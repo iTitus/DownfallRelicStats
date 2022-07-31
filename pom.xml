@@ -22,8 +22,8 @@
         <!-- These versions are just visual -->
         <BaseMod.version>5.43.0</BaseMod.version>
         <StSLib.version>2.4.0</StSLib.version>
-        <RelicStats.version>0.1.0</RelicStats.version>
-        <Downfall.version>0.1.0</Downfall.version>
+        <RelicStats.version>1.2.2</RelicStats.version>
+        <Downfall.version>4.1.17</Downfall.version>
         <!-- These versions are just visual -->
 
         <ModID>downfallRelicStats</ModID>
