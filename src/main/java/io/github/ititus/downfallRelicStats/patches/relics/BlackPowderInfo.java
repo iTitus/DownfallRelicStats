@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BlackPowder;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import relicstats.AmountIncreaseCallback;
 import relicstats.CombatStatsInfo;
 import relicstats.actions.AoeDamageFollowupAction;
@@ -18,7 +20,10 @@ import java.util.ArrayList;
         clz = BlackPowder.class,
         method = "onPlayerEndTurn"
 )
+@SuppressWarnings("unused")
 public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncreaseCallback {
+
+    private static final Logger LOGGER = LogManager.getLogger(BlackPowderInfo.class.getName());
 
     private static final String statId = getLocId("BlackPowder");
     private static final String[] description = CardCrawlGame.languagePack.getUIString(statId).TEXT;
@@ -36,11 +41,13 @@ public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncr
     @SpireInsertPatch(locator = BlackPowderInfo.Locator1.class)
     public static void before(BlackPowder __instance) {
         AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
+        LOGGER.debug("added PreAoeDamageAction, actions={}", AbstractDungeon.actionManager.actions);
     }
 
     @SpireInsertPatch(locator = BlackPowderInfo.Locator2.class)
     public static void after(BlackPowder __instance) {
         AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
+        LOGGER.debug("added AoeDamageFollowupAction, actions={}", AbstractDungeon.actionManager.actions);
     }
 
     @Override

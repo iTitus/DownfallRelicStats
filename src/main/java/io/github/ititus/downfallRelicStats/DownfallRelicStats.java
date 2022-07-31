@@ -13,9 +13,10 @@ import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
 
 @SpireInitializer
+@SuppressWarnings("unused")
 public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber {
 
-    public static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
 
     public static final String MOD_ID = "downfallRelicStats";
 
@@ -31,7 +32,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         return MOD_ID + "Resources/" + resourcePath;
     }
 
-    @SuppressWarnings("unused")
     public static void initialize() {
         BaseMod.subscribe(new DownfallRelicStats());
     }
