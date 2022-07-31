@@ -33,3 +33,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+sendToDevs/
+steam_appid.txt
