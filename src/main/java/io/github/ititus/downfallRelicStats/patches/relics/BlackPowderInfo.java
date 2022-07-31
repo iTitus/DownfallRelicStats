@@ -60,9 +60,7 @@ public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncr
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
             Matcher matcher = new Matcher.MethodCallMatcher(BlackPowder.class, "flash");
-            int[] locs = LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), matcher);
-            DownfallRelicStats.LOGGER.info("[Loc1] " + Arrays.toString(locs));
-            return locs;
+            return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), matcher);
         }
     }
 
