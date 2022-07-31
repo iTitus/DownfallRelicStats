@@ -2,7 +2,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.",
   "visibility": "public",
-  "changeNote": "v0.1.0\n\nInitial release",
+  "changeNote": "v0.1.0\n\nInitial release, only Black Powder support",
   "tags": [
     "Utility",
     "QoL"
