@@ -5,7 +5,6 @@ import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BlackPowder;
-import io.github.ititus.downfallRelicStats.DownfallRelicStats;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import relicstats.AmountIncreaseCallback;
@@ -14,7 +13,6 @@ import relicstats.actions.AoeDamageFollowupAction;
 import relicstats.actions.PreAoeDamageAction;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 @SpirePatch(
         clz = BlackPowder.class,
@@ -59,7 +57,7 @@ public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncr
 
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-            Matcher matcher = new Matcher.MethodCallMatcher(BlackPowder.class, "flash");
+            Matcher matcher = new Matcher.MethodCallMatcher(BlackPowder.class, "addToBot");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<>(), matcher);
         }
     }
