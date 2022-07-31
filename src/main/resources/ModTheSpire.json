@@ -1,0 +1,17 @@
+{
+  "modid": "${ModID}",
+  "name": "${project.name}",
+  "author_list": [
+    "iTitus"
+  ],
+  "description": "${project.description}",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": [
+    "basemod",
+    "stslib",
+    "RelicStats",
+    "downfall"
+  ]
+}
