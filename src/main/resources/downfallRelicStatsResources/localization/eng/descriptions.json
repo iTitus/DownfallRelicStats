@@ -18,5 +18,10 @@
     "TEXT": [
       "Damage dealt: "
     ]
+  },
+  "STATS:Gremlin:WoundPoker": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }

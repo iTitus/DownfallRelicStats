@@ -6,10 +6,7 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
-import io.github.ititus.downfallRelicStats.patches.relics.GremlinBombInfo;
-import io.github.ititus.downfallRelicStats.patches.relics.PricklyShieldsInfo;
-import io.github.ititus.downfallRelicStats.patches.relics.RyeStalkInfo;
+import io.github.ititus.downfallRelicStats.patches.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -57,5 +54,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinBombInfo.getInstance());
         register(PricklyShieldsInfo.getInstance());
         register(RyeStalkInfo.getInstance());
+        register(WoundPokerInfo.getInstance());
     }
 }
