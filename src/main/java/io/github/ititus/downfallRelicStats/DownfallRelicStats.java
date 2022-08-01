@@ -55,5 +55,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PricklyShieldsInfo.getInstance());
         register(RyeStalkInfo.getInstance());
         register(WoundPokerInfo.getInstance());
+        register(BabySneckoInfo.getInstance());
     }
 }

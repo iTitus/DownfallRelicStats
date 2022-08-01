@@ -23,5 +23,10 @@
     "TEXT": [
       "Damage dealt: "
     ]
+  },
+  "STATS:sneckomod:BabySnecko": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }
