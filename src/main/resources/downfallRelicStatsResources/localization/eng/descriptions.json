@@ -41,5 +41,10 @@
       " NL Artifact removed per turn: ",
       " NL Artifact removed per combat: "
     ]
+  },
+  "STATS:hexamod:Sixitude": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }
