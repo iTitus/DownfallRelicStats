@@ -16,7 +16,6 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
     protected static final Gson GSON = new GsonBuilder().create();
     private static final Logger LOGGER = LogManager.getLogger(BaseRelicStats.class.getName());
     protected final String relicId;
-    protected final String statId;
     protected final Class<T> statsClass;
     protected T stats;
     private String[] description;
@@ -24,7 +23,6 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
 
     protected BaseRelicStats(String relicId, Class<T> statsClass) {
         this.relicId = Objects.requireNonNull(relicId, "relicId");
-        this.statId = getLocId(relicId);
         this.statsClass = Objects.requireNonNull(statsClass, "statsClass");
         resetStats();
     }
@@ -33,17 +31,13 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
         return relicId;
     }
 
-    public String getStatId() {
-        return statId;
-    }
-
     public T getStats() {
         return stats;
     }
 
     public String[] getDescription() {
         if (description == null) {
-            description = Objects.requireNonNull(CardCrawlGame.languagePack.getUIString(statId).TEXT, "description");
+            description = Objects.requireNonNull(CardCrawlGame.languagePack.getUIString(getLocId(relicId)).TEXT, "description");
         }
 
         return description;
