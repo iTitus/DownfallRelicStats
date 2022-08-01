@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.StatsInfo;
@@ -15,7 +14,7 @@ import java.util.Objects;
 public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo {
 
     protected static final Gson GSON = new GsonBuilder().create();
-    private static final Logger LOGGER = LogManager.getLogger(BlackPowderInfo.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(BaseRelicStats.class.getName());
     protected final String relicId;
     protected final String statId;
     protected final Class<T> statsClass;

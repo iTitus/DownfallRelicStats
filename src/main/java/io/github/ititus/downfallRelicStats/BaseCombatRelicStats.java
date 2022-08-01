@@ -1,7 +1,6 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.google.gson.JsonElement;
-import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.AmountAdjustmentCallback;
@@ -11,7 +10,7 @@ import java.text.DecimalFormat;
 
 public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback, AmountAdjustmentCallback {
 
-    private static final Logger LOGGER = LogManager.getLogger(BlackPowderInfo.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(BaseCombatRelicStats.class.getName());
     private int startingAmount;
 
     protected BaseCombatRelicStats(String relicId) {
