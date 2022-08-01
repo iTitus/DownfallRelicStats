@@ -8,5 +8,10 @@
     "TEXT": [
       "Damage dealt: "
     ]
+  },
+  "STATS:Gremlin:PricklyShields": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }
