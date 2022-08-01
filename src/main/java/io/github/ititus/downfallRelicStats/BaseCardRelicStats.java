@@ -11,6 +11,28 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
         super(relicId, Stats.class);
     }
 
+    public static String cardToString(String cardIdOrMetricId) {
+        AbstractCard cardObj = CardLibrary.getCard(cardIdOrMetricId.split("\\+")[0]);
+        String rarityColor = null;
+        if (cardObj != null) {
+            switch (cardObj.rarity) {
+                case UNCOMMON:
+                    rarityColor = "b";
+                    break;
+                case RARE:
+                    rarityColor = "y";
+                    break;
+            }
+        }
+
+        String cardName = CardLibrary.getCardNameFromMetricID(cardIdOrMetricId);
+        if (rarityColor != null) {
+            return FontHelper.colorString(cardName, rarityColor);
+        } else {
+            return cardName;
+        }
+    }
+
     @Override
     public boolean showStats() {
         return !CardCrawlGame.isInARun();
@@ -30,11 +52,11 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
             this.cachedName = null;
         }
 
-        public void setCardWithMetricId(AbstractCard card) {
+        public void setCard(AbstractCard card) {
             setCard(card != null ? card.getMetricID() : null);
         }
 
-        public void setCardWithCardId(AbstractCard card) {
+        public void setCardWithoutUpgrade(AbstractCard card) {
             setCard(card != null ? card.cardID : null);
         }
 
@@ -45,25 +67,7 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
             }
 
             if (cachedName == null) {
-                AbstractCard cardObj = CardLibrary.getCard(card.split("\\+")[0]);
-                String rarityColor = null;
-                if (cardObj != null) {
-                    switch (cardObj.rarity) {
-                        case UNCOMMON:
-                            rarityColor = "b";
-                            break;
-                        case RARE:
-                            rarityColor = "y";
-                            break;
-                    }
-                }
-
-                String cardName = CardLibrary.getCardNameFromMetricID(card);
-                if (rarityColor != null) {
-                    cardName = FontHelper.colorString(cardName, rarityColor);
-                }
-
-                cachedName = description[0] + cardName;
+                cachedName = description[0] + cardToString(card);
             }
 
             return cachedName;
