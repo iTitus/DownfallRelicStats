@@ -72,14 +72,22 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
 
     @Override
     public JsonElement onSaveRaw() {
+        if (stats == null) {
+            throw new IllegalStateException();
+        }
+
         return GSON.toJsonTree(stats);
     }
 
     @Override
     public void onLoadRaw(JsonElement jsonElement) {
+        if (stats == null) {
+            throw new IllegalStateException();
+        }
+
         if (jsonElement != null) {
             try {
-                stats = GSON.fromJson(jsonElement, statsClass);
+                stats = Objects.requireNonNull(GSON.fromJson(jsonElement, statsClass));
             } catch (JsonSyntaxException e) {
                 LOGGER.warn("Error while loading new serialization in {}", getClass(), e);
                 resetStats();
