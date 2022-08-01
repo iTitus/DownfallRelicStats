@@ -4,13 +4,15 @@ import com.google.gson.JsonElement;
 import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import relicstats.AmountAdjustmentCallback;
 import relicstats.AmountIncreaseCallback;
 
 import java.text.DecimalFormat;
 
-public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback {
+public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback, AmountAdjustmentCallback {
 
     private static final Logger LOGGER = LogManager.getLogger(BlackPowderInfo.class.getName());
+    private int startingAmount;
 
     protected BaseCombatRelicStats(String relicId) {
         super(relicId, Stats.class);
@@ -19,6 +21,16 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
     @Override
     public void increaseAmount(int by) {
         stats.increaseAmount(by);
+    }
+
+    @Override
+    public void registerStartingAmount(int startingAmount) {
+        this.startingAmount = startingAmount;
+    }
+
+    @Override
+    public void registerEndingAmount(int endingAmount) {
+        increaseAmount(endingAmount - startingAmount);
     }
 
     @Override
