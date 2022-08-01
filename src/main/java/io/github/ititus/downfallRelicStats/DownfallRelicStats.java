@@ -6,7 +6,6 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import hermit.relics.BlackPowder;
 import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,9 +15,8 @@ import relicstats.RelicStats;
 @SuppressWarnings("unused")
 public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber {
 
-    private static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
-
     public static final String MOD_ID = "downfallRelicStats";
+    private static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
 
     public DownfallRelicStats() {
         LOGGER.info("CONSTRUCT");
@@ -36,6 +34,10 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         BaseMod.subscribe(new DownfallRelicStats());
     }
 
+    private static void register(BaseRelicStats<?> relicStats) {
+        RelicStats.registerCustomStats(relicStats.getRelicId(), relicStats);
+    }
+
     @Override
     public void receiveEditStrings() {
         switch (Settings.language) {
@@ -48,6 +50,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
     public void receivePostInitialize() {
         LOGGER.info("POST INIT");
 
-        RelicStats.registerCustomStats(BlackPowder.ID, BlackPowderInfo.getInstance());
+        register(BlackPowderInfo.getInstance());
     }
 }

@@ -2,15 +2,13 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BlackPowder;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import relicstats.AmountIncreaseCallback;
-import relicstats.CombatStatsInfo;
 import relicstats.actions.AoeDamageFollowupAction;
 import relicstats.actions.PreAoeDamageAction;
 
@@ -21,17 +19,15 @@ import java.util.ArrayList;
         method = "onPlayerEndTurn"
 )
 @SuppressWarnings("unused")
-public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncreaseCallback {
+public final class BlackPowderInfo extends BaseCombatRelicStats {
 
     private static final Logger LOGGER = LogManager.getLogger(BlackPowderInfo.class.getName());
-
-    private static final String statId = getLocId("BlackPowder");
-    private static final String[] description = CardCrawlGame.languagePack.getUIString(statId).TEXT;
     private static final BlackPowderInfo INSTANCE = new BlackPowderInfo();
 
     private static PreAoeDamageAction preAction;
 
     private BlackPowderInfo() {
+        super(BlackPowder.ID);
     }
 
     public static BlackPowderInfo getInstance() {
@@ -48,16 +44,6 @@ public final class BlackPowderInfo extends CombatStatsInfo implements AmountIncr
     public static void after(BlackPowder __instance) {
         AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         LOGGER.debug("added AoeDamageFollowupAction, actions={}", AbstractDungeon.actionManager.actions);
-    }
-
-    @Override
-    public String getBaseDescription() {
-        return description[0];
-    }
-
-    @Override
-    public void increaseAmount(int amount) {
-        this.amount += amount;
     }
 
     private static final class Locator1 extends SpireInsertLocator {
