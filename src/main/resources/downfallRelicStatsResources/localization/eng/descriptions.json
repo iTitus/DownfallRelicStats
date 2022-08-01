@@ -34,6 +34,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hexamod:SpiritBrand": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:Gremlin:WoundPoker": {
     "TEXT": [
       "Damage dealt: "
