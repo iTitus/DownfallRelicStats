@@ -50,6 +50,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
     public void receivePostInitialize() {
         LOGGER.info("POST INIT");
 
+        register(PocketSentryInfo.getInstance());
         register(BlackPowderInfo.getInstance());
         register(GremlinBombInfo.getInstance());
         register(PricklyShieldsInfo.getInstance());

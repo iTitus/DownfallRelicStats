@@ -47,7 +47,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
         super.onLoadRaw(jsonElement);
     }
 
-    static class Stats implements StatContainer, AmountIncreaseCallback {
+    public static class Stats implements StatContainer, AmountIncreaseCallback {
 
         int amount = 0;
 
