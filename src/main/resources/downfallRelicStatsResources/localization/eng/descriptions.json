@@ -3,5 +3,10 @@
     "TEXT": [
       "Damage dealt: "
     ]
+  },
+  "STATS:Gremlin:GremlinBomb": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }

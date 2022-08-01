@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
+import io.github.ititus.downfallRelicStats.patches.relics.GremlinBombInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -51,5 +52,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         LOGGER.info("POST INIT");
 
         register(BlackPowderInfo.getInstance());
+        register(GremlinBombInfo.getInstance());
     }
 }
