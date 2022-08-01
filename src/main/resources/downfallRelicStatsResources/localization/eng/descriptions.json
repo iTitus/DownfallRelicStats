@@ -13,5 +13,10 @@
     "TEXT": [
       "Damage dealt: "
     ]
+  },
+  "STATS:hermit:RyeStalk": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
   }
 }

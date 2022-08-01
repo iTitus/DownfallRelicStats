@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import io.github.ititus.downfallRelicStats.patches.relics.BlackPowderInfo;
 import io.github.ititus.downfallRelicStats.patches.relics.GremlinBombInfo;
 import io.github.ititus.downfallRelicStats.patches.relics.PricklyShieldsInfo;
+import io.github.ititus.downfallRelicStats.patches.relics.RyeStalkInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -55,5 +56,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BlackPowderInfo.getInstance());
         register(GremlinBombInfo.getInstance());
         register(PricklyShieldsInfo.getInstance());
+        register(RyeStalkInfo.getInstance());
     }
 }
