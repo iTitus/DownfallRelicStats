@@ -4,6 +4,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:champ:DefensiveTrainingManual": {
+    "TEXT": [
+      "Additional Block gained: "
+    ]
+  },
   "STATS:Gremlin:GremlinBomb": {
     "TEXT": [
       "Damage dealt: "

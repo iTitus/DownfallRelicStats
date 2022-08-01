@@ -11,10 +11,19 @@ import java.text.DecimalFormat;
 public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback, AmountAdjustmentCallback {
 
     private static final Logger LOGGER = LogManager.getLogger(BaseCombatRelicStats.class.getName());
+
+    protected boolean showPerTurn = true;
+    protected boolean showPerCombat = true;
+
     private int startingAmount;
 
     protected BaseCombatRelicStats(String relicId) {
         super(relicId, Stats.class);
+    }
+
+    @Override
+    public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
+        return getStatsDescription() + stats.getExtendedDescription(getDescription(), getExtendedDescription(), showPerTurn ? Math.max(1, totalTurns) : 0, showPerCombat ? Math.max(1, totalCombats) : 0);
     }
 
     @Override
@@ -59,8 +68,8 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
             DecimalFormat df = new DecimalFormat("#.###");
-            return extendedDescription[0] + df.format((double) amount / totalTurns) +
-                    extendedDescription[1] + df.format((double) amount / totalCombats);
+            return (totalTurns > 0 ? (extendedDescription[0] + df.format((double) amount / totalTurns)) : "") +
+                    (totalCombats > 0 ? (extendedDescription[1] + df.format((double) amount / totalCombats)) : "");
         }
 
         @Override
