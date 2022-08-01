@@ -19,6 +19,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:bronze:ProtectiveGoggles": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:hermit:RyeStalk": {
     "TEXT": [
       "Damage dealt: "

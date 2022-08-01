@@ -11,6 +11,7 @@ import javassist.expr.MethodCall;
 public final class DefensiveTrainingManualInfo extends BaseCombatRelicStats {
 
     private static final DefensiveTrainingManualInfo INSTANCE = new DefensiveTrainingManualInfo();
+    private static final int DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT = 10;
 
     private DefensiveTrainingManualInfo() {
         super(DefensiveTrainingManual.ID);
@@ -39,7 +40,7 @@ public final class DefensiveTrainingManualInfo extends BaseCombatRelicStats {
         }
 
         public static void patch(int finisherAmount) {
-            getInstance().increaseAmount(finisherAmount - 10);
+            getInstance().increaseAmount(finisherAmount - DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT);
         }
     }
 }
