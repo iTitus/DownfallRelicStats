@@ -11,27 +11,29 @@ public class BeforeAfterMultiMethodCallEditor extends ExprEditor {
     private final String callbackClassName;
     private final boolean doBefore;
     private final boolean doAfter;
+    private final boolean addThis;
 
     private int n;
 
     public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass) {
-        this(requiredTargetClass, requiredTargetMethodName, callbackClass, true, true);
+        this(requiredTargetClass, requiredTargetMethodName, callbackClass, true, true, true);
     }
 
-    public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter) {
-        this(requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter);
+    public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter, boolean addThis) {
+        this(requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter, addThis);
     }
 
     public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName) {
-        this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, true, true);
+        this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, true, true, true);
     }
 
-    public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter) {
+    public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter, boolean addThis) {
         this.requiredTargetClassName = requiredTargetClassName;
         this.requiredTargetMethodName = requiredTargetMethodName;
         this.callbackClassName = callbackClassName;
         this.doBefore = doBefore;
         this.doAfter = doAfter;
+        this.addThis = addThis;
     }
 
     @Override
