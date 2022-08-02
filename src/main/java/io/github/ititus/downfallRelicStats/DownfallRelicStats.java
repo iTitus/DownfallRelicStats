@@ -69,6 +69,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SuperSneckoSoulInfo.getInstance());
         register(SpiritBrandInfo.getInstance());
         register(SixitudeInfo.getInstance());
+        register(TagTeamworkInfo.getInstance());
         register(WoundPokerInfo.getInstance());
         register(BabySneckoInfo.getInstance());
         register(UnbrokenSoulInfo.getInstance());
