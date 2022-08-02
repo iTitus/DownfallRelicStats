@@ -40,7 +40,8 @@ public final class ModeShifterInfo extends BaseRelicStats<ModeShifterInfo.Stats>
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
             DecimalFormat df = new DecimalFormat("#.###");
-            return description[2] + df.format((double) block / totalCombats);
+            return description[2] + df.format((double) block / totalTurns) +
+                    description[3] + df.format((double) block / totalCombats);
         }
     }
 

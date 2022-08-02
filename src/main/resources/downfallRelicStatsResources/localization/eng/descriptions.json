@@ -4,10 +4,16 @@
       "Damage dealt: "
     ]
   },
+  "STATS:bronze:BronzeCore": {
+    "TEXT": [
+      "Energy gained: "
+    ]
+  },
   "STATS:Guardian:ModeShifter": {
     "TEXT": [
       "Starter Gem: ",
       "Additional Block gained: ",
+      " NL Additional Block gained per turn: ",
       " NL Additional Block gained per combat: "
     ]
   },
