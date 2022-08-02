@@ -8,11 +8,10 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import guardian.powers.ModeShiftPower;
 import guardian.relics.ModeShifter;
 import io.github.ititus.downfallRelicStats.BaseCardRelicStats;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
-
-import java.text.DecimalFormat;
 
 public final class ModeShifterInfo extends BaseRelicStats<ModeShifterInfo.Stats> {
 
@@ -39,9 +38,7 @@ public final class ModeShifterInfo extends BaseRelicStats<ModeShifterInfo.Stats>
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            DecimalFormat df = new DecimalFormat("#.###");
-            return description[2] + df.format((double) block / totalTurns) +
-                    description[3] + df.format((double) block / totalCombats);
+            return BaseCombatRelicStats.generateExtendedDescription(extendedDescription, 0, block, totalTurns, totalCombats);
         }
     }
 

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import guardian.relics.PocketSentry;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.BeforeAfterMultiMethodCallEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
@@ -13,8 +14,6 @@ import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import javassist.expr.ExprEditor;
 import relicstats.actions.AoeDamageFollowupAction;
 import relicstats.actions.PreAoeDamageAction;
-
-import java.text.DecimalFormat;
 
 public final class PocketSentryInfo extends BaseRelicStats<PocketSentryInfo.Stats> {
 
@@ -43,13 +42,9 @@ public final class PocketSentryInfo extends BaseRelicStats<PocketSentryInfo.Stat
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            DecimalFormat df = new DecimalFormat("#.###");
-            return description[3] + df.format((double) damage / totalTurns) +
-                    description[4] + df.format((double) damage / totalCombats) +
-                    description[5] + df.format((double) weak / totalTurns) +
-                    description[6] + df.format((double) weak / totalCombats) +
-                    description[7] + df.format((double) artifact / totalTurns) +
-                    description[8] + df.format((double) artifact / totalCombats);
+            return BaseCombatRelicStats.generateExtendedDescription(description, 3, damage, totalTurns, totalCombats) +
+                    BaseCombatRelicStats.generateExtendedDescription(description, 5, weak, totalTurns, totalCombats) +
+                    BaseCombatRelicStats.generateExtendedDescription(description, 7, artifact, totalTurns, totalCombats);
         }
     }
 

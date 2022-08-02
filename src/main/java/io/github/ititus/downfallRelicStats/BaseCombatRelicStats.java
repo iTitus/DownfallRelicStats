@@ -21,6 +21,12 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
         super(relicId, Stats.class);
     }
 
+    public static String generateExtendedDescription(String[] description, int descriptionStart, int amount, int totalTurns, int totalCombats) {
+        DecimalFormat df = new DecimalFormat("#.###");
+        return (totalTurns > 0 ? (description[descriptionStart] + df.format((double) amount / totalTurns)) : "") +
+                (totalCombats > 0 ? (description[descriptionStart + 1] + df.format((double) amount / totalCombats)) : "");
+    }
+
     @Override
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
         return getStatsDescription() + stats.getExtendedDescription(getDescription(), getExtendedDescription(), showPerTurn ? Math.max(1, totalTurns) : 0, showPerCombat ? Math.max(1, totalCombats) : 0);
@@ -67,9 +73,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            DecimalFormat df = new DecimalFormat("#.###");
-            return (totalTurns > 0 ? (extendedDescription[0] + df.format((double) amount / totalTurns)) : "") +
-                    (totalCombats > 0 ? (extendedDescription[1] + df.format((double) amount / totalCombats)) : "");
+            return generateExtendedDescription(extendedDescription, 0, amount, totalTurns, totalCombats);
         }
 
         @Override

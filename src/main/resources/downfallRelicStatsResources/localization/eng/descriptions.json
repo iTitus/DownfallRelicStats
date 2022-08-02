@@ -12,9 +12,7 @@
   "STATS:Guardian:ModeShifter": {
     "TEXT": [
       "Starter Gem: ",
-      "Additional Block gained: ",
-      " NL Additional Block gained per turn: ",
-      " NL Additional Block gained per combat: "
+      "Additional Block gained: "
     ]
   },
   "STATS:champ:DefensiveTrainingManual": {
@@ -78,6 +76,11 @@
   "STATS:hexamod:Sixitude": {
     "TEXT": [
       "Damage dealt: "
+    ]
+  },
+  "STATS:hexamod:UnbrokenSoul": {
+    "TEXT": [
+      "Energy gained: "
     ]
   }
 }
