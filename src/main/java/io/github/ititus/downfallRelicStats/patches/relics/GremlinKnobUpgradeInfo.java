@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import gremlin.relics.GremlinKnob;
 import gremlin.relics.GremlinKnobUpgrade;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;

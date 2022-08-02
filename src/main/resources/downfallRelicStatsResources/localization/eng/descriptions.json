@@ -4,6 +4,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hermit:ClaspedLocket": {
+    "TEXT": [
+      "Cards drawn: "
+    ]
+  },
   "STATS:bronze:BronzeCore": {
     "TEXT": [
       "Energy gained: "
