@@ -3,10 +3,10 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 import champ.relics.DefensiveTrainingManual;
 import champ.stances.DefensiveStance;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import javassist.CannotCompileException;
+import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
-import javassist.expr.MethodCall;
 
 public final class DefensiveTrainingManualInfo extends BaseCombatRelicStats {
 
@@ -29,18 +29,11 @@ public final class DefensiveTrainingManualInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
-                @Override
-                public void edit(MethodCall m) throws CannotCompileException {
-                    if (m.getClassName().equals(DefensiveStance.class.getName()) && m.getMethodName().equals("finisherAmount")) {
-                        m.replace("{$_ = $proceed($$); " + Patch.class.getName() + ".patch($_);}");
-                    }
-                }
-            };
+            return new ConstructorHookEditor(GainBlockAction.class, Patch.class, 2);
         }
 
-        public static void patch(int finisherAmount) {
-            getInstance().increaseAmount(finisherAmount - DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT);
+        public static void hook(int blockAmount) {
+            getInstance().increaseAmount(blockAmount - DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT);
         }
     }
 }

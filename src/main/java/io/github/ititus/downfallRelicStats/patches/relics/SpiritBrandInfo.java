@@ -1,15 +1,15 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 import theHexaghost.relics.SpiritBrand;
 
 public final class SpiritBrandInfo extends BaseCombatRelicStats {
 
     private static final SpiritBrandInfo INSTANCE = new SpiritBrandInfo();
-    private static final int BLOCK_AMOUNT = 4;
 
     private SpiritBrandInfo() {
         super(SpiritBrand.ID);
@@ -27,11 +27,11 @@ public final class SpiritBrandInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, SpiritBrand.class, "addToBot", Patch.class, false, true);
+            return new ConstructorHookEditor(GainBlockAction.class, Patch.class, 2);
         }
 
-        public static void after(SpiritBrand __instance) {
-            getInstance().increaseAmount(BLOCK_AMOUNT);
+        public static void hook(int blockAmount) {
+            getInstance().increaseAmount(blockAmount);
         }
     }
 }

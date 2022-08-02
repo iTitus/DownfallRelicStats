@@ -4,6 +4,13 @@
       "Damage dealt: "
     ]
   },
+  "STATS:Guardian:ModeShifter": {
+    "TEXT": [
+      "Starter Gem: ",
+      "Additional Block gained: ",
+      " NL Additional Block gained per combat: "
+    ]
+  },
   "STATS:champ:DefensiveTrainingManual": {
     "TEXT": [
       "Additional Block gained: "
