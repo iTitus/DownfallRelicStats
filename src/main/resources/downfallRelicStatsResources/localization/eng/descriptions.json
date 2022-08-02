@@ -75,6 +75,11 @@
       " NL Cards drawn per combat: "
     ]
   },
+  "STATS:sneckomod:SuperSneckoSoul": {
+    "TEXT": [
+      "Energy gained: "
+    ]
+  },
   "STATS:Gremlin:PricklyShields": {
     "TEXT": [
       "Damage dealt: "
