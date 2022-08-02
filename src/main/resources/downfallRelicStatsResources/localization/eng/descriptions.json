@@ -19,6 +19,11 @@
       "Cards drawn: "
     ]
   },
+  "STATS:Guardian:DefensiveModeMoreBlock": {
+    "TEXT": [
+      "Additional brace gained: "
+    ]
+  },
   "STATS:bronze:BronzeCore": {
     "TEXT": [
       "Energy gained: "
