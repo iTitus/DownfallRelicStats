@@ -54,6 +54,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BlackPowderInfo.getInstance());
         register(BronzeCoreInfo.getInstance());
         register(ClaspedLocketInfo.getInstance());
+        register(DecasWashersInfo.getInstance());
         register(ModeShifterInfo.getInstance());
         register(DefensiveTrainingManualInfo.getInstance());
         register(GremlinBombInfo.getInstance());
