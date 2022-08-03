@@ -12,14 +12,14 @@ import relicstats.AmountAdjustmentCallback;
 import relicstats.actions.CardDrawFollowupAction;
 import relicstats.actions.PreCardDrawAction;
 
-public final class DentedPlateInfo extends BaseRelicStats<GremlinKnobInfo.Stats> implements AmountAdjustmentCallback {
+public final class DentedPlateInfo extends BaseRelicStats<GremlinKnobUpgradeInfo.Stats> implements AmountAdjustmentCallback {
 
     private static final DentedPlateInfo INSTANCE = new DentedPlateInfo();
 
     private int startingAmount;
 
     private DentedPlateInfo() {
-        super(DentedPlate.ID, GremlinKnobInfo.Stats.class);
+        super(DentedPlate.ID, GremlinKnobUpgradeInfo.Stats.class);
     }
 
     public static DentedPlateInfo getInstance() {

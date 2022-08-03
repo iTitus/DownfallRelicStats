@@ -38,7 +38,7 @@ public final class ModeShifterInfo extends BaseRelicStats<ModeShifterInfo.Stats>
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            return BaseCombatRelicStats.generateExtendedDescription(extendedDescription, 0, block, totalTurns, totalCombats);
+            return BaseCombatRelicStats.generateExtendedDescription(extendedDescription, 0, block, 0, totalCombats);
         }
     }
 

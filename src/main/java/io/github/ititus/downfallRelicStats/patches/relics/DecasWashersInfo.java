@@ -15,6 +15,7 @@ public final class DecasWashersInfo extends BaseCombatRelicStats {
 
     private DecasWashersInfo() {
         super(DecasWashers.ID);
+        this.showPerTurn = false;
     }
 
     public static DecasWashersInfo getInstance() {

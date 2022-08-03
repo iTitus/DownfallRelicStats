@@ -13,6 +13,7 @@ public final class BronzeCoreInfo extends BaseCombatRelicStats {
 
     private BronzeCoreInfo() {
         super(BronzeCore.ID);
+        this.showPerTurn = false;
     }
 
     public static BronzeCoreInfo getInstance() {
