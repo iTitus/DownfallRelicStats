@@ -20,6 +20,14 @@
       " NL Per Rest Site: "
     ]
   },
+  "STATS:champ:ChampionCrown": {
+    "TEXT": [
+      "Entered Defensive: ",
+      " NL Entered Berserker: ",
+      " NL Ratios per combat: ",
+      " / "
+    ]
+  },
   "STATS:champ:DefensiveTrainingManual": {
     "TEXT": [
       "Additional Block gained: "

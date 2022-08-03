@@ -41,11 +41,19 @@ public class BeforeAfterMultiMethodCallEditor extends ExprEditor {
         if (m.getClassName().equals(requiredTargetClassName) && m.getMethodName().equals(requiredTargetMethodName)) {
             StringBuilder b = new StringBuilder().append('{');
             if (doBefore) {
-                b.append(callbackClassName).append(".before(").append(n).append(",this);");
+                b.append(callbackClassName).append(".before(").append(n);
+                if (addThis) {
+                    b.append(",this");
+                }
+                b.append(");");
             }
             b.append("$_=$proceed($$);");
             if (doAfter) {
-                b.append(callbackClassName).append(".after(").append(n).append(",this);");
+                b.append(callbackClassName).append(".after(").append(n);
+                if (addThis) {
+                    b.append(",this");
+                }
+                b.append(");");
             }
             m.replace(b.append('}').toString());
 
