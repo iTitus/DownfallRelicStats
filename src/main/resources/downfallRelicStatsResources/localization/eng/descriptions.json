@@ -4,6 +4,11 @@
       "Energy gained: "
     ]
   },
+  "STATS:bronze:CableSpool": {
+    "TEXT": [
+      "Additional cards encoded: "
+    ]
+  },
   "STATS:bronze:DecasWashers": {
     "TEXT": [
       "Cards drawn: "

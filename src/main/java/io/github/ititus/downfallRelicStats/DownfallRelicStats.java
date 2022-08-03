@@ -58,6 +58,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BloodyToothInfo.getInstance()); // Broken Tooth
         register(BronzeCoreInfo.getInstance()); // Bronze Core
         register(ModeShifterInfo.getInstance()); // Bronze Gear
+        register(CableSpoolInfo.getInstance()); // Cable Spool
         register(ChampionCrownInfo.getInstance()); // Champion's Crown
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
