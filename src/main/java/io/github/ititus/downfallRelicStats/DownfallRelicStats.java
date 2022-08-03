@@ -2,6 +2,7 @@ package io.github.ititus.downfallRelicStats;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.OnPlayerLoseBlockSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -13,7 +14,7 @@ import relicstats.RelicStats;
 
 @SpireInitializer
 @SuppressWarnings("unused")
-public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber {
+public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber, OnPlayerLoseBlockSubscriber {
 
     public static final String MOD_ID = "downfallRelicStats";
     private static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
@@ -65,7 +66,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(StasisUpgradeRelicInfo.getInstance()); // Cryo Chamber
         register(DecasWashersInfo.getInstance()); // Deca's Washers
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
-        // register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
+        register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
         register(DentedPlateInfo.getInstance()); // Dented Plate
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
@@ -83,5 +84,11 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
+    }
+
+    @Override
+    public int receiveOnPlayerLoseBlock(int blockToExpire) {
+        DeflectingBracersInfo.getInstance().trigger(blockToExpire);
+        return blockToExpire;
     }
 }

@@ -1,10 +1,8 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
-import champ.powers.CounterPower;
 import champ.relics.DeflectingBracers;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
-import javassist.expr.ExprEditor;
 
 public final class DeflectingBracersInfo extends BaseCombatRelicStats {
 
@@ -18,20 +16,12 @@ public final class DeflectingBracersInfo extends BaseCombatRelicStats {
         return INSTANCE;
     }
 
-    // TODO: fix this (crashes because of ClassLoader)
-    /*@SpirePatch(
-            clz = ChampMod.class,
-            method = "receiveOnPlayerLoseBlock"
-    )*/
-    @SuppressWarnings("unused")
-    public static class Patch {
-
-        public static ExprEditor Instrument() {
-            return new ConstructorHookEditor(CounterPower.class, Patch.class, 1);
-        }
-
-        public static void hook(int counterAmount) {
-            getInstance().increaseAmount(counterAmount);
+    public void trigger(int blockToExpire) {
+        if (AbstractDungeon.player.hasRelic(DeflectingBracers.ID)) {
+            int counter = Math.min(blockToExpire, AbstractDungeon.player.currentBlock / 2);
+            if (counter > 0) {
+                increaseAmount(counter);
+            }
         }
     }
 }
