@@ -63,6 +63,12 @@
       "Damage dealt: "
     ]
   },
+  "STATS:Gremlin:GremlinGravestone": {
+    "TEXT": [
+      "Free resurrects used: ",
+      " NL Per Rest Site: "
+    ]
+  },
   "STATS:Gremlin:GremlinKnob": {
     "TEXT": [
       "Energy gained: ",
