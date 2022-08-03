@@ -53,6 +53,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
         register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
         register(BarbellsInfo.getInstance()); // Barbell
+        register(AbsorbEndCombatUpgradedInfo.getInstance()); // Black Heart of Goo
         register(BlackPowderInfo.getInstance()); // Black Powder
         register(BloodyToothInfo.getInstance()); // Broken Tooth
         register(BronzeCoreInfo.getInstance()); // Bronze Core

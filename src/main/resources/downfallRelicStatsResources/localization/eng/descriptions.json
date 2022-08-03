@@ -145,6 +145,11 @@
       "HP healed: "
     ]
   },
+  "STATS:Slimebound:AbsorbEndCombatUpgraded": {
+    "TEXT": [
+      "HP healed: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
