@@ -89,6 +89,11 @@
       " NL Cards drawn per combat: "
     ]
   },
+  "STATS:Gremlin:ImpeccablePecs": {
+    "TEXT": [
+      "Temporary HP gained: "
+    ]
+  },
   "STATS:Gremlin:PricklyShields": {
     "TEXT": [
       "Damage dealt: "
