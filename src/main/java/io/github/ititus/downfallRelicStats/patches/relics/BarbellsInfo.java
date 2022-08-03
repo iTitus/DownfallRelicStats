@@ -30,13 +30,9 @@ public final class BarbellsInfo extends BaseRelicStats<BarbellsInfo.Stats> {
 
         @Override
         public String getDescription(String[] description) {
-            return description[0] + upgrades;
-        }
-
-        @Override
-        public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
             DecimalFormat df = new DecimalFormat("#.###");
-            return description[1] + df.format((double) upgrades / Math.max(1, restSites));
+            return description[0] + upgrades +
+                    description[1] + df.format((double) upgrades / Math.max(1, restSites));
         }
     }
 
