@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v0.4.0\n\nAdd support for simple energy and card draw relics",
+  "changeNote": "v0.5.0\n\nAdd support for 16 more relics",
   "tags": [
     "Utility",
     "QoL"
