@@ -140,6 +140,11 @@
       "Energy gained: "
     ]
   },
+  "STATS:Slimebound:AbsorbEndCombat": {
+    "TEXT": [
+      "HP healed: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
