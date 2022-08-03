@@ -94,6 +94,11 @@
       "Temporary HP gained: "
     ]
   },
+  "STATS:Gremlin:MagicalMallet": {
+    "TEXT": [
+      "Wiz gained: "
+    ]
+  },
   "STATS:Gremlin:PricklyShields": {
     "TEXT": [
       "Damage dealt: "
