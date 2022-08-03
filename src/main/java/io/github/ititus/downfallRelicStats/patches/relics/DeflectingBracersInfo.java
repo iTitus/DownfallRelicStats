@@ -16,6 +16,9 @@ public final class DeflectingBracersInfo extends BaseCombatRelicStats {
         return INSTANCE;
     }
 
+    /**
+     * Keep this in sync with ChampMod#receiveOnPlayerLoseBlock
+     */
     public void trigger(int blockToExpire) {
         if (AbstractDungeon.player.hasRelic(DeflectingBracers.ID)) {
             int counter = Math.min(blockToExpire, AbstractDungeon.player.currentBlock / 2);
