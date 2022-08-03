@@ -48,6 +48,11 @@
       "Vulnerable applied: "
     ]
   },
+  "STATS:champ:GladiatorsBookOfMartialProwess": {
+    "TEXT": [
+      "Strength and Dexterity gained: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "

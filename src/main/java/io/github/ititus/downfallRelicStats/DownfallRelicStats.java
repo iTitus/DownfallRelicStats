@@ -70,6 +70,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DentedPlateInfo.getInstance()); // Dented Plate
         register(DuelingGloveInfo.getInstance()); // Dueling GLove
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
+        register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
