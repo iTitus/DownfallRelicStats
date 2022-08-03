@@ -102,6 +102,12 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:Guardian:StasisUpgradeRelic": {
+    "TEXT": [
+      "Cards upgraded: ",
+      " NL Per Stasis Orb: "
+    ]
+  },
   "STATS:hermit:BlackPowder": {
     "TEXT": [
       "Damage dealt: "
