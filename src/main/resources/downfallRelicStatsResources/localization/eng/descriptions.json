@@ -193,5 +193,10 @@
     "TEXT": [
       "Energy gained: "
     ]
+  },
+  "STATS:champ:DeflectingBracers": {
+    "TEXT": [
+      "Counter gained: "
+    ]
   }
 }

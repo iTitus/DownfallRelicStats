@@ -65,6 +65,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(StasisUpgradeRelicInfo.getInstance()); // Cryo Chamber
         register(DecasWashersInfo.getInstance()); // Deca's Washers
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
+        // register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
         register(DentedPlateInfo.getInstance()); // Dented Plate
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
