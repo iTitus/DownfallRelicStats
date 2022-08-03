@@ -48,6 +48,11 @@
       "Vulnerable applied: "
     ]
   },
+  "STATS:downfall:ExtraCursedKey": {
+    "TEXT": [
+      "Curses created: "
+    ]
+  },
   "STATS:Gremlin:GremlinBomb": {
     "TEXT": [
       "Damage dealt: "
