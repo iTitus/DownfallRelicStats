@@ -108,6 +108,11 @@
       " NL In Act %d: "
     ]
   },
+  "STATS:hermit:CharredGlove": {
+    "TEXT": [
+      "Vigor gained: "
+    ]
+  },
   "STATS:hermit:ClaspedLocket": {
     "TEXT": [
       "Cards drawn: "
