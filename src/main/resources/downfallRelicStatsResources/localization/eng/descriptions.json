@@ -1,12 +1,7 @@
 {
-  "STATS:hermit:BlackPowder": {
+  "STATS:bronze:BronzeCore": {
     "TEXT": [
-      "Damage dealt: "
-    ]
-  },
-  "STATS:hermit:ClaspedLocket": {
-    "TEXT": [
-      "Cards drawn: "
+      "Energy gained: "
     ]
   },
   "STATS:bronze:DecasWashers": {
@@ -14,37 +9,15 @@
       "Cards drawn: "
     ]
   },
+  "STATS:bronze:ProtectiveGoggles": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:champ:Barbells": {
     "TEXT": [
       "Cards upgraded: ",
       " NL Per Rest Site: "
-    ]
-  },
-  "STATS:hermit:BloodyTooth": {
-    "TEXT": [
-      "Elites encountered: ",
-      " NL In Act %d: "
-    ]
-  },
-  "STATS:Gremlin:TagTeamwork": {
-    "TEXT": [
-      "Cards drawn: "
-    ]
-  },
-  "STATS:Guardian:DefensiveModeMoreBlock": {
-    "TEXT": [
-      "Additional brace gained: "
-    ]
-  },
-  "STATS:bronze:BronzeCore": {
-    "TEXT": [
-      "Energy gained: "
-    ]
-  },
-  "STATS:Guardian:ModeShifter": {
-    "TEXT": [
-      "Starter Gem: ",
-      "Additional Block gained: "
     ]
   },
   "STATS:champ:DefensiveTrainingManual": {
@@ -77,54 +50,14 @@
       " NL Cards drawn per combat: "
     ]
   },
-  "STATS:hermit:DentedPlate": {
-    "TEXT": [
-      "Energy gained: ",
-      " NL Cards drawn: ",
-      " NL Energy gained per turn: ",
-      " NL Energy gained per combat: ",
-      " NL Cards drawn per turn: ",
-      " NL Cards drawn per combat: "
-    ]
-  },
-  "STATS:sneckomod:SneckoSoul": {
-    "TEXT": [
-      "Energy gained: ",
-      " NL Cards drawn: ",
-      " NL Energy gained per turn: ",
-      " NL Energy gained per combat: ",
-      " NL Cards drawn per turn: ",
-      " NL Cards drawn per combat: "
-    ]
-  },
-  "STATS:sneckomod:SuperSneckoSoul": {
-    "TEXT": [
-      "Energy gained: "
-    ]
-  },
   "STATS:Gremlin:PricklyShields": {
     "TEXT": [
       "Damage dealt: "
     ]
   },
-  "STATS:bronze:ProtectiveGoggles": {
+  "STATS:Gremlin:TagTeamwork": {
     "TEXT": [
-      "Block gained: "
-    ]
-  },
-  "STATS:hermit:RedScarf": {
-    "TEXT": [
-      "Block gained: "
-    ]
-  },
-  "STATS:hermit:RyeStalk": {
-    "TEXT": [
-      "Damage dealt: "
-    ]
-  },
-  "STATS:hexamod:SpiritBrand": {
-    "TEXT": [
-      "Block gained: "
+      "Cards drawn: "
     ]
   },
   "STATS:Gremlin:WoundPoker": {
@@ -132,9 +65,15 @@
       "Damage dealt: "
     ]
   },
-  "STATS:sneckomod:BabySnecko": {
+  "STATS:Guardian:DefensiveModeMoreBlock": {
     "TEXT": [
-      "Damage dealt: "
+      "Additional brace gained: "
+    ]
+  },
+  "STATS:Guardian:ModeShifter": {
+    "TEXT": [
+      "Starter Gem: ",
+      "Additional Block gained: "
     ]
   },
   "STATS:Guardian:PocketSentry": {
@@ -150,12 +89,73 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:hermit:BlackPowder": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
+  },
+  "STATS:hermit:BloodyTooth": {
+    "TEXT": [
+      "Elites encountered: ",
+      " NL In Act %d: "
+    ]
+  },
+  "STATS:hermit:ClaspedLocket": {
+    "TEXT": [
+      "Cards drawn: "
+    ]
+  },
+  "STATS:hermit:DentedPlate": {
+    "TEXT": [
+      "Energy gained: ",
+      " NL Cards drawn: ",
+      " NL Energy gained per turn: ",
+      " NL Energy gained per combat: ",
+      " NL Cards drawn per turn: ",
+      " NL Cards drawn per combat: "
+    ]
+  },
+  "STATS:hermit:RedScarf": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
+  "STATS:hermit:RyeStalk": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
+  },
   "STATS:hexamod:Sixitude": {
     "TEXT": [
       "Damage dealt: "
     ]
   },
+  "STATS:hexamod:SpiritBrand": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:hexamod:UnbrokenSoul": {
+    "TEXT": [
+      "Energy gained: "
+    ]
+  },
+  "STATS:sneckomod:BabySnecko": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
+  },
+  "STATS:sneckomod:SneckoSoul": {
+    "TEXT": [
+      "Energy gained: ",
+      " NL Cards drawn: ",
+      " NL Energy gained per turn: ",
+      " NL Energy gained per combat: ",
+      " NL Cards drawn per turn: ",
+      " NL Cards drawn per combat: "
+    ]
+  },
+  "STATS:sneckomod:SuperSneckoSoul": {
     "TEXT": [
       "Energy gained: "
     ]

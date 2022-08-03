@@ -50,31 +50,31 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
     public void receivePostInitialize() {
         LOGGER.info("POST INIT");
 
-        register(PocketSentryInfo.getInstance());
-        register(BarbellsInfo.getInstance());
-        register(BlackPowderInfo.getInstance());
-        register(BloodyToothInfo.getInstance());
-        register(BronzeCoreInfo.getInstance());
-        register(ClaspedLocketInfo.getInstance());
-        register(DecasWashersInfo.getInstance());
-        register(DefensiveModeMoreBlockInfo.getInstance());
-        register(DentedPlateInfo.getInstance());
-        register(ModeShifterInfo.getInstance());
-        register(DefensiveTrainingManualInfo.getInstance());
-        register(GremlinBombInfo.getInstance());
-        register(GremlinKnobInfo.getInstance());
-        register(GremlinKnobUpgradeInfo.getInstance());
-        register(PricklyShieldsInfo.getInstance());
-        register(ProtectiveGogglesInfo.getInstance());
-        register(RedScarfInfo.getInstance());
-        register(RyeStalkInfo.getInstance());
-        register(SneckoSoulInfo.getInstance());
-        register(SuperSneckoSoulInfo.getInstance());
-        register(SpiritBrandInfo.getInstance());
-        register(SixitudeInfo.getInstance());
-        register(TagTeamworkInfo.getInstance());
-        register(WoundPokerInfo.getInstance());
-        register(BabySneckoInfo.getInstance());
-        register(UnbrokenSoulInfo.getInstance());
+        register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
+        register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
+        register(BarbellsInfo.getInstance()); // Barbell
+        register(BlackPowderInfo.getInstance()); // Black Powder
+        register(BloodyToothInfo.getInstance()); // Broken Tooth
+        register(BronzeCoreInfo.getInstance()); // Bronze Core
+        register(ModeShifterInfo.getInstance()); // Bronze Gear
+        register(ClaspedLocketInfo.getInstance()); // Clasped Locket
+        register(DecasWashersInfo.getInstance()); // Deca's Washers
+        register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
+        register(DentedPlateInfo.getInstance()); // Dented Plate
+        register(GremlinBombInfo.getInstance()); // Gremlin Bomb
+        register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
+        register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
+        register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
+        register(PricklyShieldsInfo.getInstance()); // Prickly Shields
+        register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
+        register(RedScarfInfo.getInstance()); // Red Scarf
+        register(RyeStalkInfo.getInstance()); // Rye Stalk
+        register(SixitudeInfo.getInstance()); // Six-Point Brand
+        register(SneckoSoulInfo.getInstance()); // Snecko Soul
+        register(SpiritBrandInfo.getInstance()); // Spirit Brand
+        register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
+        register(TagTeamworkInfo.getInstance()); // Tag Teamwork
+        register(WoundPokerInfo.getInstance()); // Wound Poker
+        register(BabySneckoInfo.getInstance()); // Young Snecko
     }
 }
