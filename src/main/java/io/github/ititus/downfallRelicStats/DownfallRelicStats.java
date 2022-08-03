@@ -68,6 +68,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
         register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
         register(DentedPlateInfo.getInstance()); // Dented Plate
+        register(DuelingGloveInfo.getInstance()); // Dueling GLove
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether

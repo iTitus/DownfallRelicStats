@@ -38,6 +38,16 @@
       "Additional Block gained: "
     ]
   },
+  "STATS:champ:DeflectingBracers": {
+    "TEXT": [
+      "Counter gained: "
+    ]
+  },
+  "STATS:champ:DuelingGlove": {
+    "TEXT": [
+      "Vulnerable applied: "
+    ]
+  },
   "STATS:Gremlin:GremlinBomb": {
     "TEXT": [
       "Damage dealt: "
@@ -192,11 +202,6 @@
   "STATS:sneckomod:SuperSneckoSoul": {
     "TEXT": [
       "Energy gained: "
-    ]
-  },
-  "STATS:champ:DeflectingBracers": {
-    "TEXT": [
-      "Counter gained: "
     ]
   }
 }
