@@ -26,7 +26,6 @@ public final class ImpeccablePecsInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-
         public static ExprEditor Instrument() {
             return new ConstructorHookEditor(AddTemporaryHPAction.class, Patch.class, 3);
         }
