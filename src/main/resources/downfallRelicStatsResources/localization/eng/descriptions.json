@@ -153,6 +153,11 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:Guardian:StasisCodex": {
+    "TEXT": [
+      "Cards placed into stasis: "
+    ]
+  },
   "STATS:Guardian:StasisUpgradeRelic": {
     "TEXT": [
       "Cards upgraded: ",
