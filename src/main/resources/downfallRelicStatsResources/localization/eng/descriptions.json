@@ -133,6 +133,13 @@
       "Additional Block gained: "
     ]
   },
+  "STATS:Guardian:PickAxe": {
+    "TEXT": [
+      " NL Gems:",
+      "Gems mined: ",
+      " NL Per Rest Site: "
+    ]
+  },
   "STATS:Guardian:PocketSentry": {
     "TEXT": [
       "Damage dealt: ",

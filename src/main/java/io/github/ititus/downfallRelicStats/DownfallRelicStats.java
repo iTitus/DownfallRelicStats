@@ -82,6 +82,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
         register(ChampStancesModRelicInfo.getInstance()); // New Challenger
         register(PetGhostInfo.getInstance()); // Pet Ghost
+        register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(RedScarfInfo.getInstance()); // Red Scarf
