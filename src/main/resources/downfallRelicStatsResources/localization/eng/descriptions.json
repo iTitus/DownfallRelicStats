@@ -188,6 +188,11 @@
       "Debuffs prevented: "
     ]
   },
+  "STATS:hermit:PetGhost": {
+    "TEXT": [
+      "Deaths prevented: "
+    ]
+  },
   "STATS:hermit:RedScarf": {
     "TEXT": [
       "Block gained: "
