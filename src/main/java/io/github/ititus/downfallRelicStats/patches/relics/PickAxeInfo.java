@@ -35,7 +35,7 @@ public final class PickAxeInfo extends BaseRelicStats<PickAxeInfo.Stats> {
             DecimalFormat df = new DecimalFormat("#.###");
             int gemsMined = getCards().size();
             return description[1] + gemsMined +
-                    description[2] + df.format((double) gemsMined / restSites) +
+                    description[2] + df.format((double) gemsMined / Math.max(1, restSites)) +
                     (gemsMined > 0 ? super.getDescription(description) : "");
         }
     }
