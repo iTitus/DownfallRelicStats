@@ -84,6 +84,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PetGhostInfo.getInstance()); // Pet Ghost
         register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(StasisCodexInfo.getInstance()); // Pilot's Codex
+        register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(RedScarfInfo.getInstance()); // Red Scarf

@@ -14,6 +14,11 @@
       "Cards drawn: "
     ]
   },
+  "STATS:bronze:PlatinumCore": {
+    "TEXT": [
+      "Function costs reduced: "
+    ]
+  },
   "STATS:bronze:ProtectiveGoggles": {
     "TEXT": [
       "Block gained: "
