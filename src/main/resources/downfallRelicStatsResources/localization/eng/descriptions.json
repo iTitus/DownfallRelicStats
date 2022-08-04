@@ -33,6 +33,14 @@
       " / "
     ]
   },
+  "STATS:champ:ChampStancesModRelic": {
+    "TEXT": [
+      "Entered Defensive: ",
+      " NL Entered Berserker: ",
+      " NL Ratios per combat: ",
+      " / "
+    ]
+  },
   "STATS:champ:DefensiveTrainingManual": {
     "TEXT": [
       "Additional Block gained: "

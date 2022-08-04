@@ -80,6 +80,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
         register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
         register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
+        register(ChampStancesModRelicInfo.getInstance()); // New Challenger
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(RedScarfInfo.getInstance()); // Red Scarf
