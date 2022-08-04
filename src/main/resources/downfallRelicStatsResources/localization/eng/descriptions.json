@@ -175,6 +175,11 @@
       " NL Cards drawn per combat: "
     ]
   },
+  "STATS:hermit:Horseshoe": {
+    "TEXT": [
+      "Debuffs prevented: "
+    ]
+  },
   "STATS:hermit:RedScarf": {
     "TEXT": [
       "Block gained: "

@@ -74,6 +74,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
+        register(HorseshoeInfo.getInstance()); // Horseshoe
         register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
         register(MagicMalletInfo.getInstance()); // Magic Mallet
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
