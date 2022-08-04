@@ -60,11 +60,7 @@ public final class GremlinGravestoneInfo extends BaseRelicStats<GremlinGraveston
     @SuppressWarnings("unused")
     public static class Patch2 {
 
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, ResurrectOption.class, "updateImage", Patch2.class, false, true, false);
-        }
-
-        public static void after() {
+        public static void Postfix() {
             if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(GremlinGravestone.ID)) {
                 getInstance().stats.restSites++;
             }
