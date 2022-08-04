@@ -68,7 +68,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
         register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
         register(DentedPlateInfo.getInstance()); // Dented Plate
-        register(DuelingGloveInfo.getInstance()); // Dueling GLove
+        register(DuelingGloveInfo.getInstance()); // Dueling Glove
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
