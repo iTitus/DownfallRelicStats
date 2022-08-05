@@ -230,6 +230,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hexamod:SoulConsumer": {
+    "TEXT": [
+      "HP healed: "
+    ]
+  },
   "STATS:hexamod:SpiritBrand": {
     "TEXT": [
       "Block gained: "

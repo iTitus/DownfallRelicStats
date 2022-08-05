@@ -14,6 +14,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
 
     protected boolean showPerTurn = true;
     protected boolean showPerCombat = true;
+    protected boolean amountAdjustInvert = false;
 
     private int startingAmount;
 
@@ -44,7 +45,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
 
     @Override
     public void registerEndingAmount(int endingAmount) {
-        increaseAmount(endingAmount - startingAmount);
+        increaseAmount(amountAdjustInvert ? startingAmount - endingAmount : endingAmount - startingAmount);
     }
 
     @Override
