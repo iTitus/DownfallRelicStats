@@ -33,11 +33,11 @@ public final class DecasWashersInfo extends BaseCombatRelicStats {
             return new BeforeAfterMethodCallEditor(1, DecasWashers.class, "addToBot", Patch.class);
         }
 
-        public static void before(DecasWashers __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after(DecasWashers __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }

@@ -48,7 +48,7 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMultiMethodCallEditor(ChampionCrown.class, "addToBot", Patch.class, false, true, false);
+            return new BeforeAfterMultiMethodCallEditor(ChampionCrown.class, "addToBot", Patch.class, false, true);
         }
 
         public static void after(int index) {

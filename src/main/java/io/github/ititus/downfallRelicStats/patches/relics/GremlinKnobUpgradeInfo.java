@@ -80,11 +80,11 @@ public final class GremlinKnobUpgradeInfo extends BaseRelicStats<GremlinKnobUpgr
             return new BeforeAfterMethodCallEditor(2, GameActionManager.class, "addToBottom", Patch2.class);
         }
 
-        public static void before(GremlinKnobUpgrade __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after(GremlinKnobUpgrade __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }

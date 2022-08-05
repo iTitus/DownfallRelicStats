@@ -63,11 +63,11 @@ public final class DentedPlateInfo extends BaseRelicStats<GremlinKnobUpgradeInfo
             return new BeforeAfterMethodCallEditor(1, DentedPlate.class, "addToBot", Patch2.class);
         }
 
-        public static void before(DentedPlate __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after(DentedPlate __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }

@@ -28,7 +28,7 @@ public final class CharredGloveInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, GameActionManager.class, "addToBottom", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class, false, true);
         }
 
         public static void after() {

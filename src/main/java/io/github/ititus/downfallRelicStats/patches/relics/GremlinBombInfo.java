@@ -35,11 +35,11 @@ public final class GremlinBombInfo extends BaseCombatRelicStats {
             return new BeforeAfterMethodCallEditor(1, GameActionManager.class, "addToBottom", Patch.class);
         }
 
-        public static void before(GremlinBomb __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
         }
 
-        public static void after(GremlinBomb __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         }
     }

@@ -34,11 +34,11 @@ public final class BlackPowderInfo extends BaseCombatRelicStats {
             return new BeforeAfterMethodCallEditor(1, BlackPowder.class, "addToBot", Patch.class);
         }
 
-        public static void before(BlackPowder __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
         }
 
-        public static void after(BlackPowder __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         }
     }

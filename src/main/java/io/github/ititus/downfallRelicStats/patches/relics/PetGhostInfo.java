@@ -28,7 +28,7 @@ public final class PetGhostInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, AbstractPlayer.class, "heal", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "heal", Patch.class, false, true);
         }
 
         public static void after() {

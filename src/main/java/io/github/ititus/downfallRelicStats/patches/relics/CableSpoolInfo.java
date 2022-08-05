@@ -27,7 +27,7 @@ public final class CableSpoolInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, CableSpool.class, "addToBot", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(1, CableSpool.class, "addToBot", Patch.class, false, true);
         }
 
         public static void after() {

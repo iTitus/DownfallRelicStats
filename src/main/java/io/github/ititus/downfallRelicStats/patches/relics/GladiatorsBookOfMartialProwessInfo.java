@@ -26,7 +26,7 @@ public final class GladiatorsBookOfMartialProwessInfo extends BaseCombatRelicSta
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, GladiatorsBookOfMartialProwess.class, "addToBot", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(1, GladiatorsBookOfMartialProwess.class, "addToBot", Patch.class, false, true);
         }
 
         public static void after() {

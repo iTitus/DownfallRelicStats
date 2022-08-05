@@ -60,14 +60,14 @@ public final class SneckoSoulInfo extends BaseRelicStats<GremlinKnobInfo.Stats> 
     public static class Patch2 {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, SneckoSoul.class, "addToBot", Patch2.class);
+            return new BeforeAfterMethodCallEditor(SneckoSoul.class, "addToBot", Patch2.class);
         }
 
-        public static void before(SneckoSoul __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after(SneckoSoul __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }

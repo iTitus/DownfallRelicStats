@@ -16,7 +16,11 @@ public class BeforeAfterMultiMethodCallEditor extends ExprEditor {
     private int n;
 
     public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass) {
-        this(requiredTargetClass, requiredTargetMethodName, callbackClass, true, true, true);
+        this(requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName());
+    }
+
+    public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter) {
+        this(requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter);
     }
 
     public BeforeAfterMultiMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter, boolean addThis) {
@@ -25,6 +29,10 @@ public class BeforeAfterMultiMethodCallEditor extends ExprEditor {
 
     public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName) {
         this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, true, true, true);
+    }
+
+    public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter) {
+        this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, doBefore, doAfter, false);
     }
 
     public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter, boolean addThis) {

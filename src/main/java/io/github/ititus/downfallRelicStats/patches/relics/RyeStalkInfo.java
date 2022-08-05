@@ -32,14 +32,14 @@ public final class RyeStalkInfo extends BaseCombatRelicStats {
         private static PreAoeDamageAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, Bruise.class, "addToBot", Patch.class);
+            return new BeforeAfterMethodCallEditor(Bruise.class, "addToBot", Patch.class);
         }
 
-        public static void before(Bruise __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
         }
 
-        public static void after(Bruise __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         }
     }

@@ -1,25 +1,37 @@
 package io.github.ititus.downfallRelicStats.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import relicstats.AmountIncreaseCallback;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class AoePowerFollowupAction extends AbstractGameAction {
 
-    private final AmountIncreaseCallback statTracker;
+    private final PowerChangeCallback statTracker;
     private final PreAoePowerAction preAction;
-    private final boolean checkIncrease;
 
-    public AoePowerFollowupAction(AmountIncreaseCallback statTracker, PreAoePowerAction preAction, boolean checkIncrease) {
+    public AoePowerFollowupAction(PowerChangeCallback statTracker, PreAoePowerAction preAction) {
         this.statTracker = statTracker;
         this.preAction = preAction;
-        this.checkIncrease = checkIncrease;
-        this.actionType = ActionType.DAMAGE;
     }
 
     public void update() {
-        int newPowerAmount = preAction.countPowerAmount();
-        int change = checkIncrease ? newPowerAmount - preAction.getPowerAmount() : preAction.getPowerAmount() - newPowerAmount;
-        statTracker.increaseAmount(change);
+        if (!preAction.isDone) {
+            throw new IllegalStateException();
+        }
+
+        Map<String, Integer> oldPowerAmounts = preAction.getPowerAmounts();
+        Map<String, Integer> newPowerAmounts = preAction.countPowerAmounts();
+
+        Set<String> powerIds = new HashSet<>();
+        powerIds.addAll(oldPowerAmounts.keySet());
+        powerIds.addAll(newPowerAmounts.keySet());
+        for (String powerId : powerIds) {
+            int oldAmount = oldPowerAmounts.getOrDefault(powerId, 0);
+            int newAmount = newPowerAmounts.getOrDefault(powerId, 0);
+            statTracker.onPowerChanged(powerId, newAmount - oldAmount);
+        }
 
         isDone = true;
     }

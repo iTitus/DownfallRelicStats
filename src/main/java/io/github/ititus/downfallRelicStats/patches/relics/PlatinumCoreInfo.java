@@ -26,7 +26,7 @@ public final class PlatinumCoreInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, PlatinumCore.class, "flash", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(PlatinumCore.class, "flash", Patch.class, false, true);
         }
 
         public static void after() {

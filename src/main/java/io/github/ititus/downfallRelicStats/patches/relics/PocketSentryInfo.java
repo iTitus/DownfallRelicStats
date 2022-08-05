@@ -56,33 +56,35 @@ public final class PocketSentryInfo extends BaseRelicStats<PocketSentryInfo.Stat
     public static class Patch {
 
         private static PreAoeDamageAction preDamageAction;
-        private static PreAoePowerAction prePowerActionWeak;
-        private static PreAoePowerAction prePowerActionArtifact;
+        private static PreAoePowerAction prePowerAction;
 
         public static ExprEditor Instrument() {
             return new BeforeAfterMultiMethodCallEditor(PocketSentry.class, "addToBot", Patch.class);
         }
 
-        public static void before(int index, PocketSentry __instance) {
+        public static void before(int index) {
             preDamageAction = null;
-            prePowerActionWeak = null;
-            prePowerActionArtifact = null;
+            prePowerAction = null;
             if (index == 0) {
                 AbstractDungeon.actionManager.addToBottom(preDamageAction = new PreAoeDamageAction());
             } else if (index == 1) {
-                AbstractDungeon.actionManager.addToBottom(prePowerActionWeak = new PreAoePowerAction(WeakPower.POWER_ID));
-                AbstractDungeon.actionManager.addToBottom(prePowerActionArtifact = new PreAoePowerAction(ArtifactPower.POWER_ID));
+                AbstractDungeon.actionManager.addToBottom(prePowerAction = new PreAoePowerAction());
             } else {
                 throw new AssertionError();
             }
         }
 
-        public static void after(int index, PocketSentry __instance) {
+        public static void after(int index) {
             if (index == 0) {
                 AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(by -> getInstance().stats.damage += by, preDamageAction));
             } else if (index == 1) {
-                AbstractDungeon.actionManager.addToBottom(new AoePowerFollowupAction(by -> getInstance().stats.weak += by, prePowerActionWeak, true));
-                AbstractDungeon.actionManager.addToBottom(new AoePowerFollowupAction(by -> getInstance().stats.artifact += by, prePowerActionArtifact, false));
+                AbstractDungeon.actionManager.addToBottom(new AoePowerFollowupAction((powerId, by) -> {
+                    if (WeakPower.POWER_ID.equals(powerId)) {
+                        getInstance().stats.weak += by;
+                    } else if (ArtifactPower.POWER_ID.equals(powerId)) {
+                        getInstance().stats.artifact -= by;
+                    }
+                }, prePowerAction));
             } else {
                 throw new AssertionError();
             }

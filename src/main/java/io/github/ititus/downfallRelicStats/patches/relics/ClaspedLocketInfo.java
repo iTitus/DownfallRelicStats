@@ -29,14 +29,14 @@ public final class ClaspedLocketInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, ClaspedLocket.class, "addToTop", Patch.class);
+            return new BeforeAfterMethodCallEditor(ClaspedLocket.class, "addToTop", Patch.class);
         }
 
-        public static void before(ClaspedLocket __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToTop(new CardDrawFollowupAction(getInstance()));
         }
 
-        public static void after(ClaspedLocket __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToTop(new PreCardDrawAction(getInstance()));
         }
     }

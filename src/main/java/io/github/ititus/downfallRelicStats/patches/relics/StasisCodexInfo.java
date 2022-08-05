@@ -28,7 +28,7 @@ public final class StasisCodexInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, GameActionManager.class, "addToTop", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToTop", Patch.class, false, true);
         }
 
         public static void after() {

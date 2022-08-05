@@ -45,7 +45,7 @@ public final class GremlinGravestoneInfo extends BaseRelicStats<GremlinGraveston
     public static class Patch1 {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, GremlinCharacter.class, "resurrect", Patch1.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(GremlinCharacter.class, "resurrect", Patch1.class, false, true);
         }
 
         public static void after() {

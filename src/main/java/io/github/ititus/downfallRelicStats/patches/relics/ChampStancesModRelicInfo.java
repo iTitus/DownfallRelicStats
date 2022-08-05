@@ -48,7 +48,7 @@ public final class ChampStancesModRelicInfo extends BaseRelicStats<ChampStancesM
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMultiMethodCallEditor(ChampStancesModRelic.class, "addToBot", Patch.class, false, true, false);
+            return new BeforeAfterMultiMethodCallEditor(ChampStancesModRelic.class, "addToBot", Patch.class, false, true);
         }
 
         public static void after(int index) {

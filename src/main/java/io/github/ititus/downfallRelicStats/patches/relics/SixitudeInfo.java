@@ -34,11 +34,11 @@ public final class SixitudeInfo extends BaseCombatRelicStats {
             return new BeforeAfterMethodCallEditor(1, Sixitude.class, "addToBot", Patch.class);
         }
 
-        public static void before(Sixitude __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
         }
 
-        public static void after(Sixitude __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         }
     }

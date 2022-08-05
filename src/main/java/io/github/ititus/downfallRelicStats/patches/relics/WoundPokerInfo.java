@@ -32,14 +32,14 @@ public final class WoundPokerInfo extends BaseCombatRelicStats {
         private static PreAoeDamageAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, GameActionManager.class, "addToBottom", Patch.class);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
         }
 
-        public static void before(WoundPoker __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
         }
 
-        public static void after(WoundPoker __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
         }
     }

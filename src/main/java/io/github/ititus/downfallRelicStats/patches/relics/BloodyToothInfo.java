@@ -55,7 +55,7 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, BloodyTooth.class, "flash", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(BloodyTooth.class, "flash", Patch.class, false, true);
         }
 
         public static void after() {

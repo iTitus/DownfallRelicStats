@@ -45,12 +45,12 @@ public final class BarbellsInfo extends BaseRelicStats<BarbellsInfo.Stats> {
 
         @SpireInstrumentPatch
         public static ExprEditor Instrument1() {
-            return new BeforeAfterMethodCallEditor(0, Barbells.class, "flash", Patch.class, true, false, false);
+            return new BeforeAfterMethodCallEditor(Barbells.class, "flash", Patch.class, true, false);
         }
 
         @SpireInstrumentPatch
         public static ExprEditor Instrument2() {
-            return new BeforeAfterMethodCallEditor(0, AbstractCard.class, "upgrade", Patch.class, false, true, false);
+            return new BeforeAfterMethodCallEditor(AbstractCard.class, "upgrade", Patch.class, false, true);
         }
 
         public static void before() {

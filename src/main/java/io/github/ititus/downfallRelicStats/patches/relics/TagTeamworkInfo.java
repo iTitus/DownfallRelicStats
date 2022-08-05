@@ -30,14 +30,14 @@ public final class TagTeamworkInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(0, GameActionManager.class, "addToBottom", Patch.class);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
         }
 
-        public static void before(TagTeamwork __instance) {
+        public static void before() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after(TagTeamwork __instance) {
+        public static void after() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }
