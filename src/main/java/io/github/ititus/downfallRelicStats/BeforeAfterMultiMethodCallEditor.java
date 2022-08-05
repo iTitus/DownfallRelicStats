@@ -28,7 +28,7 @@ public class BeforeAfterMultiMethodCallEditor extends ExprEditor {
     }
 
     public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName) {
-        this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, true, true, true);
+        this(requiredTargetClassName, requiredTargetMethodName, callbackClassName, true, true);
     }
 
     public BeforeAfterMultiMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter) {
