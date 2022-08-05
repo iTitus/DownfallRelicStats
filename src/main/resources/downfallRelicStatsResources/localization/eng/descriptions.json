@@ -122,6 +122,11 @@
       "Cards drawn: "
     ]
   },
+  "STATS:Gremlin:WizardHat": {
+    "TEXT": [
+      "Debuffs cleared: "
+    ]
+  },
   "STATS:Gremlin:WoundPoker": {
     "TEXT": [
       "Damage dealt: "
