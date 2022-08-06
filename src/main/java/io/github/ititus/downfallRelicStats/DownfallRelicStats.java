@@ -5,7 +5,6 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.OnPlayerLoseBlockSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import io.github.ititus.downfallRelicStats.patches.relics.*;
 import org.apache.logging.log4j.LogManager;
@@ -41,10 +40,11 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
     @Override
     public void receiveEditStrings() {
-        switch (Settings.language) {
-            default:
-                BaseMod.loadCustomStringsFile(UIStrings.class, makePath("localization/eng/descriptions.json"));
-        }
+        BaseMod.loadCustomStringsFile(UIStrings.class, makePath("localization/eng/descriptions.json"));
+        /*switch (Settings.language) {
+            case DEU:
+                BaseMod.loadCustomStringsFile(UIStrings.class, makePath("localization/deu/descriptions.json"));
+        }*/
     }
 
     @Override
