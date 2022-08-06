@@ -92,6 +92,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SixitudeInfo.getInstance()); // Six-Point Brand
+        register(PreparedRelicInfo.getInstance()); // Slime Soup
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
         register(SpiritBrandInfo.getInstance()); // Spirit Brand
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul

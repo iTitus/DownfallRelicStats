@@ -265,6 +265,11 @@
       "HP healed: "
     ]
   },
+  "STATS:Slimebound:PreparedRelic": {
+    "TEXT": [
+      "Prepares generated: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
