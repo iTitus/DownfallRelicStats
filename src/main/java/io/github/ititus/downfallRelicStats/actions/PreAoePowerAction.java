@@ -17,20 +17,38 @@ public class PreAoePowerAction extends AbstractGameAction {
     private Map<String, Integer> powerAmounts;
 
     public PreAoePowerAction() {
-        this(Mode.ONLY_MONSTERS, p -> true);
+        this(Mode.ONLY_MONSTERS);
     }
 
     public PreAoePowerAction(Mode mode) {
         this(mode, p -> true);
     }
 
+    public PreAoePowerAction(String... powerIds) {
+        this(idFilter(powerIds));
+    }
+
     public PreAoePowerAction(Predicate<AbstractPower> filter) {
         this(Mode.ONLY_MONSTERS, filter);
+    }
+
+    public PreAoePowerAction(Mode mode, String... powerIds) {
+        this(mode, idFilter(powerIds));
     }
 
     public PreAoePowerAction(Mode mode, Predicate<AbstractPower> filter) {
         this.mode = Objects.requireNonNull(mode, "mode");
         this.filter = Objects.requireNonNull(filter, "filter");
+    }
+
+    public static Predicate<AbstractPower> idFilter(String... powerIds) {
+        Objects.requireNonNull(powerIds, "powerIds");
+        if (powerIds.length == 0) {
+            throw new IllegalArgumentException();
+        }
+
+        List<String> powerIdList = new ArrayList<>(Arrays.asList(powerIds));
+        return p -> powerIdList.stream().anyMatch(id -> p.ID.equals(id));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.google.gson.JsonElement;
+import io.github.ititus.downfallRelicStats.actions.PowerChangeCallback;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.AmountAdjustmentCallback;
@@ -8,13 +9,14 @@ import relicstats.AmountIncreaseCallback;
 
 import java.text.DecimalFormat;
 
-public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback, AmountAdjustmentCallback {
+public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatRelicStats.Stats> implements AmountIncreaseCallback, AmountAdjustmentCallback, PowerChangeCallback {
 
     private static final Logger LOGGER = LogManager.getLogger(BaseCombatRelicStats.class.getName());
 
     protected boolean showPerTurn = true;
     protected boolean showPerCombat = true;
     protected boolean amountAdjustInvert = false;
+    protected boolean powerChangeInvert = false;
 
     private int startingAmount;
 
@@ -46,6 +48,11 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
     @Override
     public void registerEndingAmount(int endingAmount) {
         increaseAmount(amountAdjustInvert ? startingAmount - endingAmount : endingAmount - startingAmount);
+    }
+
+    @Override
+    public void onPowerChanged(String powerId, int amount) {
+        increaseAmount(powerChangeInvert ? -amount : amount);
     }
 
     @Override

@@ -22,6 +22,11 @@ public final class WizardHatInfo extends BaseCombatRelicStats {
         return INSTANCE;
     }
 
+    @Override
+    public void onPowerChanged(String powerId, int amount) {
+        increaseAmount(1);
+    }
+
     @SpirePatch(
             clz = WizardHat.class,
             method = "onTrigger"
@@ -40,7 +45,7 @@ public final class WizardHatInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new AoePowerFollowupAction((powerId, amount) -> getInstance().increaseAmount(1), preAction));
+            AbstractDungeon.actionManager.addToBottom(new AoePowerFollowupAction(getInstance(), preAction));
         }
     }
 }
