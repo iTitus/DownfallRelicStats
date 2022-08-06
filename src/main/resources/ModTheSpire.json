@@ -4,7 +4,7 @@
   "author_list": [
     "iTitus"
   ],
-  "credits": "Thanks to Ocean for generating a very helpful table to track implementation progress",
+  "credits": "Thanks to Ocean for generating a very helpful table to track implementation progress and for making the workshop icon",
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
