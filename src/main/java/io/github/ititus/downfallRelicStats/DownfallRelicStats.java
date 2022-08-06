@@ -87,6 +87,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
+        register(CandleOfCauterizingInfo.getInstance()); // Red Candle
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SixitudeInfo.getInstance()); // Six-Point Brand

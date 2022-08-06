@@ -225,6 +225,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hexamod:CandleOfCauterizing": {
+    "TEXT": [
+      "Soulburn applied: "
+    ]
+  },
   "STATS:hexamod:Sixitude": {
     "TEXT": [
       "Damage dealt: "
