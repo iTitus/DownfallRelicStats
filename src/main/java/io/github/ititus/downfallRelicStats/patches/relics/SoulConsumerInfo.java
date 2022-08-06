@@ -28,8 +28,6 @@ public final class SoulConsumerInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-        private static int health;
-
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "heal", Patch.class);
         }

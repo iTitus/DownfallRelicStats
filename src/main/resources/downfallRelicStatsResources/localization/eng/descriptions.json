@@ -240,6 +240,11 @@
       "Block gained: "
     ]
   },
+  "STATS:hexamod:TheBrokenSeal": {
+    "TEXT": [
+      "HP healed: "
+    ]
+  },
   "STATS:hexamod:UnbrokenSoul": {
     "TEXT": [
       "Energy gained: "
