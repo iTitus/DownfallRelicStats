@@ -89,6 +89,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(CandleOfCauterizingInfo.getInstance()); // Red Candle
         register(RedScarfInfo.getInstance()); // Red Scarf
+        register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SixitudeInfo.getInstance()); // Six-Point Brand
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
