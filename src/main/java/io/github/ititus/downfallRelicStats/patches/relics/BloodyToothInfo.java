@@ -1,6 +1,7 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BloodyTooth;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
@@ -32,15 +33,17 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
         @Override
         public String getDescription(String[] description) {
             StringBuilder b = new StringBuilder();
+
             int allElites = elites != null ? elites.stream().mapToInt(i -> i).sum() : 0;
             b.append(description[0]).append(allElites);
 
-            if (elites != null && !elites.isEmpty()) {
-                for (int i = 0; i < elites.size() - 1; i++) {
-                    b.append(String.format(description[1], i + 1)).append(elites.get(i));
-                }
-            } else {
-                b.append(String.format(description[1], 1)).append(0);
+            int len = Math.max(1, Math.max(
+                    elites != null ? elites.size() : 0,
+                    CardCrawlGame.isInARun() ? AbstractDungeon.actNum : 0
+            ));
+            for (int i = 0; i < len; i++) {
+                int elitesFought = elites == null || i >= elites.size() ? 0 : elites.get(i);
+                b.append(String.format(description[1], i + 1)).append(elitesFought);
             }
 
             return b.toString();
@@ -65,8 +68,8 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
             }
 
             int size = elites.size();
-            int act = AbstractDungeon.actNum;
-            if (size <= act) {
+            int act = AbstractDungeon.actNum - 1;
+            if (act >= size) {
                 elites.addAll(IntStream.rangeClosed(size, act).map(i -> 0).boxed().collect(Collectors.toList()));
             }
 
