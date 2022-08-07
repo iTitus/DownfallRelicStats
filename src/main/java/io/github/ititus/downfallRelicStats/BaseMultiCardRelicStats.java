@@ -1,7 +1,6 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,11 +10,6 @@ public abstract class BaseMultiCardRelicStats extends BaseRelicStats<BaseMultiCa
 
     protected BaseMultiCardRelicStats(String relicId) {
         super(relicId, Stats.class);
-    }
-
-    @Override
-    public boolean showStats() {
-        return !CardCrawlGame.isInARun();
     }
 
     public static class Stats implements StatContainer {

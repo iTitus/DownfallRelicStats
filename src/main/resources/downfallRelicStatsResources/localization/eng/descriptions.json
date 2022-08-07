@@ -137,6 +137,11 @@
       "Additional brace gained: "
     ]
   },
+  "STATS:Guardian:GemstoneGun": {
+    "TEXT": [
+      "Gems chosen: "
+    ]
+  },
   "STATS:Guardian:ModeShifter": {
     "TEXT": [
       "Starter Gem: ",

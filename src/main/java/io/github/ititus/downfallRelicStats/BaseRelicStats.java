@@ -18,6 +18,7 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
     protected final String relicId;
     protected final Class<T> statsClass;
     protected T stats;
+    protected boolean onlyShowInRunHistory = false;
     private String[] description;
     private String[] extendedDescription;
 
@@ -68,6 +69,11 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public boolean showStats() {
+        return !onlyShowInRunHistory || !CardCrawlGame.isInARun();
     }
 
     @Override

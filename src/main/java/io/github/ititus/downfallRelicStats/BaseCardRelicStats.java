@@ -1,7 +1,6 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 
@@ -31,11 +30,6 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
         } else {
             return cardName;
         }
-    }
-
-    @Override
-    public boolean showStats() {
-        return !CardCrawlGame.isInARun();
     }
 
     public static class Stats implements StatContainer {
