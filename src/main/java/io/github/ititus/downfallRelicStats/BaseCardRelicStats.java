@@ -1,8 +1,11 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.relics.Omamori;
 
 public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicStats.Stats> {
 
@@ -30,6 +33,10 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
         } else {
             return cardName;
         }
+    }
+
+    public static boolean hasActiveOmamori() {
+        return CardCrawlGame.isInARun() && AbstractDungeon.player.hasRelic(Omamori.ID) && AbstractDungeon.player.getRelic(Omamori.ID).counter != 0;
     }
 
     public static class Stats implements StatContainer {

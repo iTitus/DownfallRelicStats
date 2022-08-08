@@ -144,7 +144,7 @@
   },
   "STATS:Guardian:GemstoneGun": {
     "TEXT": [
-      "Gems obtained: "
+      "Gems chosen: "
     ]
   },
   "STATS:Guardian:ModeShifter": {
@@ -171,6 +171,11 @@
       " NL Weak applied per combat: ",
       " NL Artifact removed per turn: ",
       " NL Artifact removed per combat: "
+    ]
+  },
+  "STATS:Guardian:SackOfGems": {
+    "TEXT": [
+      "Gems obtained: "
     ]
   },
   "STATS:Guardian:StasisCodex": {
