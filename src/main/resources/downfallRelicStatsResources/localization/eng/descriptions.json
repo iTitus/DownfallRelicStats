@@ -71,6 +71,11 @@
       "Curses created: "
     ]
   },
+  "STATS:downfall:GremlinSack": {
+    "TEXT": [
+      "Cards obtained: "
+    ]
+  },
   "STATS:Gremlin:GremlinBomb": {
     "TEXT": [
       "Damage dealt: "
@@ -139,18 +144,18 @@
   },
   "STATS:Guardian:GemstoneGun": {
     "TEXT": [
-      "Gems chosen: "
+      "Gems obtained: "
     ]
   },
   "STATS:Guardian:ModeShifter": {
     "TEXT": [
-      "Starter Gem: ",
+      "Gem obtained: ",
       "Additional Block gained: "
     ]
   },
   "STATS:Guardian:PickAxe": {
     "TEXT": [
-      " NL Gems:",
+      " NL Gems obtained:",
       "Gems mined: ",
       " NL Per Rest Site: "
     ]
