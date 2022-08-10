@@ -153,6 +153,11 @@
       "Card bottled: "
     ]
   },
+  "STATS:Guardian:BottledStasis": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:Guardian:DefensiveModeMoreBlock": {
     "TEXT": [
       "Additional brace gained: "

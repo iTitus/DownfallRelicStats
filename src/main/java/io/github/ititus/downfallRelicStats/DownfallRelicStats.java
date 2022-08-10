@@ -57,6 +57,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AbsorbEndCombatUpgradedInfo.getInstance()); // Black Heart of Goo
         register(BlackPowderInfo.getInstance()); // Black Powder
         register(BottledAnomalyInfo.getInstance()); // Bottled Anomaly
+        register(BottledStasisInfo.getInstance()); // Bottled Black Hole
         register(BrassTacksInfo.getInstance()); // Brass Tacks
         register(BloodyToothInfo.getInstance()); // Broken Tooth
         register(BronzeCoreInfo.getInstance()); // Bronze Core
