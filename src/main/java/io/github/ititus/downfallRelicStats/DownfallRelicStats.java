@@ -76,6 +76,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(GemstoneGunInfo.getInstance()); // Gemstone Gun
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
+        register(GreedOozeRelicInfo.getInstance()); // Greed Ooze
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher

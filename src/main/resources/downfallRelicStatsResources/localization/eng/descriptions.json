@@ -321,6 +321,14 @@
       "HP healed: "
     ]
   },
+  "STATS:Slimebound:GreedOozeRelic": {
+    "TEXT": [
+      "Slime Damage: ",
+      " NL Times upgraded: ",
+      " NL Times upgraded per Rest Site: ",
+      " NL Gold spent: "
+    ]
+  },
   "STATS:Slimebound:PreparedRelic": {
     "TEXT": [
       "Prepares generated: "
