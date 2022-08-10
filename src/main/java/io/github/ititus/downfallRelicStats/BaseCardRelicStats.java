@@ -57,6 +57,10 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
             setCard(card != null ? card.getMetricID() : null);
         }
 
+        public void clearCard() {
+            setCard((String) null);
+        }
+
         public void setCardWithoutUpgrade(AbstractCard card) {
             setCard(card != null ? card.cardID : null);
         }

@@ -1,4 +1,9 @@
 {
+  "STATS:bronze:BottledCode": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:bronze:BronzeCore": {
     "TEXT": [
       "Energy gained: "
