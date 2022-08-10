@@ -102,6 +102,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SackOfGemsInfo.getInstance()); // Sack of Gems
+        register(ScrapOozeRelicInfo.getInstance()); // Scrap Ooze
         register(SignatureFinisherInfo.getInstance()); // Six-Point Brand
         register(SixitudeInfo.getInstance()); // Six-Point Brand
         register(PreparedRelicInfo.getInstance()); // Slime Soup

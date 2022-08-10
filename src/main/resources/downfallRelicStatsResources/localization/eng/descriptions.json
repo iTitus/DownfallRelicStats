@@ -323,7 +323,7 @@
   },
   "STATS:Slimebound:GreedOozeRelic": {
     "TEXT": [
-      "Slime Damage: ",
+      "Greed Ooze Damage: ",
       " NL Times upgraded: ",
       " NL Times upgraded per Rest Site: ",
       " NL Gold spent: "
@@ -332,6 +332,17 @@
   "STATS:Slimebound:PreparedRelic": {
     "TEXT": [
       "Prepares generated: "
+    ]
+  },
+  "STATS:Slimebound:ScrapOozeRelic": {
+    "TEXT": [
+      "Scrap Ooze Damage: ",
+      " NL Times upgraded: ",
+      " NL Times upgraded per Rest Site: ",
+      " NL Rares scrapped: ",
+      " NL Uncommons scrapped: ",
+      " NL Commons scrapped: ",
+      " NL Curses scrapped: "
     ]
   },
   "STATS:sneckomod:BabySnecko": {
