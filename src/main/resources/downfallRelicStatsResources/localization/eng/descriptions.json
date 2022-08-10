@@ -209,6 +209,11 @@
       "Cards placed into stasis: "
     ]
   },
+  "STATS:Guardian:StasisEgg": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:Guardian:StasisUpgradeRelic": {
     "TEXT": [
       "Cards upgraded: ",

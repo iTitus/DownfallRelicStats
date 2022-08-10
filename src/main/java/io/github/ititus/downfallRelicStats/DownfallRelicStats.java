@@ -95,6 +95,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
+        register(StasisEggInfo.getInstance()); // Quantum Chamber
         register(CandleOfCauterizingInfo.getInstance()); // Red Candle
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
