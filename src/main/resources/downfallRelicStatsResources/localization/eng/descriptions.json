@@ -148,6 +148,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:Guardian:BottledAnomaly": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:Guardian:DefensiveModeMoreBlock": {
     "TEXT": [
       "Additional brace gained: "
