@@ -71,6 +71,11 @@
       "Strength and Dexterity gained: "
     ]
   },
+  "STATS:champ:SignatureFinisher": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
