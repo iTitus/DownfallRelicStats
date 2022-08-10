@@ -331,6 +331,11 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:sneckomod:D8": {
+    "TEXT": [
+      "Card bottled: "
+    ]
+  },
   "STATS:sneckomod:SneckoSoul": {
     "TEXT": [
       "Energy gained: ",
