@@ -200,6 +200,11 @@
       " NL In Act %d: "
     ]
   },
+  "STATS:hermit:BrassTacks": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:hermit:CharredGlove": {
     "TEXT": [
       "Vigor gained: "
