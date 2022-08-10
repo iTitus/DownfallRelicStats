@@ -27,7 +27,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
     public static String generateExtendedDescription(String[] description, int descriptionStart, int amount, int totalTurns, int totalCombats) {
         DecimalFormat df = new DecimalFormat("#.###");
         return (totalTurns > 0 ? (description[descriptionStart] + df.format((double) amount / totalTurns)) : "") +
-                (totalCombats > 0 ? (description[descriptionStart + 1] + df.format((double) amount / totalCombats)) : "");
+                (totalCombats > 0 ? (description[totalTurns > 0 ? descriptionStart + 1 : descriptionStart] + df.format((double) amount / totalCombats)) : "");
     }
 
     @Override

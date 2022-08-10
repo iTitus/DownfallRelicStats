@@ -281,6 +281,14 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hexamod:BolsterEngine": {
+    "TEXT": [
+      "Block gained: ",
+      " NL Strength gained: ",
+      " NL Block gained per combat: ",
+      " NL Strength gained per combat: "
+    ]
+  },
   "STATS:hexamod:CandleOfCauterizing": {
     "TEXT": [
       "Soulburn applied: "
@@ -337,8 +345,8 @@
   "STATS:Slimebound:ScrapOozeRelic": {
     "TEXT": [
       "Scrap Ooze Damage: ",
-      " NL Times upgraded: ",
-      " NL Times upgraded per Rest Site: ",
+      " NL Cards scrapped: ",
+      " NL Cards scrapped per Rest Site: ",
       " NL Rares scrapped: ",
       " NL Uncommons scrapped: ",
       " NL Commons scrapped: ",
