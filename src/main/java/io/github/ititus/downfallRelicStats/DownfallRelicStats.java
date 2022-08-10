@@ -75,6 +75,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
+        register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
         register(GremlinSackInfo.getInstance()); // Gremlin Sack
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(HorseshoeInfo.getInstance()); // Horseshoe

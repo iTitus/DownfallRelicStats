@@ -112,6 +112,17 @@
       "Temporary HP gained: "
     ]
   },
+  "STATS:Gremlin:LeaderVoucher": {
+    "TEXT": [
+      "Gremlin lost: ",
+      "Unknown",
+      "Fat Gremlin",
+      "Gremlin Wizard",
+      "Mad Gremlin",
+      "Shield Gremlin",
+      "Sneaky Gremlin"
+    ]
+  },
   "STATS:Gremlin:MagicalMallet": {
     "TEXT": [
       "Wiz gained: "
