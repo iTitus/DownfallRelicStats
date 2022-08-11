@@ -76,6 +76,16 @@
       "Card bottled: "
     ]
   },
+  "STATS:champ:SpectersHand": {
+    "TEXT": [
+      "Strikes generated: ",
+      " NL Defends generated: ",
+      " NL Strikes per turn: ",
+      " NL Strikes per combat: ",
+      " NL Defends per turn: ",
+      " NL Defends per combat: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
