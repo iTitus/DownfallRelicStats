@@ -238,6 +238,11 @@
       " NL Per Stasis Orb: "
     ]
   },
+  "STATS:hermit:BartenderGlass": {
+    "TEXT": [
+      "Potions created: "
+    ]
+  },
   "STATS:hermit:BlackPowder": {
     "TEXT": [
       "Damage dealt: "
