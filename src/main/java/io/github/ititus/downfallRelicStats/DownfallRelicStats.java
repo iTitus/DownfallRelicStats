@@ -107,6 +107,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SixitudeInfo.getInstance()); // Six-Point Brand
         register(PreparedRelicInfo.getInstance()); // Slime Soup
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
+        register(SoulOfChaosInfo.getInstance()); // Soul of Chaos
         register(SpectersHandInfo.getInstance()); // Spectre's Hand
         register(SpiritBrandInfo.getInstance()); // Spirit Brand
         register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise

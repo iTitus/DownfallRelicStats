@@ -323,6 +323,11 @@
       "HP healed: "
     ]
   },
+  "STATS:hexamod:SoulOfChaos": {
+    "TEXT": [
+      "Cards played: "
+    ]
+  },
   "STATS:hexamod:SpiritBrand": {
     "TEXT": [
       "Block gained: "
