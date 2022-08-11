@@ -377,6 +377,11 @@
       " NL Curses scrapped: "
     ]
   },
+  "STATS:Slimebound:SlimedTailRelic": {
+    "TEXT": [
+      "Times split: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
