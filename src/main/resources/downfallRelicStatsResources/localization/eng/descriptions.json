@@ -151,6 +151,13 @@
       "Damage dealt: "
     ]
   },
+  "STATS:Gremlin:ShortStature": {
+    "TEXT": [
+      "Deaths prevented: ",
+      " NL HP healed: ",
+      " NL Per activation: "
+    ]
+  },
   "STATS:Gremlin:StolenMerchandise": {
     "TEXT": [
       "Cards echoed: "
