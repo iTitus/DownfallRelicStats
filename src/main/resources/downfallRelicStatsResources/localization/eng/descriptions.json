@@ -325,6 +325,11 @@
       "Soulburn applied: "
     ]
   },
+  "STATS:hexamod:RecyclingMachine": {
+    "TEXT": [
+      "Cards copied: "
+    ]
+  },
   "STATS:hexamod:Sixitude": {
     "TEXT": [
       "Damage dealt: "
