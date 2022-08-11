@@ -279,6 +279,12 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hermit:StraightRazor": {
+    "TEXT": [
+      "HP healed: ",
+      " NL Per Card removed: "
+    ]
+  },
   "STATS:hexamod:BolsterEngine": {
     "TEXT": [
       "Block gained: ",

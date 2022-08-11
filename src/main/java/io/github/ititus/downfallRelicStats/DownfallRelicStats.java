@@ -108,6 +108,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PreparedRelicInfo.getInstance()); // Slime Soup
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
         register(SpiritBrandInfo.getInstance()); // Spirit Brand
+        register(StraightRazorInfo.getInstance()); // Straight Razor
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
         register(TheBrokenSealInfo.getInstance()); // The Broken Seal
