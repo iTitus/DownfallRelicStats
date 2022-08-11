@@ -81,7 +81,7 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            return generateExtendedDescription(extendedDescription, 0, amount, totalTurns, totalCombats);
+            return generateExtendedDescription(extendedDescription, totalTurns > 0 ? 0 : 1, amount, totalTurns, totalCombats);
         }
 
         @Override
