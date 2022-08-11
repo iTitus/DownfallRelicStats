@@ -385,5 +385,11 @@
     "TEXT": [
       "Energy gained: "
     ]
+  },
+  "STATS:sneckomod:UnknownEgg": {
+    "TEXT": [
+      "Times identified: ",
+      " NL Per Rest Site: "
+    ]
   }
 }
