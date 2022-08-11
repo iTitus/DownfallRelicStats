@@ -9,6 +9,11 @@
       "Energy gained: "
     ]
   },
+  "STATS:bronze:BronzeIdol": {
+    "TEXT": [
+      "Status cards converted: "
+    ]
+  },
   "STATS:bronze:CableSpool": {
     "TEXT": [
       "Additional cards encoded: "

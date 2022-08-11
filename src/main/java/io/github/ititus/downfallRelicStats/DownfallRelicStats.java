@@ -2,7 +2,7 @@ package io.github.ititus.downfallRelicStats;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.OnPlayerLoseBlockSubscriber;
+import basemod.interfaces.ISubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -13,7 +13,7 @@ import relicstats.RelicStats;
 
 @SpireInitializer
 @SuppressWarnings("unused")
-public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber, OnPlayerLoseBlockSubscriber {
+public final class DownfallRelicStats implements EditStringsSubscriber, PostInitializeSubscriber {
 
     public static final String MOD_ID = "downfallRelicStats";
     private static final Logger LOGGER = LogManager.getLogger(DownfallRelicStats.class.getName());
@@ -36,6 +36,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
     private static void register(BaseRelicStats<?> relicStats) {
         RelicStats.registerCustomStats(relicStats.getRelicId(), relicStats);
+        if (relicStats instanceof ISubscriber) {
+            BaseMod.subscribe((ISubscriber) relicStats);
+        }
     }
 
     @Override
@@ -63,6 +66,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BloodyToothInfo.getInstance()); // Broken Tooth
         register(BronzeCoreInfo.getInstance()); // Bronze Core
         register(ModeShifterInfo.getInstance()); // Bronze Gear
+        register(BronzeIdolInfo.getInstance()); // Bronze Idol
         register(CableSpoolInfo.getInstance()); // Cable Spool
         register(ChampionCrownInfo.getInstance()); // Champion's Crown
         register(CharredGloveInfo.getInstance()); // Charred Glove
@@ -125,11 +129,5 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(WizardHatInfo.getInstance()); // Wizard Hat
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
-    }
-
-    @Override
-    public int receiveOnPlayerLoseBlock(int blockToExpire) {
-        DeflectingBracersInfo.getInstance().trigger(blockToExpire);
-        return blockToExpire;
     }
 }
