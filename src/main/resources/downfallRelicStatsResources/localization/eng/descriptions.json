@@ -141,6 +141,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:Gremlin:StolenMerchandise": {
+    "TEXT": [
+      "Cards echoed: "
+    ]
+  },
   "STATS:Gremlin:TagTeamwork": {
     "TEXT": [
       "Cards drawn: "
