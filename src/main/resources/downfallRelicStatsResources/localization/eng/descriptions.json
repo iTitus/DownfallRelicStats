@@ -101,6 +101,11 @@
       "Cards obtained: "
     ]
   },
+  "STATS:Gremlin:FragmentationGrenade": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:Gremlin:GremlinBomb": {
     "TEXT": [
       "Damage dealt: "
