@@ -55,7 +55,7 @@ public class PreAoePowerAction extends AbstractGameAction {
     public void update() {
         if (mode == Mode.ONLY_MONSTERS || mode == Mode.ALL) {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if (!m.isDead && !m.isDeadOrEscaped()) {
+                if (!m.isDead && !m.isDeadOrEscaped() && m.currentHealth > 0) {
                     affectedCreatures.add(m);
                 }
             }
@@ -63,7 +63,7 @@ public class PreAoePowerAction extends AbstractGameAction {
 
         if (mode == Mode.ONLY_PLAYER || mode == Mode.ALL) {
             AbstractCreature c = AbstractDungeon.player;
-            if (c != null && !c.isDead && !c.isDeadOrEscaped()) {
+            if (c != null && !c.isDead && !c.isDeadOrEscaped() && c.currentHealth > 0) {
                 affectedCreatures.add(c);
             }
         }
