@@ -412,6 +412,11 @@
       " NL Curses scrapped: "
     ]
   },
+  "STATS:Slimebound:SelfDamagePreventRelic": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:Slimebound:SlimedTailRelic": {
     "TEXT": [
       "Times split: "

@@ -101,6 +101,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(StasisCodexInfo.getInstance()); // Pilot's Codex
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
+        register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(StasisEggInfo.getInstance()); // Quantum Chamber
         register(RecyclingMachineInfo.getInstance()); // Recycler
