@@ -89,6 +89,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(HorseshoeInfo.getInstance()); // Horseshoe
         register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
+        register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
         register(MagicMalletInfo.getInstance()); // Magic Mallet
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
         register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
@@ -109,6 +110,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SackOfGemsInfo.getInstance()); // Sack of Gems
         register(ScrapOozeRelicInfo.getInstance()); // Scrap Ooze
+        register(SneckoCommonInfo.getInstance()); // Seal of Approval
         register(ShortStatureInfo.getInstance()); // Short Stature
         register(BartenderGlassInfo.getInstance()); // Shotglass
         register(SignatureFinisherInfo.getInstance()); // Signature Finisher

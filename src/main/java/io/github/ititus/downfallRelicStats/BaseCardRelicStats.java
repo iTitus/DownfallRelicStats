@@ -68,7 +68,7 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
         @Override
         public String getDescription(String[] description) {
             if (card == null) {
-                return "";
+                return description[1];
             }
 
             if (cachedName == null) {

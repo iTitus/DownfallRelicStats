@@ -95,7 +95,7 @@ public abstract class BaseRelicStats<T extends StatContainer> extends StatsInfo 
             try {
                 stats = Objects.requireNonNull(GSON.fromJson(jsonElement, statsClass));
             } catch (JsonSyntaxException e) {
-                LOGGER.warn("Error while loading new serialization in {}", getClass(), e);
+                LOGGER.warn("Error while loading serialization in {}", getClass(), e);
                 resetStats();
             }
         } else {

@@ -1,7 +1,8 @@
 {
   "STATS:bronze:BottledCode": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:bronze:BronzeCore": {
@@ -78,7 +79,8 @@
   },
   "STATS:champ:SignatureFinisher": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:champ:SpectersHand": {
@@ -98,7 +100,8 @@
   },
   "STATS:downfall:GremlinSack": {
     "TEXT": [
-      "Cards obtained: "
+      "Cards obtained: ",
+      "None"
     ]
   },
   "STATS:Gremlin:FragmentationGrenade": {
@@ -143,7 +146,7 @@
   "STATS:Gremlin:LeaderVoucher": {
     "TEXT": [
       "Gremlin lost: ",
-      "Unknown",
+      "None",
       "Fat Gremlin",
       "Gremlin Wizard",
       "Mad Gremlin",
@@ -190,12 +193,14 @@
   },
   "STATS:Guardian:BottledAnomaly": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:Guardian:BottledStasis": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:Guardian:DefensiveModeMoreBlock": {
@@ -205,7 +210,8 @@
   },
   "STATS:Guardian:GemstoneGun": {
     "TEXT": [
-      "Gems chosen: "
+      "Gems chosen: ",
+      "None"
     ]
   },
   "STATS:Guardian:ModeShifter": {
@@ -236,7 +242,8 @@
   },
   "STATS:Guardian:SackOfGems": {
     "TEXT": [
-      "Gems obtained: "
+      "Gems obtained: ",
+      "None"
     ]
   },
   "STATS:Guardian:StasisCodex": {
@@ -246,7 +253,8 @@
   },
   "STATS:Guardian:StasisEgg": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:Guardian:StasisUpgradeRelic": {
@@ -426,7 +434,20 @@
   },
   "STATS:sneckomod:D8": {
     "TEXT": [
-      "Card bottled: "
+      "Card bottled: ",
+      "None"
+    ]
+  },
+  "STATS:sneckomod:SneckoBoss": {
+    "TEXT": [
+      "Chosen character: ",
+      "None"
+    ]
+  },
+  "STATS:sneckomod:SneckoCommon": {
+    "TEXT": [
+      "Chosen character: ",
+      "None"
     ]
   },
   "STATS:sneckomod:SneckoSoul": {
