@@ -114,6 +114,12 @@
       "None"
     ]
   },
+  "STATS:downfall:GremlinWheel": {
+    "TEXT": [
+      "Wheel spun: ",
+      " NL Per Rest Site: "
+    ]
+  },
   "STATS:downfall:KnowingSkull": {
     "TEXT": [
       "Times used: ",
@@ -209,6 +215,11 @@
   "STATS:Gremlin:WizardHat": {
     "TEXT": [
       "Debuffs cleared: "
+    ]
+  },
+  "STATS:Gremlin:WizardStaff": {
+    "TEXT": [
+      "Additional Wiz damage: "
     ]
   },
   "STATS:Gremlin:WoundPoker": {
@@ -352,12 +363,6 @@
   "STATS:hermit:Spyglass": {
     "TEXT": [
       "Times triggered: "
-    ]
-  },
-  "STATS:downfall:GremlinWheel": {
-    "TEXT": [
-      "Wheel spun: ",
-      " NL Per Rest Site: "
     ]
   },
   "STATS:hermit:StraightRazor": {
