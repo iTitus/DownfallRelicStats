@@ -26,8 +26,8 @@ public final class ShortStatureInfo extends BaseRelicStats<ShortStatureInfo.Stat
 
     public static class Stats implements StatContainer {
 
-        int healed = 0;
         int timesTriggered = 0;
+        int healed = 0;
 
         @Override
         public String getDescription(String[] description) {
@@ -61,8 +61,8 @@ public final class ShortStatureInfo extends BaseRelicStats<ShortStatureInfo.Stat
         }
 
         public static void after() {
-            getInstance().stats.healed += AbstractDungeon.player.currentHealth - hp;
             getInstance().stats.timesTriggered++;
+            getInstance().stats.healed += AbstractDungeon.player.currentHealth - hp;
         }
     }
 }

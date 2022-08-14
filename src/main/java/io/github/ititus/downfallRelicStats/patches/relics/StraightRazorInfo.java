@@ -25,14 +25,15 @@ public final class StraightRazorInfo extends BaseRelicStats<StraightRazorInfo.St
 
     public static class Stats implements StatContainer {
 
-        int healed = 0;
         int removes = 0;
+        int healed = 0;
 
         @Override
         public String getDescription(String[] description) {
             DecimalFormat df = new DecimalFormat("#.###");
-            return description[0] + healed +
-                    description[1] + df.format((double) healed / Math.max(1, removes));
+            return description[0] + removes +
+                    description[1] + healed +
+                    description[2] + df.format((double) healed / Math.max(1, removes));
         }
     }
 
@@ -54,8 +55,8 @@ public final class StraightRazorInfo extends BaseRelicStats<StraightRazorInfo.St
         }
 
         public static void after() {
-            getInstance().stats.healed += AbstractDungeon.player.currentHealth - hp;
             getInstance().stats.removes++;
+            getInstance().stats.healed += AbstractDungeon.player.currentHealth - hp;
         }
     }
 }

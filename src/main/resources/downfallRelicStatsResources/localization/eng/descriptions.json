@@ -326,7 +326,8 @@
   },
   "STATS:hermit:StraightRazor": {
     "TEXT": [
-      "HP healed: ",
+      "Cards removed: ",
+      " NL HP healed: ",
       " NL Per card removed: "
     ]
   },

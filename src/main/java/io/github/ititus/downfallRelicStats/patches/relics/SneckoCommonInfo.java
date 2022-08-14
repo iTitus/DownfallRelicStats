@@ -93,7 +93,7 @@ public final class SneckoCommonInfo extends BaseRelicStats<SneckoCommonInfo.Stat
                 @Override
                 public void edit(FieldAccess f) throws CannotCompileException {
                     if (f.getClassName().equals(SneckoBoss.class.getName()) && f.getFieldName().equals("myColor") && f.isWriter()) {
-                        f.replace("{$_ = $proceed($$);" + Patch2.class.getName() + ".hook($1);}");
+                        f.replace("{$_=$proceed($$);" + Patch2.class.getName() + ".hook($1);}");
                     }
                 }
             };
