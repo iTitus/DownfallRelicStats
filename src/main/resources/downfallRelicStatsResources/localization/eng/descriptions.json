@@ -35,6 +35,11 @@
       "Block gained: "
     ]
   },
+  "STATS:bronze:Timepiece": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:champ:Barbells": {
     "TEXT": [
       "Cards upgraded: ",

@@ -80,6 +80,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DuelingGloveInfo.getInstance()); // Dueling Glove
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
+        register(TimepieceInfo.getInstance()); // Frost Primer
         register(GemstoneGunInfo.getInstance()); // Gemstone Gun
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GreedOozeRelicInfo.getInstance()); // Greed Ooze
