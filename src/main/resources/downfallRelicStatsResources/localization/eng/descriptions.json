@@ -72,6 +72,11 @@
       "Vulnerable applied: "
     ]
   },
+  "STATS:champ:FightingForDummies": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:champ:GladiatorsBookOfMartialProwess": {
     "TEXT": [
       "Strength and Dexterity gained: "
