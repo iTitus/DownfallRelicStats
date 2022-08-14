@@ -104,6 +104,21 @@
       "None"
     ]
   },
+  "STATS:downfall:KnowingSkull": {
+    "TEXT": [
+      "Times used: ",
+      " NL HP spent: ",
+      " NL Gold gained: ",
+      " NL Cards generated: ",
+      " NL Potions gained: ",
+      " NL Ratios: %s / %s / %s",
+      " NL Times used per combat: ",
+      " NL HP spent per combat: ",
+      " NL Gold gained per combat: ",
+      " NL Cards generated per combat: ",
+      " NL Potions gained per combat: "
+    ]
+  },
   "STATS:Gremlin:FragmentationGrenade": {
     "TEXT": [
       "Times triggered: "

@@ -89,6 +89,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(HorseshoeInfo.getInstance()); // Horseshoe
         register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
+        register(KnowingSkullInfo.getInstance()); // Knowing Skull
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
         register(MagicMalletInfo.getInstance()); // Magic Mallet
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
