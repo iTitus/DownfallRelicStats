@@ -354,6 +354,12 @@
       "Times triggered: "
     ]
   },
+  "STATS:downfall:GremlinWheel": {
+    "TEXT": [
+      "Wheel spun: ",
+      " NL Per Rest Site: "
+    ]
+  },
   "STATS:hermit:StraightRazor": {
     "TEXT": [
       "Cards removed: ",

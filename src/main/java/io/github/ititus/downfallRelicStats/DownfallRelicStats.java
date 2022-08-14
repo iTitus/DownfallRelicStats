@@ -134,6 +134,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SoulConsumerInfo.getInstance()); // Thermal Stone
         register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod
         register(UnknownEggInfo.getInstance()); // Unidentified Egg
+        register(GremlinWheelInfo.getInstance()); // Wheel of Change
         register(WizardHatInfo.getInstance()); // Wizard Hat
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
