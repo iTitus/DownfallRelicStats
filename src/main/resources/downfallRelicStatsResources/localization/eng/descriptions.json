@@ -474,6 +474,13 @@
       "Times muddled: "
     ]
   },
+  "STATS:sneckomod:SuperSneckoEye": {
+    "TEXT": [
+      "Card cost counts:",
+      " NL %d energy: ",
+      " NL Average discount: "
+    ]
+  },
   "STATS:sneckomod:ConfusingCodex": {
     "TEXT": [
       "Weak applied: ",

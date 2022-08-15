@@ -129,6 +129,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SpyglassInfo.getInstance()); // Spyglass
         register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
         register(StraightRazorInfo.getInstance()); // Straight Razor
+        register(SuperSneckoEyeInfo.getInstance()); // Super Snecko Eye
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
         register(TheBrokenSealInfo.getInstance()); // The Broken Seal
