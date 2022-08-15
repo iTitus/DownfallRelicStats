@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v0.9.0\n\nAdd support for 10 more relics",
+  "changeNote": "v1.0.0\n\nAdd support for final 2 relics",
   "tags": [
     "Utility",
     "QoL"

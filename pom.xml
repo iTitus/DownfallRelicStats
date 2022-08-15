@@ -7,7 +7,7 @@
 
     <groupId>io.github.ititus</groupId>
     <artifactId>downfall-relic-stats</artifactId>
-    <version>0.9.0</version>
+    <version>1.0.0</version>
     <name>Downfall Relic Stats</name>
     <description>Adds Relic Stats compatibility to the Downfall Expansion.</description>
 
@@ -38,13 +38,13 @@
             <scope>system</scope>
             <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.megacrit.cardcrawl</groupId>
             <artifactId>slaythespire-patched</artifactId>
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0-patched.jar</systemPath>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>modthespire</artifactId>
