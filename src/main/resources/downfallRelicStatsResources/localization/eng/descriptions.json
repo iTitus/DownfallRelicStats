@@ -469,6 +469,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:sneckomod:CleanMud": {
+    "TEXT": [
+      "Times muddled: "
+    ]
+  },
   "STATS:sneckomod:ConfusingCodex": {
     "TEXT": [
       "Weak applied: ",
