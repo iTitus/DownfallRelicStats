@@ -529,5 +529,10 @@
       "Times identified: ",
       " NL Per Rest Site: "
     ]
+  },
+  "STATS:downfall:TeleportStone": {
+    "TEXT": [
+      "Floors skipped: "
+    ]
   }
 }
