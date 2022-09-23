@@ -132,6 +132,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SuperSneckoEyeInfo.getInstance()); // Super Snecko Eye
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
+        register(TeleportStoneInfo.getInstance()); // Teleport Stone
         register(TheBrokenSealInfo.getInstance()); // The Broken Seal
         register(SoulConsumerInfo.getInstance()); // Thermal Stone
         register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod
