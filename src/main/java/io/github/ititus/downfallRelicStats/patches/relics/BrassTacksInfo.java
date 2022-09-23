@@ -7,6 +7,7 @@ import hermit.relics.BrassTacks;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
 public final class BrassTacksInfo extends BaseCombatRelicStats {
+
     private static final BrassTacksInfo INSTANCE = new BrassTacksInfo();
     private static final int BRASS_TACKS_DEFAULT_BLOCK_AMOUNT = 2;
 

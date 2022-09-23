@@ -6,32 +6,33 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import downfall.patches.TeleportStonePatch;
 import downfall.relics.TeleportStone;
-import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
-public class TeleportStoneInfo extends BaseRelicStats<TeleportStoneInfo.Stats> {
+public class TeleportStoneInfo extends BaseCombatRelicStats {
+
     private static final TeleportStoneInfo INSTANCE = new TeleportStoneInfo();
 
     private TeleportStoneInfo() {
-        super(TeleportStone.ID, Stats.class);
+        super(TeleportStone.ID);
+        this.showPerTurn = false;
+        this.showPerCombat = false;
     }
 
     public static TeleportStoneInfo getInstance() {
         return INSTANCE;
     }
-    
-    public static class Stats implements StatContainer {
-        int skips = 0;
-        public String getDescription(String[] description) {
-            return description[0] + skips;
-        }
-    }
 
-    @SpirePatch(clz = TeleportStonePatch.NodeSelected.class,method = "Postfix")
-    public static class SkipPatch {
+    @SpirePatch(
+            clz = TeleportStonePatch.NodeSelected.class,
+            method = "Postfix"
+    )
+    @SuppressWarnings("unused")
+    public static class Patch {
         public static void Postfix(MapRoomNode __instance) {
-            if (AbstractDungeon.player.hasRelic(INSTANCE.getRelicId()))
-                getInstance().stats.skips += (int)ReflectionHacks.privateStaticMethod(TeleportStonePatch.IsConnectedTo.class, "getNodeDistance", new Class[] {MapRoomNode.class, MapRoomNode.class}).invoke(new Object[] {AbstractDungeon.currMapNode, __instance}) - 1;
+            if (AbstractDungeon.player.hasRelic(TeleportStone.ID)) {
+                ReflectionHacks.RStaticMethod getNodeDistance = ReflectionHacks.privateStaticMethod(TeleportStonePatch.IsConnectedTo.class, "getNodeDistance", MapRoomNode.class, MapRoomNode.class);
+                getInstance().stats.increaseAmount(Math.max(0, (int) getNodeDistance.invoke(new Object[] { AbstractDungeon.currMapNode, __instance }) - 1));
+            }
         }
     }
 }

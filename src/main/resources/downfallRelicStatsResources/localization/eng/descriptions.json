@@ -135,6 +135,11 @@
       " NL Potions gained per combat: "
     ]
   },
+  "STATS:downfall:TeleportStone": {
+    "TEXT": [
+      "Floors skipped: "
+    ]
+  },
   "STATS:Gremlin:FragmentationGrenade": {
     "TEXT": [
       "Times triggered: "
@@ -474,13 +479,6 @@
       "Times muddled: "
     ]
   },
-  "STATS:sneckomod:SuperSneckoEye": {
-    "TEXT": [
-      "Card cost counts:",
-      " NL %d energy: ",
-      " NL Average discount: "
-    ]
-  },
   "STATS:sneckomod:ConfusingCodex": {
     "TEXT": [
       "Weak applied: ",
@@ -519,6 +517,13 @@
       " NL Cards drawn per combat: "
     ]
   },
+  "STATS:sneckomod:SuperSneckoEye": {
+    "TEXT": [
+      "Card cost counts:",
+      " NL %d energy: ",
+      " NL Average discount: "
+    ]
+  },
   "STATS:sneckomod:SuperSneckoSoul": {
     "TEXT": [
       "Energy gained: "
@@ -528,11 +533,6 @@
     "TEXT": [
       "Times identified: ",
       " NL Per Rest Site: "
-    ]
-  },
-  "STATS:downfall:TeleportStone": {
-    "TEXT": [
-      "Floors skipped: "
     ]
   }
 }
