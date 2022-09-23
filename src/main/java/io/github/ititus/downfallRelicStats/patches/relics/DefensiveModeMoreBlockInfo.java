@@ -37,7 +37,7 @@ public final class DefensiveModeMoreBlockInfo extends BaseCombatRelicStats {
                 @Override
                 public void edit(FieldAccess f) throws CannotCompileException {
                     if (f.getFieldName().equals("braceValue") && n++ == 2) {
-                        f.replace("{$_ = $proceed($$);" + Patch.class.getName() + ".hook();}");
+                        f.replace("{$_=$proceed($$);" + Patch.class.getName() + ".hook();}");
                     }
                 }
             };

@@ -3,7 +3,6 @@ package io.github.ititus.downfallRelicStats.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.*;
@@ -53,17 +52,17 @@ public class PreAoePowerAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        List<AbstractCreature> candidates = new ArrayList<>();
         if (mode == Mode.ONLY_MONSTERS || mode == Mode.ALL) {
-            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                if (!m.isDead && !m.isDeadOrEscaped()) {
-                    affectedCreatures.add(m);
-                }
-            }
+            candidates.addAll(AbstractDungeon.getMonsters().monsters);
         }
 
         if (mode == Mode.ONLY_PLAYER || mode == Mode.ALL) {
-            AbstractCreature c = AbstractDungeon.player;
-            if (c != null && !c.isDead && !c.isDeadOrEscaped()) {
+            candidates.add(AbstractDungeon.player);
+        }
+
+        for (AbstractCreature c : candidates) {
+            if (c != null && !c.isDead && !c.isDeadOrEscaped() && c.currentHealth > 0) {
                 affectedCreatures.add(c);
             }
         }

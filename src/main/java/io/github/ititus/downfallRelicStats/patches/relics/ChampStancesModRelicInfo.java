@@ -35,8 +35,9 @@ public final class ChampStancesModRelicInfo extends BaseRelicStats<ChampStancesM
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
             DecimalFormat df = new DecimalFormat("#%");
-            return description[2] + df.format((double) defensive / totalCombats) +
-                    description[3] + df.format((double) berserker / totalCombats);
+            int total = Math.max(1, defensive + berserker);
+            return description[2] + df.format((double) defensive / total) +
+                    description[3] + df.format((double) berserker / total);
         }
     }
 

@@ -1,8 +1,8 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.MetallicizePower;
 import hermit.relics.BrassTacks;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
@@ -20,14 +20,16 @@ public final class BrassTacksInfo extends BaseCombatRelicStats {
     }
 
     @SpirePatch(
-        clz = MetallicizePower.class,
-        method = "atEndOfTurnPreEndTurnCards"
+            clz = MetallicizePower.class,
+            method = "atEndOfTurnPreEndTurnCards"
     )
     @SuppressWarnings("unused")
     public static class Patch {
+
         public static void Postfix() {
-            if (AbstractDungeon.player.hasRelic(BrassTacks.ID))
+            if (AbstractDungeon.player.hasRelic(BrassTacks.ID)) {
                 getInstance().increaseAmount(BRASS_TACKS_DEFAULT_BLOCK_AMOUNT);
+            }
         }
     }
 }

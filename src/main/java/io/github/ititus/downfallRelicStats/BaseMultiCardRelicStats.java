@@ -61,8 +61,13 @@ public abstract class BaseMultiCardRelicStats extends BaseRelicStats<BaseMultiCa
         public String getDescription(String[] description) {
             if (cachedNames == null) {
                 StringBuilder b = new StringBuilder(description[0]);
-                for (String card : getCardsInternal()) {
-                    b.append(" NL ").append(BaseCardRelicStats.cardToString(card));
+                List<String> cards = getCardsInternal();
+                if (cards.isEmpty()) {
+                    b.append(description[1]);
+                } else {
+                    for (String card : cards) {
+                        b.append(" NL ").append(BaseCardRelicStats.cardToString(card));
+                    }
                 }
 
                 cachedNames = b.toString();

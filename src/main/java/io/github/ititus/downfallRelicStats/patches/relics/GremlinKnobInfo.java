@@ -49,7 +49,7 @@ public final class GremlinKnobInfo extends BaseRelicStats<GremlinKnobInfo.Stats>
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
             return BaseCombatRelicStats.generateExtendedDescription(description, 2, energy, 0, totalCombats) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 4, cards, 0, totalCombats);
+                    BaseCombatRelicStats.generateExtendedDescription(description, 3, cards, 0, totalCombats);
         }
     }
 

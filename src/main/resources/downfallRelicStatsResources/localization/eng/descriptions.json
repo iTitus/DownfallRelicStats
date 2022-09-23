@@ -1,7 +1,18 @@
 {
+  "STATS:bronze:BottledCode": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
   "STATS:bronze:BronzeCore": {
     "TEXT": [
       "Energy gained: "
+    ]
+  },
+  "STATS:bronze:BronzeIdol": {
+    "TEXT": [
+      "Status cards converted: "
     ]
   },
   "STATS:bronze:CableSpool": {
@@ -22,6 +33,11 @@
   "STATS:bronze:ProtectiveGoggles": {
     "TEXT": [
       "Block gained: "
+    ]
+  },
+  "STATS:bronze:Timepiece": {
+    "TEXT": [
+      "Times triggered: "
     ]
   },
   "STATS:champ:Barbells": {
@@ -61,9 +77,30 @@
       "Vulnerable applied: "
     ]
   },
+  "STATS:champ:FightingForDummies": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:champ:GladiatorsBookOfMartialProwess": {
     "TEXT": [
       "Strength and Dexterity gained: "
+    ]
+  },
+  "STATS:champ:SignatureFinisher": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
+  "STATS:champ:SpectersHand": {
+    "TEXT": [
+      "Strikes generated: ",
+      " NL Defends generated: ",
+      " NL Strikes per turn: ",
+      " NL Strikes per combat: ",
+      " NL Defends per turn: ",
+      " NL Defends per combat: "
     ]
   },
   "STATS:downfall:ExtraCursedKey": {
@@ -73,7 +110,34 @@
   },
   "STATS:downfall:GremlinSack": {
     "TEXT": [
-      "Cards obtained: "
+      "Cards obtained: ",
+      "None"
+    ]
+  },
+  "STATS:downfall:GremlinWheel": {
+    "TEXT": [
+      "Wheel spun: ",
+      " NL Per Rest Site: "
+    ]
+  },
+  "STATS:downfall:KnowingSkull": {
+    "TEXT": [
+      "Times used: ",
+      " NL HP spent: ",
+      " NL Gold gained: ",
+      " NL Cards generated: ",
+      " NL Potions gained: ",
+      " NL Ratios: %s / %s / %s",
+      " NL Times used per combat: ",
+      " NL HP spent per combat: ",
+      " NL Gold gained per combat: ",
+      " NL Cards generated per combat: ",
+      " NL Potions gained per combat: "
+    ]
+  },
+  "STATS:Gremlin:FragmentationGrenade": {
+    "TEXT": [
+      "Times triggered: "
     ]
   },
   "STATS:Gremlin:GremlinBomb": {
@@ -91,9 +155,7 @@
     "TEXT": [
       "Energy gained: ",
       " NL Cards drawn: ",
-      " NL Energy gained per turn: ",
       " NL Energy gained per combat: ",
-      " NL Cards drawn per turn: ",
       " NL Cards drawn per combat: "
     ]
   },
@@ -112,6 +174,17 @@
       "Temporary HP gained: "
     ]
   },
+  "STATS:Gremlin:LeaderVoucher": {
+    "TEXT": [
+      "Gremlin lost: ",
+      "None",
+      "Fat Gremlin",
+      "Gremlin Wizard",
+      "Mad Gremlin",
+      "Shield Gremlin",
+      "Sneaky Gremlin"
+    ]
+  },
   "STATS:Gremlin:MagicalMallet": {
     "TEXT": [
       "Wiz gained: "
@@ -120,6 +193,18 @@
   "STATS:Gremlin:PricklyShields": {
     "TEXT": [
       "Damage dealt: "
+    ]
+  },
+  "STATS:Gremlin:ShortStature": {
+    "TEXT": [
+      "Deaths prevented: ",
+      " NL HP healed: ",
+      " NL Per activation: "
+    ]
+  },
+  "STATS:Gremlin:StolenMerchandise": {
+    "TEXT": [
+      "Cards echoed: "
     ]
   },
   "STATS:Gremlin:TagTeamwork": {
@@ -132,9 +217,26 @@
       "Debuffs cleared: "
     ]
   },
+  "STATS:Gremlin:WizardStaff": {
+    "TEXT": [
+      "Additional Wiz damage: "
+    ]
+  },
   "STATS:Gremlin:WoundPoker": {
     "TEXT": [
       "Damage dealt: "
+    ]
+  },
+  "STATS:Guardian:BottledAnomaly": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
+  "STATS:Guardian:BottledStasis": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
     ]
   },
   "STATS:Guardian:DefensiveModeMoreBlock": {
@@ -144,7 +246,8 @@
   },
   "STATS:Guardian:GemstoneGun": {
     "TEXT": [
-      "Gems chosen: "
+      "Gems chosen: ",
+      "None"
     ]
   },
   "STATS:Guardian:ModeShifter": {
@@ -175,7 +278,8 @@
   },
   "STATS:Guardian:SackOfGems": {
     "TEXT": [
-      "Gems obtained: "
+      "Gems obtained: ",
+      "None"
     ]
   },
   "STATS:Guardian:StasisCodex": {
@@ -183,10 +287,21 @@
       "Cards placed into stasis: "
     ]
   },
+  "STATS:Guardian:StasisEgg": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
   "STATS:Guardian:StasisUpgradeRelic": {
     "TEXT": [
       "Cards upgraded: ",
       " NL Per Stasis Orb: "
+    ]
+  },
+  "STATS:hermit:BartenderGlass": {
+    "TEXT": [
+      "Potions created: "
     ]
   },
   "STATS:hermit:BlackPowder": {
@@ -245,9 +360,34 @@
       "Damage dealt: "
     ]
   },
+  "STATS:hermit:Spyglass": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
+  "STATS:hermit:StraightRazor": {
+    "TEXT": [
+      "Cards removed: ",
+      " NL HP healed: ",
+      " NL Per card removed: "
+    ]
+  },
+  "STATS:hexamod:BolsterEngine": {
+    "TEXT": [
+      "Block gained: ",
+      " NL Strength gained: ",
+      " NL Block gained per combat: ",
+      " NL Strength gained per combat: "
+    ]
+  },
   "STATS:hexamod:CandleOfCauterizing": {
     "TEXT": [
       "Soulburn applied: "
+    ]
+  },
+  "STATS:hexamod:RecyclingMachine": {
+    "TEXT": [
+      "Cards copied: "
     ]
   },
   "STATS:hexamod:Sixitude": {
@@ -258,6 +398,11 @@
   "STATS:hexamod:SoulConsumer": {
     "TEXT": [
       "HP healed: "
+    ]
+  },
+  "STATS:hexamod:SoulOfChaos": {
+    "TEXT": [
+      "Cards played: "
     ]
   },
   "STATS:hexamod:SpiritBrand": {
@@ -285,14 +430,55 @@
       "HP healed: "
     ]
   },
+  "STATS:Slimebound:GreedOozeRelic": {
+    "TEXT": [
+      "Greed Ooze Damage: ",
+      " NL Times upgraded: ",
+      " NL Times upgraded per Rest Site: ",
+      " NL Gold spent: "
+    ]
+  },
   "STATS:Slimebound:PreparedRelic": {
     "TEXT": [
       "Prepares generated: "
     ]
   },
+  "STATS:Slimebound:ScrapOozeRelic": {
+    "TEXT": [
+      "Scrap Ooze Damage: ",
+      " NL Cards scrapped: ",
+      " NL Cards scrapped per Rest Site: ",
+      " NL Rares scrapped: ",
+      " NL Uncommons scrapped: ",
+      " NL Commons scrapped: ",
+      " NL Curses scrapped: "
+    ]
+  },
+  "STATS:Slimebound:SelfDamagePreventRelic": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
+  "STATS:Slimebound:SlimedTailRelic": {
+    "TEXT": [
+      "Times split: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
+    ]
+  },
+  "STATS:sneckomod:CleanMud": {
+    "TEXT": [
+      "Times muddled: "
+    ]
+  },
+  "STATS:sneckomod:SuperSneckoEye": {
+    "TEXT": [
+      "Card cost counts:",
+      " NL %d energy: ",
+      " NL Average discount: "
     ]
   },
   "STATS:sneckomod:ConfusingCodex": {
@@ -303,6 +489,24 @@
       " NL Weak applied per combat: ",
       " NL Vulnerable applied per combat: ",
       " NL Artifact removed per combat: "
+    ]
+  },
+  "STATS:sneckomod:D8": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
+  "STATS:sneckomod:SneckoBoss": {
+    "TEXT": [
+      "Chosen character: ",
+      "None"
+    ]
+  },
+  "STATS:sneckomod:SneckoCommon": {
+    "TEXT": [
+      "Chosen character: ",
+      "None"
     ]
   },
   "STATS:sneckomod:SneckoSoul": {
@@ -318,6 +522,12 @@
   "STATS:sneckomod:SuperSneckoSoul": {
     "TEXT": [
       "Energy gained: "
+    ]
+  },
+  "STATS:sneckomod:UnknownEgg": {
+    "TEXT": [
+      "Times identified: ",
+      " NL Per Rest Site: "
     ]
   }
 }
