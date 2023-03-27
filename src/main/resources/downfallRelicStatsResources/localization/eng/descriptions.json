@@ -270,15 +270,7 @@
   },
   "STATS:Guardian:PocketSentry": {
     "TEXT": [
-      "Damage dealt: ",
-      " NL Weak applied: ",
-      " NL Artifact removed: ",
-      " NL Damage dealt per turn: ",
-      " NL Damage dealt per combat: ",
-      " NL Weak applied per turn: ",
-      " NL Weak applied per combat: ",
-      " NL Artifact removed per turn: ",
-      " NL Artifact removed per combat: "
+      "Weak applied: "
     ]
   },
   "STATS:Guardian:SackOfGems": {

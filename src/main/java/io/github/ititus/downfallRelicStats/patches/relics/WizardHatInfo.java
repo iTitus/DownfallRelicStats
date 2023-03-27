@@ -23,8 +23,8 @@ public final class WizardHatInfo extends BaseCombatRelicStats {
     }
 
     @Override
-    public void onPowerChanged(String powerId, int amount) {
-        increaseAmount(1);
+    protected int trackPowerAmount(String powerId, int amount) {
+        return 1;
     }
 
     @SpirePatch(

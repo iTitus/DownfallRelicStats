@@ -50,9 +50,18 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
         increaseAmount(amountAdjustInvert ? startingAmount - endingAmount : endingAmount - startingAmount);
     }
 
+    protected int trackPowerAmount(String powerId, int amount) {
+        return amount;
+    }
+
     @Override
     public void onPowerChanged(String powerId, int amount) {
-        increaseAmount(powerChangeInvert ? -amount : amount);
+        if (amount != 0) {
+            amount = trackPowerAmount(powerId, amount);
+            if (amount != 0) {
+                increaseAmount(powerChangeInvert ? -amount : amount);
+            }
+        }
     }
 
     @Override

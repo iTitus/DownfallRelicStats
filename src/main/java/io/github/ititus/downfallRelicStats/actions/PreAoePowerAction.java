@@ -46,8 +46,8 @@ public class PreAoePowerAction extends AbstractGameAction {
             throw new IllegalArgumentException();
         }
 
-        List<String> powerIdList = new ArrayList<>(Arrays.asList(powerIds));
-        return p -> powerIdList.stream().anyMatch(id -> p.ID.equals(id));
+        Set<String> powerIdSet = new HashSet<>(Arrays.asList(powerIds));
+        return p -> powerIdSet.contains(p.ID);
     }
 
     @Override
