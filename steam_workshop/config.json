@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v1.1.0\n\nAdd support for Teleport Stone",
+  "changeNote": "v1.2.0\n\nUpdate for Downfall 4.3.0",
   "tags": [
     "Utility",
     "QoL"
