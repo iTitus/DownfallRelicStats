@@ -11,7 +11,7 @@ import javassist.expr.ExprEditor;
 public final class DefensiveTrainingManualInfo extends BaseCombatRelicStats {
 
     private static final DefensiveTrainingManualInfo INSTANCE = new DefensiveTrainingManualInfo();
-    private static final int DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT = 10;
+    private static final int DEFENSIVE_FINISHER_DEFAULT_BLOCK_AMOUNT = 8;
 
     private DefensiveTrainingManualInfo() {
         super(DefensiveTrainingManual.ID);

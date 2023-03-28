@@ -1,27 +1,28 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import gremlin.relics.GremlinKnob;
-import io.github.ititus.downfallRelicStats.*;
+import gremlin.relics.SupplyScroll;
+import io.github.ititus.downfallRelicStats.BaseRelicStats;
+import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 import relicstats.AmountAdjustmentCallback;
 import relicstats.actions.CardDrawFollowupAction;
 import relicstats.actions.PreCardDrawAction;
 
-public final class GremlinKnobInfo extends BaseRelicStats<GremlinKnobInfo.Stats> implements AmountAdjustmentCallback {
+public final class SupplyScrollInfo extends BaseRelicStats<GremlinKnobInfo.Stats> implements AmountAdjustmentCallback {
 
-    private static final GremlinKnobInfo INSTANCE = new GremlinKnobInfo();
+    private static final SupplyScrollInfo INSTANCE = new SupplyScrollInfo();
 
     private int startingAmount;
 
-    private GremlinKnobInfo() {
-        super(GremlinKnob.ID, Stats.class);
+    private SupplyScrollInfo() {
+        super(SupplyScroll.ID, GremlinKnobInfo.Stats.class);
     }
 
-    public static GremlinKnobInfo getInstance() {
+    public static SupplyScrollInfo getInstance() {
         return INSTANCE;
     }
 
@@ -35,27 +36,9 @@ public final class GremlinKnobInfo extends BaseRelicStats<GremlinKnobInfo.Stats>
         stats.cards += endingAmount - startingAmount;
     }
 
-    public static class Stats implements StatContainer {
-
-        int energy = 0;
-        int cards = 0;
-
-        @Override
-        public String getDescription(String[] description) {
-            return description[0] + energy +
-                    description[1] + cards;
-        }
-
-        @Override
-        public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            return BaseCombatRelicStats.generateExtendedDescription(description, 2, energy, totalTurns, 0) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 3, cards, totalTurns, 0);
-        }
-    }
-
     @SpirePatch(
-            clz = GremlinKnob.class,
-            method = "atBattleStart"
+            clz = SupplyScroll.class,
+            method = "atTurnStart"
     )
     @SuppressWarnings("unused")
     public static class Patch1 {
@@ -70,14 +53,14 @@ public final class GremlinKnobInfo extends BaseRelicStats<GremlinKnobInfo.Stats>
     }
 
     @SpirePatch(
-            clz = GremlinKnob.class,
-            method = "atBattleStart"
+            clz = SupplyScroll.class,
+            method = "atTurnStart"
     )
     @SuppressWarnings("unused")
     public static class Patch2 {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, GameActionManager.class, "addToBottom", Patch2.class);
+            return new BeforeAfterMethodCallEditor(2, SupplyScroll.class, "addToBot", Patch2.class);
         }
 
         public static void before() {

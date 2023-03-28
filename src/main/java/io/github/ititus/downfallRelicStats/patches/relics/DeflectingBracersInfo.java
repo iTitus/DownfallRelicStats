@@ -4,6 +4,7 @@ import basemod.interfaces.OnPlayerLoseBlockSubscriber;
 import champ.ChampMod;
 import champ.relics.DeflectingBracers;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import guardian.stances.DefensiveMode;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
 public final class DeflectingBracersInfo extends BaseCombatRelicStats implements OnPlayerLoseBlockSubscriber {
@@ -23,6 +24,10 @@ public final class DeflectingBracersInfo extends BaseCombatRelicStats implements
      */
     @Override
     public int receiveOnPlayerLoseBlock(int blockToExpire) {
+        if (AbstractDungeon.player.stance instanceof DefensiveMode) {
+            return blockToExpire;
+        }
+
         if (AbstractDungeon.player.hasRelic(DeflectingBracers.ID)) {
             int counter = Math.min(blockToExpire, AbstractDungeon.player.currentBlock / 2);
             if (counter > 0) {

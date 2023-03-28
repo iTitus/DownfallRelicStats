@@ -160,8 +160,8 @@
     "TEXT": [
       "Energy gained: ",
       " NL Cards drawn: ",
-      " NL Energy gained per combat: ",
-      " NL Cards drawn per combat: "
+      " NL Energy gained per turn: ",
+      " NL Cards drawn per turn: "
     ]
   },
   "STATS:Gremlin:GremlinKnobUpgrade": {
@@ -210,6 +210,14 @@
   "STATS:Gremlin:StolenMerchandise": {
     "TEXT": [
       "Cards echoed: "
+    ]
+  },
+  "STATS:Gremlin:SupplyScroll": {
+    "TEXT": [
+      "Energy gained: ",
+      " NL Cards drawn: ",
+      " NL Energy gained per turn: ",
+      " NL Cards drawn per turn: "
     ]
   },
   "STATS:Gremlin:TagTeamwork": {
@@ -354,7 +362,7 @@
   },
   "STATS:hermit:RyeStalk": {
     "TEXT": [
-      "Damage dealt: "
+      "Strength taken: "
     ]
   },
   "STATS:hermit:Spyglass": {
