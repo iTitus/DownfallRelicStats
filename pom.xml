@@ -20,10 +20,10 @@
         <ModTheSpire.version>3.28.0</ModTheSpire.version>
 
         <!-- These versions are just visual -->
-        <BaseMod.version>5.43.0</BaseMod.version>
-        <StSLib.version>2.4.0</StSLib.version>
+        <BaseMod.version>5.52.3</BaseMod.version>
+        <StSLib.version>2.10.1</StSLib.version>
         <RelicStats.version>1.2.2</RelicStats.version>
-        <Downfall.version>4.1.17</Downfall.version>
+        <Downfall.version>5.0.2</Downfall.version>
         <!-- These versions are just visual -->
 
         <ModID>downfallRelicStats</ModID>

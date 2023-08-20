@@ -3,7 +3,7 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 import automaton.relics.Timepiece;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import downfall.cardmods.RetainCardMod;
+import expansioncontent.cardmods.RetainCardMod;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
 public final class TimepieceInfo extends BaseCombatRelicStats {
