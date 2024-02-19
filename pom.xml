@@ -7,7 +7,7 @@
 
     <groupId>io.github.ititus</groupId>
     <artifactId>downfall-relic-stats</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <name>Downfall Relic Stats</name>
     <description>Adds Relic Stats compatibility to the Downfall Expansion.</description>
 
@@ -17,13 +17,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <SlayTheSpire.version>03-07-2022</SlayTheSpire.version>
-        <ModTheSpire.version>3.28.0</ModTheSpire.version>
+        <ModTheSpire.version>3.30.3</ModTheSpire.version>
 
         <!-- These versions are just visual -->
-        <BaseMod.version>5.52.3</BaseMod.version>
-        <StSLib.version>2.10.1</StSLib.version>
+        <BaseMod.version>5.54.1</BaseMod.version>
+        <StSLib.version>2.11.0</StSLib.version>
         <RelicStats.version>1.2.2</RelicStats.version>
-        <Downfall.version>5.0.2</Downfall.version>
+        <Downfall.version>5.1.0</Downfall.version>
         <!-- These versions are just visual -->
 
         <ModID>downfallRelicStats</ModID>

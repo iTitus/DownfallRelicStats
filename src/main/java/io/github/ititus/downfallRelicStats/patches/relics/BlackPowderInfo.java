@@ -2,6 +2,7 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import hermit.cards.AbstractHermitCard;
 import hermit.relics.BlackPowder;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
@@ -22,8 +23,8 @@ public final class BlackPowderInfo extends BaseCombatRelicStats {
     }
 
     @SpirePatch(
-            clz = BlackPowder.class,
-            method = "onPlayerEndTurn"
+            clz = AbstractHermitCard.class,
+            method = "TriggerDeadOnEffect"
     )
     @SuppressWarnings("unused")
     public static class Patch {
@@ -31,7 +32,7 @@ public final class BlackPowderInfo extends BaseCombatRelicStats {
         private static PreAoeDamageAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, BlackPowder.class, "addToBot", Patch.class);
+            return new BeforeAfterMethodCallEditor(1, AbstractHermitCard.class, "addToBot", Patch.class);
         }
 
         public static void before() {

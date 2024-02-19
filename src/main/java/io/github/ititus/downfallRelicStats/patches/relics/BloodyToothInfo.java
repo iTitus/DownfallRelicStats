@@ -28,6 +28,7 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
 
     public static class Stats implements StatContainer {
 
+        // TODO: track the amount of money and health gained as well?
         List<Integer> elites = new ArrayList<>();
 
         @Override
