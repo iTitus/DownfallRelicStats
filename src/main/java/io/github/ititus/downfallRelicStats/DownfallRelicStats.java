@@ -5,11 +5,21 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.ISubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.Prefs;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import io.github.ititus.downfallRelicStats.patches.relics.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
+
+import java.util.Map;
 
 @SpireInitializer
 @SuppressWarnings("unused")
@@ -53,6 +63,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
     @Override
     public void receivePostInitialize() {
         LOGGER.info("POST INIT");
+
+        // unlockAll();
 
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
         register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
@@ -143,5 +155,69 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(WizardStaffInfo.getInstance()); // Wizard Staff
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
+
+        // Collector
+        register(AutoCurserInfo.getInstance()); // Hexx Talisman
+    }
+
+    private static void unlockAll() {
+        LOGGER.info("locked cards: " + UnlockTracker.lockedCards);
+        for (Map.Entry<String, AbstractCard> cardEntry : CardLibrary.cards.entrySet()) {
+            String cardId = cardEntry.getKey();
+            AbstractCard card = cardEntry.getValue();
+
+            // LOGGER.info("unlock card: " + cardId);
+            UnlockTracker.unlockPref.putInteger(cardId, 2);
+            UnlockTracker.seenPref.putInteger(cardId, 1);
+
+            if (card != null && !card.isSeen) {
+                card.isSeen = true;
+                card.unlock();
+            }
+        }
+        UnlockTracker.lockedCards.clear();
+
+        LOGGER.info("locked relics: " + UnlockTracker.lockedRelics);
+        for (String relicId : BaseMod.listAllRelicIDs()) {
+            // LOGGER.info("unlock relic: " + relicId);
+            UnlockTracker.unlockPref.putInteger(relicId, 2);
+            UnlockTracker.relicSeenPref.putInteger(relicId, 1);
+
+            AbstractRelic relic = RelicLibrary.getRelic(relicId);
+            if (relic != null) {
+                relic.isSeen = true;
+            }
+        }
+        UnlockTracker.lockedRelics.clear();
+
+        LOGGER.info("locked characters: " + UnlockTracker.lockedCharacters);
+        for (String character : UnlockTracker.lockedCharacters) {
+            UnlockTracker.unlockPref.putInteger(character, 2);
+        }
+        UnlockTracker.lockedCharacters.clear();
+
+        LOGGER.info("locked loadouts: " + UnlockTracker.lockedLoadouts);
+        UnlockTracker.lockedLoadouts.clear();
+
+        for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
+            int maxUnlockLevel = BaseMod.isBaseGameCharacter(p) ? 5 : BaseMod.getMaxUnlockLevel(p);
+            int unlockLevel = UnlockTracker.getUnlockLevel(p.chosenClass);
+            UnlockTracker.unlockProgress.putInteger(p.chosenClass + "UnlockLevel", Math.max(unlockLevel, maxUnlockLevel + 1));
+
+            Prefs prefs = p.getPrefs();
+            prefs.putInteger("WIN_COUNT", Math.max(1, prefs.getInteger("WIN_COUNT", 0)));
+            prefs.putInteger("ASCENSION_LEVEL", 20);
+            prefs.flush();
+
+            CardCrawlGame.playerPref.putBoolean(p.chosenClass + "_WIN", true);
+
+            LOGGER.info("playerClass=" + p.chosenClass + " unlockLevel=" + unlockLevel + " maxUnlockLevel=" + maxUnlockLevel);
+        }
+
+        UnlockTracker.unlockPref.flush();
+        UnlockTracker.seenPref.flush();
+        UnlockTracker.relicSeenPref.flush();
+        UnlockTracker.unlockProgress.flush();
+        CardCrawlGame.playerPref.flush();
     }
 }

@@ -103,6 +103,16 @@
       " NL Defends per combat: "
     ]
   },
+  "STATS:collector:AutoCurser": {
+    "TEXT": [
+      "Weak applied: ",
+      " NL Vulnerable applied: ",
+      " NL Artifact removed: ",
+      " NL Weak applied per combat: ",
+      " NL Vulnerable applied per combat: ",
+      " NL Artifact removed per combat: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
