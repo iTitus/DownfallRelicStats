@@ -158,6 +158,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
+        register(BagOfTricksInfo.getInstance()); // Bag of Tricks
     }
 
     private static void unlockAll() {

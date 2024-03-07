@@ -113,6 +113,11 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:collector:BagOfTricks": {
+    "TEXT": [
+      "Cards drawn: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
