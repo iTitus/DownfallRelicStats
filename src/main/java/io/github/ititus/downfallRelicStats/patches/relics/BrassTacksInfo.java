@@ -28,7 +28,7 @@ public final class BrassTacksInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static void Postfix() {
-            if (AbstractDungeon.player.hasRelic(BrassTacks.ID)) {
+            if (AbstractDungeon.player.hasRelic(BrassTacks.ID) && AbstractDungeon.player.hasPower(MetallicizePower.POWER_ID)) {
                 getInstance().increaseAmount(BRASS_TACKS_DEFAULT_BLOCK_AMOUNT);
             }
         }
