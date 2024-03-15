@@ -159,6 +159,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
         register(BagOfTricksInfo.getInstance()); // Bag of Tricks
+        register(BagpipesInfo.getInstance()); // The Bagpipes
     }
 
     private static void unlockAll() {

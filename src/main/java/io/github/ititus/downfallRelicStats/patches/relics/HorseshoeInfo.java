@@ -1,13 +1,12 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import hermit.relics.Horseshoe;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import javassist.CannotCompileException;
+import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
-import javassist.expr.FieldAccess;
-import javassist.expr.MethodCall;
 
 public final class HorseshoeInfo extends BaseCombatRelicStats {
 
@@ -29,19 +28,13 @@ public final class HorseshoeInfo extends BaseCombatRelicStats {
     public static class Patch1 {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
-
-                @Override
-                public void edit(FieldAccess f) throws CannotCompileException {
-                    if (f.getClassName().equals(AbstractPower.class.getName()) && f.getFieldName().equals("amount") && f.isWriter()) {
-                        f.replace("{" + Patch1.class.getName() + ".hook(var1.amount,$1);$_=$proceed($$);}");
-                    }
-                }
-            };
+            return new FieldAccessHookEditor(1, AbstractPower.class, "amount", Patch1.class);
         }
 
-        public static void hook(int oldAmount, int newAmount) {
-            getInstance().increaseAmount(Math.max(0, oldAmount - newAmount));
+        public static int hook(AbstractPower __instance, int amount) {
+            getInstance().registerStartingAmount(__instance.amount);
+            getInstance().registerStartingAmount(amount);
+            return amount;
         }
     }
 
@@ -52,20 +45,10 @@ public final class HorseshoeInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch2 {
 
-        public static ExprEditor Instrument() {
-            return new ExprEditor() {
-
-                @Override
-                public void edit(MethodCall m) throws CannotCompileException {
-                    if (m.getClassName().equals(Horseshoe.class.getName()) && m.getMethodName().equals("flash")) {
-                        m.replace("{$_=$proceed($$);" + Patch2.class.getName() + ".hook(stackAmount,stackAmount-1);}");
-                    }
-                }
-            };
-        }
-
-        public static void hook(int oldAmount, int newAmount) {
-            getInstance().increaseAmount(Math.max(0, oldAmount - newAmount));
+        public static int Postfix(int __result, Horseshoe __instance, AbstractPower power, AbstractCreature source, int stackAmount) {
+            getInstance().registerStartingAmount(stackAmount);
+            getInstance().registerEndingAmount(__result);
+            return __result;
         }
     }
 }

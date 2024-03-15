@@ -1,7 +1,6 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.RyeStalk;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;

@@ -118,6 +118,11 @@
       "Cards drawn: "
     ]
   },
+  "STATS:collector:Bagpipes": {
+    "TEXT": [
+      "Weak/Vulnerable added: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "

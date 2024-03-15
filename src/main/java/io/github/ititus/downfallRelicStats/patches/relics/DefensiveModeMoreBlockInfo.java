@@ -4,15 +4,12 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import guardian.actions.BraceAction;
 import guardian.relics.DefensiveModeMoreBlock;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import javassist.CannotCompileException;
+import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
-import javassist.expr.FieldAccess;
 
 public final class DefensiveModeMoreBlockInfo extends BaseCombatRelicStats {
 
     private static final DefensiveModeMoreBlockInfo INSTANCE = new DefensiveModeMoreBlockInfo();
-
-    private static final int ADDITIONAL_BRACE = 1;
 
     private DefensiveModeMoreBlockInfo() {
         super(DefensiveModeMoreBlock.ID);
@@ -30,21 +27,13 @@ public final class DefensiveModeMoreBlockInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
-
-                int n = 0;
-
-                @Override
-                public void edit(FieldAccess f) throws CannotCompileException {
-                    if (f.getFieldName().equals("braceValue") && n++ == 2) {
-                        f.replace("{$_=$proceed($$);" + Patch.class.getName() + ".hook();}");
-                    }
-                }
-            };
+            return new FieldAccessHookEditor(2, BraceAction.class, "braceValue", Patch.class);
         }
 
-        public static void hook() {
-            getInstance().increaseAmount(ADDITIONAL_BRACE);
+        public static int hook(BraceAction __instance, int braceValue) {
+            getInstance().registerStartingAmount(__instance.braceValue);
+            getInstance().registerEndingAmount(braceValue);
+            return braceValue;
         }
     }
 }

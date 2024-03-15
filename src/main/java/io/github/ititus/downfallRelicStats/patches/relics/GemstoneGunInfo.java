@@ -27,18 +27,25 @@ public class GemstoneGunInfo extends BaseMultiCardRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
+            // TODO: implement a MultiFieldAccessHookEditor
             return new ExprEditor() {
+
                 @Override
                 public void edit(FieldAccess f) throws CannotCompileException {
                     if (f.getClassName().equals(GemstoneGun.class.getName()) && f.getFieldName().startsWith("myGem")) {
-                        f.replace("{$_=$proceed($$);" + Patch.class.getName() + ".hook($1);}");
+                        if (f.isReader() || !f.isWriter()) {
+                            throw new AssertionError();
+                        }
+
+                        f.replace("{$proceed(" + Patch.class.getName() + ".hook($1));}");
                     }
                 }
             };
         }
 
-        public static void hook(String cardId) {
+        public static String hook(String cardId) {
             getInstance().stats.addCard(cardId);
+            return cardId;
         }
     }
 }
