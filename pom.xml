@@ -16,6 +16,10 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <!-- Make sure the patching library has all infos -->
+        <maven.compiler.parameters>true</maven.compiler.parameters>
+        <maven.compiler.debug>true</maven.compiler.debug>
+
         <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
         <ModTheSpire.version>3.30.3</ModTheSpire.version>
 
@@ -23,9 +27,9 @@
         <BaseMod.version>5.54.1</BaseMod.version>
         <StSLib.version>2.11.0</StSLib.version>
         <RelicStats.version>1.2.2</RelicStats.version>
-        <Downfall.version>5.1.1</Downfall.version>
-        <!-- These versions are just visual -->
+        <Downfall.version>5.1.2</Downfall.version>
 
+        <!-- Constants -->
         <ModID>downfallRelicStats</ModID>
         <Steam.path>C:/Program Files (x86)/Steam/steamapps</Steam.path>
     </properties>
@@ -94,8 +98,10 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
-                                <copy file="target/${project.artifactId}.jar" tofile="${project.basedir}/steam_workshop/content/${project.artifactId}.jar"/>
+                                <copy file="target/${project.artifactId}.jar"
+                                      tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                                <copy file="target/${project.artifactId}.jar"
+                                      tofile="${project.basedir}/steam_workshop/content/${project.artifactId}.jar"/>
                             </target>
                         </configuration>
                         <goals>
