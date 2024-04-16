@@ -1,11 +1,8 @@
 package io.github.ititus.downfallRelicStats;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.relics.Omamori;
 
 public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicStats.Stats> {
 
@@ -16,13 +13,19 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
     public static String cardToString(String cardIdOrMetricId) {
         AbstractCard cardObj = CardLibrary.getCard(cardIdOrMetricId.split("\\+")[0]);
         String rarityColor = null;
-        if (cardObj != null) {
+        if (cardObj != null && cardObj.rarity != null) {
             switch (cardObj.rarity) {
                 case UNCOMMON:
                     rarityColor = "b";
                     break;
                 case RARE:
                     rarityColor = "y";
+                    break;
+                case SPECIAL:
+                    rarityColor = "r";
+                    break;
+                case CURSE:
+                    rarityColor = "p";
                     break;
             }
         }
@@ -33,10 +36,6 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
         } else {
             return cardName;
         }
-    }
-
-    public static boolean hasActiveOmamori() {
-        return CardCrawlGame.isInARun() && AbstractDungeon.player.hasRelic(Omamori.ID) && AbstractDungeon.player.getRelic(Omamori.ID).counter != 0;
     }
 
     public static class Stats implements StatContainer {
@@ -71,6 +70,7 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
                 return description[1];
             }
 
+            // TODO: maybe show card as tooltip?
             if (cachedName == null) {
                 cachedName = description[0] + cardToString(card);
             }

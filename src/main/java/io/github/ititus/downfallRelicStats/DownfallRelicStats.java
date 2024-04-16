@@ -160,7 +160,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
         register(BagOfTricksInfo.getInstance()); // Bag of Tricks
         register(BagpipesInfo.getInstance()); // The Bagpipes
-        register(BlockedChakraInfo.getInstance()); // Blocked Chakra not tracked
+        register(BlockedChakraInfo.getInstance()); // Blocked Chakra
+        register(BottledCollectibleInfo.getInstance()); // Bottled Brain
     }
 
     private static void unlockAll() {

@@ -128,6 +128,12 @@
       "Collected cards blocked: "
     ]
   },
+  "STATS:collector:BottledCollectible": {
+    "TEXT": [
+      "Card bottled: ",
+      "None"
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
