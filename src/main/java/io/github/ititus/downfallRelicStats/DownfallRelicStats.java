@@ -164,6 +164,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
         register(EmeraldTorchInfo.getInstance()); // Emerald Torch
         register(ForbiddenFruitInfo.getInstance()); // Forbidden Fruit
+        register(FuelCanisterInfo.getInstance()); // Fuel Canister
     }
 
     private static void unlockAll() {

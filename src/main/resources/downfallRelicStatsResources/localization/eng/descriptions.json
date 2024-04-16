@@ -145,6 +145,11 @@
       "None"
     ]
   },
+  "STATS:collector:FuelCanister": {
+    "TEXT": [
+      "Cards retained: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
