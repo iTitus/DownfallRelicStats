@@ -162,6 +162,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BagpipesInfo.getInstance()); // The Bagpipes
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
+        register(EmeraldTorchInfo.getInstance()); // Emerald Torch
     }
 
     private static void unlockAll() {

@@ -134,6 +134,11 @@
       "None"
     ]
   },
+  "STATS:collector:EmeraldTorch": {
+    "TEXT": [
+      "Reserve gained: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
