@@ -33,7 +33,7 @@ public final class HorseshoeInfo extends BaseCombatRelicStats {
 
         public static int hook(AbstractPower __instance, int amount) {
             getInstance().registerStartingAmount(__instance.amount);
-            getInstance().registerStartingAmount(amount);
+            getInstance().registerEndingAmount(amount);
             return amount;
         }
     }
