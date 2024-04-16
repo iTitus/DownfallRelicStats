@@ -160,15 +160,16 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
         register(BagOfTricksInfo.getInstance()); // Bag of Tricks
         register(BagpipesInfo.getInstance()); // The Bagpipes
+        register(BlockedChakraInfo.getInstance()); // Blocked Chakra not tracked
     }
 
     private static void unlockAll() {
-        LOGGER.info("locked cards: " + UnlockTracker.lockedCards);
+        LOGGER.info("locked cards: {}", UnlockTracker.lockedCards);
         for (Map.Entry<String, AbstractCard> cardEntry : CardLibrary.cards.entrySet()) {
             String cardId = cardEntry.getKey();
             AbstractCard card = cardEntry.getValue();
 
-            // LOGGER.info("unlock card: " + cardId);
+            // LOGGER.info("unlock card: {}", cardId);
             UnlockTracker.unlockPref.putInteger(cardId, 2);
             UnlockTracker.seenPref.putInteger(cardId, 1);
 
@@ -179,9 +180,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         }
         UnlockTracker.lockedCards.clear();
 
-        LOGGER.info("locked relics: " + UnlockTracker.lockedRelics);
+        LOGGER.info("locked relics: {}", UnlockTracker.lockedRelics);
         for (String relicId : BaseMod.listAllRelicIDs()) {
-            // LOGGER.info("unlock relic: " + relicId);
+            // LOGGER.info("unlock relic: {}", relicId);
             UnlockTracker.unlockPref.putInteger(relicId, 2);
             UnlockTracker.relicSeenPref.putInteger(relicId, 1);
 
@@ -192,13 +193,13 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         }
         UnlockTracker.lockedRelics.clear();
 
-        LOGGER.info("locked characters: " + UnlockTracker.lockedCharacters);
+        LOGGER.info("locked characters: {}", UnlockTracker.lockedCharacters);
         for (String character : UnlockTracker.lockedCharacters) {
             UnlockTracker.unlockPref.putInteger(character, 2);
         }
         UnlockTracker.lockedCharacters.clear();
 
-        LOGGER.info("locked loadouts: " + UnlockTracker.lockedLoadouts);
+        LOGGER.info("locked loadouts: {}", UnlockTracker.lockedLoadouts);
         UnlockTracker.lockedLoadouts.clear();
 
         for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
@@ -213,7 +214,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
             CardCrawlGame.playerPref.putBoolean(p.chosenClass + "_WIN", true);
 
-            LOGGER.info("playerClass=" + p.chosenClass + " unlockLevel=" + unlockLevel + " maxUnlockLevel=" + maxUnlockLevel);
+            LOGGER.info("playerClass={} unlockLevel={} maxUnlockLevel={}", p.chosenClass, unlockLevel, maxUnlockLevel);
         }
 
         UnlockTracker.unlockPref.flush();

@@ -123,6 +123,11 @@
       "Weak/Vulnerable added: "
     ]
   },
+  "STATS:collector:BlockedChakra": {
+    "TEXT": [
+      "Collected cards blocked: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
