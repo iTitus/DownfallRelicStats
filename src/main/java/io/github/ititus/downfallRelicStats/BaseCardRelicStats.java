@@ -13,20 +13,27 @@ public abstract class BaseCardRelicStats extends BaseRelicStats<BaseCardRelicSta
     public static String cardToString(String cardIdOrMetricId) {
         AbstractCard cardObj = CardLibrary.getCard(cardIdOrMetricId.split("\\+")[0]);
         String rarityColor = null;
-        if (cardObj != null && cardObj.rarity != null) {
-            switch (cardObj.rarity) {
-                case UNCOMMON:
-                    rarityColor = "b";
-                    break;
-                case RARE:
-                    rarityColor = "y";
-                    break;
-                case SPECIAL:
-                    rarityColor = "r";
-                    break;
-                case CURSE:
-                    rarityColor = "p";
-                    break;
+        if (cardObj != null) {
+            if (AbstractCard.CardType.CURSE.equals(cardObj.type) || AbstractCard.CardColor.CURSE.equals(cardObj.color) || AbstractCard.CardRarity.CURSE.equals(cardObj.rarity)) {
+                // all curses are red
+                rarityColor = "r";
+            } else if (!AbstractCard.CardType.STATUS.equals(cardObj.type) && cardObj.rarity != null) {
+                // status/common/basic cards are uncolored
+                switch (cardObj.rarity) {
+                    case UNCOMMON:
+                        // uncommon cards are blue
+                        rarityColor = "b";
+                        break;
+                    case RARE:
+                        // rare cards are gold (yellow)
+                        rarityColor = "y";
+                        break;
+                    case SPECIAL:
+                        // special cards are purple
+                        // shivs are special, maybe this should be uncolored instead?
+                        rarityColor = "p";
+                        break;
+                }
             }
         }
 

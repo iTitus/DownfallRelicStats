@@ -139,6 +139,12 @@
       "Reserve gained: "
     ]
   },
+  "STATS:collector:ForbiddenFruit": {
+    "TEXT": [
+      "Cards obtained: ",
+      "None"
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "

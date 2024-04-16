@@ -163,6 +163,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
         register(EmeraldTorchInfo.getInstance()); // Emerald Torch
+        register(ForbiddenFruitInfo.getInstance()); // Forbidden Fruit
     }
 
     private static void unlockAll() {
