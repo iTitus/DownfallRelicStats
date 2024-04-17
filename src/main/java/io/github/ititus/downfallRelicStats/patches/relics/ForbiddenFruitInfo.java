@@ -9,7 +9,7 @@ import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
 import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
-public class ForbiddenFruitInfo extends BaseMultiCardRelicStats {
+public final class ForbiddenFruitInfo extends BaseMultiCardRelicStats {
 
     private static final ForbiddenFruitInfo INSTANCE = new ForbiddenFruitInfo();
 

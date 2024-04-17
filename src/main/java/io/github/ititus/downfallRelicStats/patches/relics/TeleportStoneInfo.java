@@ -8,7 +8,7 @@ import downfall.patches.TeleportStonePatch;
 import downfall.relics.TeleportStone;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 
-public class TeleportStoneInfo extends BaseCombatRelicStats {
+public final class TeleportStoneInfo extends BaseCombatRelicStats {
 
     private static final TeleportStoneInfo INSTANCE = new TeleportStoneInfo();
 

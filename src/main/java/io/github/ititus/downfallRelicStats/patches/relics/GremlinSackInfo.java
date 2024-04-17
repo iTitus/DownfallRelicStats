@@ -8,7 +8,7 @@ import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
 import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
-public class GremlinSackInfo extends BaseMultiCardRelicStats {
+public final class GremlinSackInfo extends BaseMultiCardRelicStats {
 
     private static final GremlinSackInfo INSTANCE = new GremlinSackInfo();
 

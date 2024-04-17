@@ -8,7 +8,7 @@ import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
 import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
-public class SackOfGemsInfo extends BaseMultiCardRelicStats {
+public final class SackOfGemsInfo extends BaseMultiCardRelicStats {
 
     private static final SackOfGemsInfo INSTANCE = new SackOfGemsInfo();
 

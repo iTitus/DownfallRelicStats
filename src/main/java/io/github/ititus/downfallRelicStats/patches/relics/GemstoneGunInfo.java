@@ -7,7 +7,7 @@ import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
-public class GemstoneGunInfo extends BaseMultiCardRelicStats {
+public final class GemstoneGunInfo extends BaseMultiCardRelicStats {
 
     private static final GemstoneGunInfo INSTANCE = new GemstoneGunInfo();
 
