@@ -160,6 +160,11 @@
       "Debuffs prevented: "
     ]
   },
+  "STATS:collector:JadeRing": {
+    "TEXT": [
+      "Souls gained: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "

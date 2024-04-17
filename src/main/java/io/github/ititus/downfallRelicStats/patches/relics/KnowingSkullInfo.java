@@ -86,6 +86,7 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
             if (n == 0 || n == 2 || n == 4) {
                 AbstractDungeon.actionManager.addToBottom(new PlayerDamageFollowAction(by -> getInstance().stats.hp += by, preAction));
             } else if (n == 1) {
+                // TODO: track gold amount
                 getInstance().stats.goldTimes++;
             } else if (n == 3) {
                 getInstance().stats.cards++;
