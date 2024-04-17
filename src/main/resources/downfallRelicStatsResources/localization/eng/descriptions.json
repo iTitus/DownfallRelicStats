@@ -145,6 +145,11 @@
       "None"
     ]
   },
+  "STATS:collector:SoullitLamp": {
+    "TEXT": [
+      "Embers created: "
+    ]
+  },
   "STATS:collector:FuelCanister": {
     "TEXT": [
       "Cards retained: "

@@ -169,6 +169,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(IncenseInfo.getInstance()); // Incense
         register(JadeRingInfo.getInstance()); // Jade Ring
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
+        register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
     }
 
     private static void unlockAll() {
