@@ -171,7 +171,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
         register(RoughDiamondInfo.getInstance()); // Rough Diamond
         register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
-        // TheContract (The Contract) not tracked: one-time effect
+        // The Contract not tracked: one-time effect
+        // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
     }
 
     private static void unlockAll() {
