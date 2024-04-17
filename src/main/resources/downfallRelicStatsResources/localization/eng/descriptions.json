@@ -155,6 +155,11 @@
       "Lucky Wicks created: "
     ]
   },
+  "STATS:collector:Incense": {
+    "TEXT": [
+      "Debuffs prevented: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "

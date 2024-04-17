@@ -166,6 +166,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ForbiddenFruitInfo.getInstance()); // Forbidden Fruit
         register(FuelCanisterInfo.getInstance()); // Fuel Canister
         register(HolidayCoalInfo.getInstance()); // Krampian Coal
+        register(IncenseInfo.getInstance()); // Incense
     }
 
     private static void unlockAll() {
