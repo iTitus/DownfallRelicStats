@@ -145,11 +145,6 @@
       "None"
     ]
   },
-  "STATS:collector:SoullitLamp": {
-    "TEXT": [
-      "Embers created: "
-    ]
-  },
   "STATS:collector:FuelCanister": {
     "TEXT": [
       "Cards retained: "
@@ -173,6 +168,16 @@
   "STATS:collector:PrismaticTorch": {
     "TEXT": [
       "Reserve gained: "
+    ]
+  },
+  "STATS:collector:RoughDiamond": {
+    "TEXT": [
+      "Energy gained: "
+    ]
+  },
+  "STATS:collector:SoullitLamp": {
+    "TEXT": [
+      "Embers created: "
     ]
   },
   "STATS:downfall:ExtraCursedKey": {

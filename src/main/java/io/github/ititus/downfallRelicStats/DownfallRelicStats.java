@@ -169,7 +169,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(IncenseInfo.getInstance()); // Incense
         register(JadeRingInfo.getInstance()); // Jade Ring
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
+        register(RoughDiamondInfo.getInstance()); // Rough Diamond
         register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
+        // TheContract (The Contract) not tracked: one-time effect
     }
 
     private static void unlockAll() {
