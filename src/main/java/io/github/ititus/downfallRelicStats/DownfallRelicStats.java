@@ -168,6 +168,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(HolidayCoalInfo.getInstance()); // Krampian Coal
         register(IncenseInfo.getInstance()); // Incense
         register(JadeRingInfo.getInstance()); // Jade Ring
+        register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
     }
 
     private static void unlockAll() {
