@@ -31,6 +31,7 @@ public final class BagpipesInfo extends BaseCombatRelicStats {
         }
 
         public static int hook(AbstractPower __instance, int amount) {
+            // TODO: do not count when target has artifact
             getInstance().registerStartingAmount(__instance.amount);
             getInstance().registerEndingAmount(amount);
             return amount;
