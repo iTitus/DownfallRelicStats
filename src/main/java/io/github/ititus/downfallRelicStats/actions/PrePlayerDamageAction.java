@@ -12,6 +12,7 @@ public class PrePlayerDamageAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player != null && !AbstractDungeon.player.isDead && !AbstractDungeon.player.isDeadOrEscaped() && AbstractDungeon.player.currentHealth > 0) {
+            // TODO: use GameActionManger#damageReceivedThisCombat to track this instead of patching
             ActualLastDamageField.set(AbstractDungeon.player, 0);
             this.player = AbstractDungeon.player;
         }
