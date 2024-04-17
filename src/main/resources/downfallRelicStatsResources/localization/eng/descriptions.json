@@ -150,6 +150,11 @@
       "Cards retained: "
     ]
   },
+  "STATS:collector:HolidayCoal": {
+    "TEXT": [
+      "Lucky Wicks created: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
