@@ -36,7 +36,7 @@ public final class MagicMalletInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(WizPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, WizPower.POWER_ID));
         }
 
         public static void after() {

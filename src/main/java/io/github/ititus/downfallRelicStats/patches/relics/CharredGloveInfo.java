@@ -37,7 +37,7 @@ public final class CharredGloveInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(VigorPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, VigorPower.POWER_ID));
         }
 
         public static void after() {
