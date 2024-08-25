@@ -7,7 +7,7 @@
 
     <groupId>io.github.ititus</groupId>
     <artifactId>downfall-relic-stats</artifactId>
-    <version>1.3.1</version>
+    <version>1.4.0</version>
     <name>Downfall Relic Stats</name>
     <description>Adds Relic Stats compatibility to the Downfall Expansion.</description>
 
@@ -27,7 +27,7 @@
         <BaseMod.version>5.54.1</BaseMod.version>
         <StSLib.version>2.11.0</StSLib.version>
         <RelicStats.version>1.2.2</RelicStats.version>
-        <Downfall.version>5.1.2</Downfall.version>
+        <Downfall.version>5.2.01</Downfall.version>
 
         <!-- Constants -->
         <ModID>downfallRelicStats</ModID>
