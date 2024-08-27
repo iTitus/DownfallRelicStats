@@ -467,6 +467,27 @@
       "Soulburn applied: "
     ]
   },
+  "STATS:hexamod:IceCube": {
+    "TEXT": [
+      "Intensity prevented: "
+    ]
+  },
+  "STATS:hexamod:JarOfFuel": {
+    "TEXT": [
+      "Additional Ghostflame triggers: "
+    ]
+  },
+  "STATS:hexamod:Libra": {
+    "TEXT": [
+      "Cards obtained: ",
+      "None"
+    ]
+  },
+  "STATS:hexamod:MatchstickCase": {
+    "TEXT": [
+      "Times chosen: "
+    ]
+  },
   "STATS:hexamod:RecyclingMachine": {
     "TEXT": [
       "Cards copied: "
@@ -477,14 +498,14 @@
       "Damage dealt: "
     ]
   },
-  "STATS:hexamod:SoulConsumer": {
-    "TEXT": [
-      "HP healed: "
-    ]
-  },
   "STATS:hexamod:SoulOfChaos": {
     "TEXT": [
       "Cards played: "
+    ]
+  },
+  "STATS:hexamod:SoulStone": {
+    "TEXT": [
+      "Ghostflames ignited: "
     ]
   },
   "STATS:hexamod:SpiritBrand": {
@@ -499,7 +520,7 @@
   },
   "STATS:hexamod:UnbrokenSoul": {
     "TEXT": [
-      "Energy gained: "
+      "Block gained: "
     ]
   },
   "STATS:Slimebound:AbsorbEndCombat": {
@@ -553,7 +574,7 @@
   },
   "STATS:sneckomod:CleanMud": {
     "TEXT": [
-      "Times muddled: "
+      "Times possible 3-cost muddles prevented: "
     ]
   },
   "STATS:sneckomod:ConfusingCodex": {
@@ -598,7 +619,8 @@
     "TEXT": [
       "Card cost counts:",
       " NL %d energy: ",
-      " NL Average discount: "
+      " NL Average discount: ",
+      " NL Times triggered: "
     ]
   },
   "STATS:sneckomod:SuperSneckoSoul": {

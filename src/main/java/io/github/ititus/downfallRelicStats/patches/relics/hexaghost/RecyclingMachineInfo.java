@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.patches.relics;
+package io.github.ititus.downfallRelicStats.patches.relics.hexaghost;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;

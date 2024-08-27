@@ -24,9 +24,7 @@ public final class BronzeIdolInfo extends BaseCombatRelicStats implements PostDr
         return INSTANCE;
     }
 
-    /**
-     * Keep this in sync with {@link AutomatonMod#receivePostDraw}
-     */
+    // TODO: Keep this in sync with AutomatonMod#receivePostDraw
     @Override
     public void receivePostDraw(AbstractCard abstractCard) {
         if (abstractCard.type == AbstractCard.CardType.STATUS && AbstractDungeon.player.hasRelic(BronzeIdol.ID) && !abstractCard.hasTag(AutomatonMod.GOOD_STATUS)) {

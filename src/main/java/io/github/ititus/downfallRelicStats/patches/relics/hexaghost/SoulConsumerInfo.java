@@ -1,8 +1,9 @@
-package io.github.ititus.downfallRelicStats.patches.relics;
+package io.github.ititus.downfallRelicStats.patches.relics.hexaghost;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
@@ -23,21 +24,17 @@ public final class SoulConsumerInfo extends BaseCombatRelicStats {
 
     @SpirePatch(
             clz = SoulConsumer.class,
-            method = "onVictory"
+            method = "onExhaust"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "heal", Patch.class);
-        }
-
-        public static void before() {
-            getInstance().registerStartingAmount(AbstractDungeon.player.currentHealth);
+            return new BeforeAfterMethodCallEditor(AbstractRelic.class, "flash", Patch.class, false, true);
         }
 
         public static void after() {
-            getInstance().registerEndingAmount(AbstractDungeon.player.currentHealth);
+            getInstance().increaseAmount(1);
         }
     }
 }

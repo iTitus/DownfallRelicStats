@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import io.github.ititus.downfallRelicStats.patches.relics.*;
+import io.github.ititus.downfallRelicStats.patches.relics.hexaghost.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -106,7 +107,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(KnowingSkullInfo.getInstance()); // Knowing Skull
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
         register(MagicMalletInfo.getInstance()); // Magic Mallet
-        register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
         register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
         register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
         register(D8Info.getInstance()); // Mystical Octahedron
@@ -119,7 +119,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(StasisEggInfo.getInstance()); // Quantum Chamber
-        register(RecyclingMachineInfo.getInstance()); // Recycler
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
@@ -129,14 +128,11 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ShortStatureInfo.getInstance()); // Short Stature
         register(BartenderGlassInfo.getInstance()); // Shotglass
         register(SignatureFinisherInfo.getInstance()); // Signature Finisher
-        register(SixitudeInfo.getInstance()); // Six-Point Brand
         register(PreparedRelicInfo.getInstance()); // Slime Soup
         register(SlimedTailRelicInfo.getInstance()); // Slimed Tail
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
-        register(SoulOfChaosInfo.getInstance()); // Soul of Chaos
         register(SpectersHandInfo.getInstance()); // Spectre's Hand
-        register(SpiritBrandInfo.getInstance()); // Spirit Brand
         register(SpyglassInfo.getInstance()); // Spyglass
         register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
         register(StraightRazorInfo.getInstance()); // Straight Razor
@@ -145,9 +141,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SupplyScrollInfo.getInstance()); // Supply Scroll
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
         register(TeleportStoneInfo.getInstance()); // Teleport Stone
-        register(TheBrokenSealInfo.getInstance()); // The Broken Seal
-        register(SoulConsumerInfo.getInstance()); // Thermal Stone
-        register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod
         register(UnknownEggInfo.getInstance()); // Unidentified Egg
         register(GremlinWheelInfo.getInstance()); // Wheel of Change
         register(WizardHatInfo.getInstance()); // Wizard Hat
@@ -172,6 +165,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
         // The Contract not tracked: one-time effect
         // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
+
+        // Hexaghost
+        register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod
+        // Red Candle (Candle of Cauterizing) not tracked, too many places to hook
+        register(IceCubeInfo.getInstance()); // Xanatos' Icy Charm
+        // Jar of TOBSCo (Inflammatory Letter) not tracked: same effect every combat
+        register(JarOfFuelInfo.getInstance()); // Olexa's Shield
+        register(LibraInfo.getInstance()); // Libra
+        register(MatchstickCaseInfo.getInstance()); // Sneaky Teakwood Match
+        register(RecyclingMachineInfo.getInstance()); // Recycler
+        register(SixitudeInfo.getInstance()); // Six-Point Brand
+        register(SoulConsumerInfo.getInstance()); // Soul Stone (old: Thermal Stone)
+        register(SoulOfChaosInfo.getInstance()); // Soul of Chaos
+        register(SpiritBrandInfo.getInstance()); // Spirit Brand
+        register(TheBrokenSealInfo.getInstance()); // The Broken Seal
+        register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
     }
 
     private static void unlockAll() {

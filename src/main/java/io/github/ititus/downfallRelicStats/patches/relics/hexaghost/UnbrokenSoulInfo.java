@@ -1,7 +1,7 @@
-package io.github.ititus.downfallRelicStats.patches.relics;
+package io.github.ititus.downfallRelicStats.patches.relics.hexaghost;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
@@ -27,11 +27,11 @@ public final class UnbrokenSoulInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ConstructorHookEditor(GainEnergyAction.class, Patch.class, 1);
+            return new ConstructorHookEditor(GainBlockAction.class, Patch.class, 2);
         }
 
-        public static void hook(int energyAmount) {
-            getInstance().increaseAmount(energyAmount);
+        public static void hook(int blockAmount) {
+            getInstance().increaseAmount(blockAmount);
         }
     }
 }

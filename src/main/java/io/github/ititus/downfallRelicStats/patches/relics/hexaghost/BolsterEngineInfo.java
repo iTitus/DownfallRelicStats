@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.patches.relics;
+package io.github.ititus.downfallRelicStats.patches.relics.hexaghost;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -35,6 +35,7 @@ public final class BolsterEngineInfo extends BaseRelicStats<BolsterEngineInfo.St
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
+            // do not show per turn
             return BaseCombatRelicStats.generateExtendedDescription(description, 2, block, 0, totalCombats) +
                     BaseCombatRelicStats.generateExtendedDescription(description, 3, strength, 0, totalCombats);
         }

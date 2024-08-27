@@ -28,6 +28,8 @@ public final class TeleportStoneInfo extends BaseCombatRelicStats {
     )
     @SuppressWarnings("unused")
     public static class Patch {
+
+        // TODO: keep in sync
         public static void Postfix(MapRoomNode __instance) {
             if (AbstractDungeon.player.hasRelic(TeleportStone.ID)) {
                 ReflectionHacks.RStaticMethod getNodeDistance = ReflectionHacks.privateStaticMethod(TeleportStonePatch.IsConnectedTo.class, "getNodeDistance", MapRoomNode.class, MapRoomNode.class);

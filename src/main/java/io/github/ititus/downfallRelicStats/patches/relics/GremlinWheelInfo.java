@@ -64,6 +64,7 @@ public final class GremlinWheelInfo extends BaseRelicStats<GremlinWheelInfo.Stat
 
         public static void before() {
             // TODO: check if other relic stats also count a campfire as two if the gremlin wheel is involved
+            // TODO: keep in sync with AddWheelSpinButtonPatch.AddKeys#update
             if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasRelic(GremlinWheel.ID) && !((GremlinWheel) AbstractDungeon.player.getRelic(GremlinWheel.ID)).justFailed) {
                 getInstance().stats.restSites++;
             }

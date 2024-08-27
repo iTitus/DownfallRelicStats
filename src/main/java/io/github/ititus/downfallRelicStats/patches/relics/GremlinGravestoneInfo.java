@@ -60,6 +60,7 @@ public final class GremlinGravestoneInfo extends BaseRelicStats<GremlinGraveston
     @SuppressWarnings("unused")
     public static class Patch2 {
 
+        // TODO: make sure ResurrectOption#new is only used when the player is entering a rest site
         public static void Postfix() {
             if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(GremlinGravestone.ID)) {
                 getInstance().stats.restSites++;

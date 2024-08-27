@@ -41,6 +41,7 @@ public final class SuperSneckoEyeInfo extends BaseRelicStats<SuperSneckoEyeInfo.
 
         int[] costDistribution;
         int totalDiscount;
+        int activationCount;
         transient Map<AbstractCard, Integer> initialCosts;
         transient boolean activated;
 
@@ -73,6 +74,7 @@ public final class SuperSneckoEyeInfo extends BaseRelicStats<SuperSneckoEyeInfo.
             }
 
             b.append(description[2]).append(df.format((double) totalDiscount / Math.max(1, totalCards)));
+            b.append(description[3]).append(activationCount);
             return b.toString();
         }
     }
@@ -96,10 +98,12 @@ public final class SuperSneckoEyeInfo extends BaseRelicStats<SuperSneckoEyeInfo.
             };
         }
 
+        // TODO: keep in sync with SuperSneckoEye#onCardDraw and SneckoInfo#patch
         public static void hook(AbstractCard card, int newCost) {
             if (AbstractDungeon.player.hasRelic(SuperSneckoEye.ID) && (card.type != AbstractCard.CardType.SKILL || !AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID))) {
                 if (newCost == 3 && !getInstance().stats.activated) {
                     newCost = 0;
+                    getInstance().stats.activationCount++;
                     getInstance().stats.activated = true;
                 }
 

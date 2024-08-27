@@ -19,9 +19,7 @@ public final class DeflectingBracersInfo extends BaseCombatRelicStats implements
         return INSTANCE;
     }
 
-    /**
-     * Keep this in sync with {@link ChampMod#receiveOnPlayerLoseBlock}
-     */
+    // TODO: Keep this in sync with ChampMod#receiveOnPlayerLoseBlock
     @Override
     public int receiveOnPlayerLoseBlock(int blockToExpire) {
         if (AbstractDungeon.player.stance instanceof DefensiveMode) {
