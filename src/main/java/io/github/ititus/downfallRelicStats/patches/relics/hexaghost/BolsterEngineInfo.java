@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 import theHexaghost.relics.BolsterEngine;
 

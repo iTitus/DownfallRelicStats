@@ -1,13 +1,18 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import guardian.orbs.StasisOrb;
 import guardian.relics.StasisUpgradeRelic;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.actions.PostAdjustmentAction;
+import io.github.ititus.downfallRelicStats.actions.PreAdjustmentAction;
+import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -52,29 +57,27 @@ public final class StasisUpgradeRelicInfo extends BaseRelicStats<StasisUpgradeRe
     @SuppressWarnings("unused")
     public static class Patch {
 
-        private static int timesUpgraded;
+        private static PreAdjustmentAction preAction;
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
+            return new SafeExprEditor() {
 
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
-                    if (m.getClassName().equals(AbstractCard.class.getName()) && m.getMethodName().equals("upgrade")) {
-                        m.replace("{" + Patch.class.getName() + ".before($0);$_=$proceed($$);" + Patch.class.getName() + ".after($0);}");
+                    if (m.getClassName().equals(GameActionManager.class.getName()) && m.getMethodName().equals("addToBottom")) {
+                        m.replace("{" + Patch.class.getName() + ".before(card);$_=$proceed($$);" + Patch.class.getName() + ".after();}");
                     }
                 }
             };
         }
 
         public static void before(AbstractCard card) {
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAdjustmentAction(n -> getInstance().stats.upgrades += n, () -> card.timesUpgraded));
             getInstance().stats.stasis++;
-            timesUpgraded = card.timesUpgraded;
         }
 
-        public static void after(AbstractCard card) {
-            if (card.timesUpgraded > timesUpgraded) {
-                getInstance().stats.upgrades++;
-            }
+        public static void after() {
+            AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preAction));
         }
     }
 }

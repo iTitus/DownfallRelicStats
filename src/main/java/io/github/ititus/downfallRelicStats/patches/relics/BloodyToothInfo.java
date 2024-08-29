@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BloodyTooth;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 import java.util.ArrayList;

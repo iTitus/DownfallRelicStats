@@ -6,7 +6,7 @@ import guardian.GuardianMod;
 import guardian.relics.ModeShifter;
 import guardian.vfx.AddGemToStartingDeckEffect;
 import io.github.ititus.downfallRelicStats.BaseCardRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class ModeShifterInfo extends BaseCardRelicStats {

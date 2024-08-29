@@ -1,10 +1,9 @@
-package io.github.ititus.downfallRelicStats;
+package io.github.ititus.downfallRelicStats.patches.editor;
 
 import javassist.CannotCompileException;
-import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 
-public class BeforeAfterMethodCallEditor extends ExprEditor {
+public class BeforeAfterMethodCallEditor extends SafeExprEditor {
 
     private final int requiredIndex;
     private final String requiredTargetClassName;

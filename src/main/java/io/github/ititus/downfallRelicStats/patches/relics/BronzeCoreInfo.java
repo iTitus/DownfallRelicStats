@@ -4,7 +4,7 @@ import automaton.relics.BronzeCore;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class BronzeCoreInfo extends BaseCombatRelicStats {

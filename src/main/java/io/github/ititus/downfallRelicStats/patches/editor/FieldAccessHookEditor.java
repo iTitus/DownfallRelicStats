@@ -1,10 +1,9 @@
-package io.github.ititus.downfallRelicStats;
+package io.github.ititus.downfallRelicStats.patches.editor;
 
 import javassist.CannotCompileException;
-import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
 
-public class FieldAccessHookEditor extends ExprEditor {
+public class FieldAccessHookEditor extends SafeExprEditor {
 
     private final int requiredIndex;
     private final String requiredTargetClassName;

@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import gremlin.relics.ImpeccablePecs;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class ImpeccablePecsInfo extends BaseCombatRelicStats {

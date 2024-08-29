@@ -204,12 +204,7 @@
       " NL Gold gained: ",
       " NL Cards generated: ",
       " NL Potions gained: ",
-      " NL Ratios: %s / %s / %s",
-      " NL Times used per combat: ",
-      " NL HP spent per combat: ",
-      " NL Gold gained per combat: ",
-      " NL Cards generated per combat: ",
-      " NL Potions gained per combat: "
+      " NL Times used per combat: "
     ]
   },
   "STATS:downfall:TeleportStone": {

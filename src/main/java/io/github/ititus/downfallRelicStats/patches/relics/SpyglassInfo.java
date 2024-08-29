@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import hermit.powers.Concentration;
 import hermit.relics.Spyglass;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class SpyglassInfo extends BaseCombatRelicStats {

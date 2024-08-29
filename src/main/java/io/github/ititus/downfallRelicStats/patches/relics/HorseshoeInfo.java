@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import hermit.relics.Horseshoe;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class HorseshoeInfo extends BaseCombatRelicStats {

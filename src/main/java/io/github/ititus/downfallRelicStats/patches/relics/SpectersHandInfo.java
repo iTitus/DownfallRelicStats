@@ -4,8 +4,8 @@ import champ.relics.SpectersHand;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMultiMethodCallEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class SpectersHandInfo extends BaseRelicStats<SpectersHandInfo.Stats> {

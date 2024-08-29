@@ -3,7 +3,7 @@ package io.github.ititus.downfallRelicStats.patches.relics.hexaghost;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import theHexaghost.relics.RecyclingMachine;
 

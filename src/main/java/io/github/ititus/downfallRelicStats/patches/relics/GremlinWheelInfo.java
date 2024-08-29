@@ -8,8 +8,8 @@ import downfall.patches.ui.campfire.AddWheelSpinButtonPatch;
 import downfall.relics.GremlinWheel;
 import downfall.ui.campfire.WheelSpinButton;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -87,7 +88,7 @@ public final class SuperSneckoEyeInfo extends BaseRelicStats<SuperSneckoEyeInfo.
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
+            return new SafeExprEditor() {
 
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {

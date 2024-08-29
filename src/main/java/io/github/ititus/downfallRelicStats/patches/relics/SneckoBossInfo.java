@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
 import sneckomod.relics.SneckoBoss;
 import sneckomod.relics.SneckoCommon;

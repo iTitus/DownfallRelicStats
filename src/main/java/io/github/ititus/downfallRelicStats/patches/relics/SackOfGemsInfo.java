@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import guardian.relics.SackOfGems;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class SackOfGemsInfo extends BaseMultiCardRelicStats {

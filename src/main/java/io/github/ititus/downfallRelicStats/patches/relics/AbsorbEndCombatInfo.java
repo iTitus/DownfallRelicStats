@@ -1,10 +1,9 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import relicstats.actions.HealingFollowupAction;
 import relicstats.actions.PreHealingAction;
@@ -30,7 +29,7 @@ public final class AbsorbEndCombatInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
+            return new BeforeAfterMethodCallEditor(1, AbsorbEndCombat.class, "addToBot", Patch.class);
         }
 
         public static void before() {

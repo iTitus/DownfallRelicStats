@@ -1,13 +1,12 @@
-package io.github.ititus.downfallRelicStats;
+package io.github.ititus.downfallRelicStats.patches.editor;
 
 import javassist.CannotCompileException;
-import javassist.expr.ExprEditor;
 import javassist.expr.NewExpr;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class ConstructorHookEditor extends ExprEditor {
+public class ConstructorHookEditor extends SafeExprEditor {
 
     private final String targetClassName;
     private final String callbackClassName;

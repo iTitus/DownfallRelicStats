@@ -5,9 +5,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import gremlin.powers.WizPower;
 import gremlin.relics.MagicalMallet;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.actions.AoePowerFollowupAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class MagicMalletInfo extends BaseCombatRelicStats {

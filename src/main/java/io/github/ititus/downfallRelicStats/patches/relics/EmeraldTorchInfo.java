@@ -4,7 +4,7 @@ import collector.actions.GainReservesAction;
 import collector.relics.EmeraldTorch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class EmeraldTorchInfo extends BaseCombatRelicStats {

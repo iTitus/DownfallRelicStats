@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import guardian.actions.StasisCodexAction;
 import guardian.relics.StasisCodex;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class StasisCodexInfo extends BaseCombatRelicStats {

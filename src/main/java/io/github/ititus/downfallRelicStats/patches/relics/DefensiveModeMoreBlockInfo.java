@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import guardian.actions.BraceAction;
 import guardian.relics.DefensiveModeMoreBlock;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class DefensiveModeMoreBlockInfo extends BaseCombatRelicStats {

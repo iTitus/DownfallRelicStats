@@ -3,8 +3,8 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 import champ.relics.ChampStancesModRelic;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMultiMethodCallEditor;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;

@@ -4,7 +4,7 @@ import collector.relics.FuelCanister;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class FuelCanisterInfo extends BaseCombatRelicStats {

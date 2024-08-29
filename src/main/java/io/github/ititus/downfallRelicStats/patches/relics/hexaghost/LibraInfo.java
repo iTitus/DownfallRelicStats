@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
+import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -30,7 +31,7 @@ public final class LibraInfo extends BaseMultiCardRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
+            return new SafeExprEditor() {
 
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {

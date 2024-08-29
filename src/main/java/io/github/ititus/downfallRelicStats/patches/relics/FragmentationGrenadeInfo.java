@@ -6,7 +6,7 @@ import gremlin.actions.PseudoDamageRandomEnemyAction;
 import gremlin.patches.RandomDamagePatch;
 import gremlin.relics.FragmentationGrenade;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class FragmentationGrenadeInfo extends BaseCombatRelicStats {

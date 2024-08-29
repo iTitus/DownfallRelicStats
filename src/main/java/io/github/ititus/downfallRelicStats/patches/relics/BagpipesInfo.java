@@ -4,7 +4,7 @@ import collector.relics.Bagpipes;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
 import javassist.expr.ExprEditor;
 
 public final class BagpipesInfo extends BaseCombatRelicStats {

@@ -3,7 +3,7 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import hermit.relics.BartenderGlass;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class BartenderGlassInfo extends BaseCombatRelicStats {

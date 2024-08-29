@@ -4,6 +4,7 @@ import collector.relics.JadeRing;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
+import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -28,7 +29,7 @@ public final class JadeRingInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new ExprEditor() {
+            return new SafeExprEditor() {
 
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {

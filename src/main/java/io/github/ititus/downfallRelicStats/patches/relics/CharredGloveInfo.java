@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import hermit.relics.CharredGlove;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.actions.AoePowerFollowupAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class CharredGloveInfo extends BaseCombatRelicStats {

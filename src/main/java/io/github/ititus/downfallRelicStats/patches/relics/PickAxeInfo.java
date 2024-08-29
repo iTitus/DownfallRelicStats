@@ -9,7 +9,7 @@ import guardian.ui.FindGemsOption;
 import guardian.vfx.CampfireFindGemsEffect;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
-import io.github.ititus.downfallRelicStats.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;

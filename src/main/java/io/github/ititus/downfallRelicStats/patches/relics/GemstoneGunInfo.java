@@ -3,6 +3,7 @@ package io.github.ititus.downfallRelicStats.patches.relics;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import guardian.relics.GemstoneGun;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
+import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.FieldAccess;
@@ -28,7 +29,7 @@ public final class GemstoneGunInfo extends BaseMultiCardRelicStats {
 
         public static ExprEditor Instrument() {
             // TODO: implement a MultiFieldAccessHookEditor
-            return new ExprEditor() {
+            return new SafeExprEditor() {
 
                 @Override
                 public void edit(FieldAccess f) throws CannotCompileException {

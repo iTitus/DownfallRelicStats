@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.cards.AbstractHermitCard;
 import hermit.relics.BlackPowder;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.BeforeAfterMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import relicstats.actions.AoeDamageFollowupAction;
 import relicstats.actions.PreAoeDamageAction;

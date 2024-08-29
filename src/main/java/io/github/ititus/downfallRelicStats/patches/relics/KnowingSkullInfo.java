@@ -1,15 +1,16 @@
 package io.github.ititus.downfallRelicStats.patches.relics;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import downfall.cards.KnowingSkullWish;
 import downfall.relics.KnowingSkull;
-import io.github.ititus.downfallRelicStats.*;
-import io.github.ititus.downfallRelicStats.actions.PlayerDamageFollowAction;
-import io.github.ititus.downfallRelicStats.actions.PrePlayerDamageAction;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
+import io.github.ititus.downfallRelicStats.BaseRelicStats;
+import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.actions.PostAdjustmentAction;
+import io.github.ititus.downfallRelicStats.actions.PreAdjustmentAction;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
 import javassist.expr.ExprEditor;
-import sneckomod.actions.ChangeGoldAction;
 
 import java.text.DecimalFormat;
 
@@ -39,19 +40,15 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
             int total = goldTimes + cards + potions;
             return description[0] + total +
                     description[1] + hp +
-                    description[2] + gold +
-                    description[3] + cards +
-                    description[4] + potions +
-                    String.format(description[5], df.format((double) goldTimes / Math.max(1, total)), df.format((double) cards / Math.max(1, total)), df.format((double) potions / Math.max(1, total)));
+                    description[2] + gold + " (" + df.format((double) goldTimes / Math.max(1, total)) + ")" +
+                    description[3] + cards + " (" + df.format((double) cards / Math.max(1, total)) + ")" +
+                    description[4] + potions + " (" + df.format((double) potions / Math.max(1, total)) + ")";
         }
 
         @Override
         public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            return BaseCombatRelicStats.generateExtendedDescription(description, 6, goldTimes + cards + potions, 0, totalCombats) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 7, hp, 0, totalCombats) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 8, gold, 0, totalCombats) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 9, cards, 0, totalCombats) +
-                    BaseCombatRelicStats.generateExtendedDescription(description, 10, potions, 0, totalCombats);
+            int total = goldTimes + cards + potions;
+            return BaseCombatRelicStats.generateExtendedDescription(description, 5, total, 0, totalCombats);
         }
     }
 
@@ -60,34 +57,31 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
             method = "doChoiceStuff"
     )
     @SuppressWarnings("unused")
-    public static class Patch1 {
+    public static class Patch {
 
-        private static PrePlayerDamageAction preAction;
+        private static PreAdjustmentAction preHpAction;
+        private static PreAdjustmentAction preGoldAction;
 
-        @SpireInstrumentPatch
-        public static ExprEditor Instrument1() {
-            return new BeforeAfterMultiMethodCallEditor(KnowingSkullWish.class, "atb", Patch1.class);
-        }
-
-        @SpireInstrumentPatch
-        public static ExprEditor Instrument2() {
-            return new ConstructorHookEditor(ChangeGoldAction.class, Patch1.class, 1);
+        public static ExprEditor Instrument() {
+            return new BeforeAfterMultiMethodCallEditor(KnowingSkullWish.class, "atb", Patch.class);
         }
 
         public static void before(int n) {
             if (n == 0 || n == 2 || n == 4) {
-                AbstractDungeon.actionManager.addToBottom(preAction = new PrePlayerDamageAction());
-            } else if (n != 1 && n != 3 && n != 5) {
+                AbstractDungeon.actionManager.addToBottom(preHpAction = new PreAdjustmentAction(i -> getInstance().stats.hp -= i, () -> AbstractDungeon.player.currentHealth));
+            } else if (n == 1) {
+                AbstractDungeon.actionManager.addToBottom(preGoldAction = new PreAdjustmentAction(i -> getInstance().stats.gold += i, () -> AbstractDungeon.player.gold));
+            } else if (n != 3 && n != 5) {
                 throw new AssertionError();
             }
         }
 
         public static void after(int n) {
             if (n == 0 || n == 2 || n == 4) {
-                AbstractDungeon.actionManager.addToBottom(new PlayerDamageFollowAction(by -> getInstance().stats.hp += by, preAction));
+                AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preHpAction));
             } else if (n == 1) {
-                // TODO: track gold amount
                 getInstance().stats.goldTimes++;
+                AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preGoldAction));
             } else if (n == 3) {
                 getInstance().stats.cards++;
             } else if (n == 5) {
@@ -95,10 +89,6 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
             } else {
                 throw new AssertionError();
             }
-        }
-
-        public static void hook(int goldAmount) {
-            getInstance().stats.gold += goldAmount;
         }
     }
 }
