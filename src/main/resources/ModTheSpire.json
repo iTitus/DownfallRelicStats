@@ -2,8 +2,7 @@
   "modid": "${ModID}",
   "name": "${project.name}",
   "author_list": [
-    "iTitus",
-    "Ocean"
+    "iTitus"
   ],
   "credits": "Thanks to Ocean for generating a very helpful table to track implementation progress and for making the workshop icon",
   "description": "${project.description}",
