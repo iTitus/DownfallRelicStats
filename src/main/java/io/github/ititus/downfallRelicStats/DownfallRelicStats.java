@@ -165,6 +165,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(TeleportStoneInfo.getInstance()); // Teleport Stone
         // (VFX Tester) TestRelic is not registered
 
+        // Expansion
+        // Tiny Bowler Hat (StudyCardRelic) - not tracked, always does the same
+
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
         register(BagOfTricksInfo.getInstance()); // Bag of Tricks
