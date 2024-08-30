@@ -146,7 +146,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
 
-        // Shared
+        // Downfall
         // Broken Wing Statue doesn't do anything - nothing to track
         // Coat Of Many Faces / Cloak of Many Faces gives all masks all the time - nothing to track
         // Extra Cursed Bell - same as Calling Bell, not tracked
