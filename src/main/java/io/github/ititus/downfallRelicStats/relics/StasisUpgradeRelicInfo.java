@@ -72,7 +72,7 @@ public final class StasisUpgradeRelicInfo extends BaseRelicStats<StasisUpgradeRe
         }
 
         public static void before(AbstractCard card) {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAdjustmentAction(n -> getInstance().stats.upgrades += n, () -> card.timesUpgraded));
+            AbstractDungeon.actionManager.addToBottom(preAction = PreAdjustmentAction.fromIncrease(n -> getInstance().stats.upgrades += n, () -> card.timesUpgraded));
             getInstance().stats.stasis++;
         }
 

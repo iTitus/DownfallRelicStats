@@ -12,8 +12,13 @@ public class PreAdjustmentAction extends AbstractGameAction {
     private final AmountAdjustmentCallback statTracker;
     private final IntSupplier valueSupplier;
 
-    public PreAdjustmentAction(AmountIncreaseCallback statTracker, IntSupplier valueSupplier) {
-        this(new AmountAdjustmentCallback() {
+    private PreAdjustmentAction(AmountAdjustmentCallback statTracker, IntSupplier valueSupplier) {
+        this.statTracker = Objects.requireNonNull(statTracker, "statTracker");
+        this.valueSupplier = Objects.requireNonNull(valueSupplier, "valueSupplier");
+    }
+
+    public static PreAdjustmentAction fromIncrease(AmountIncreaseCallback statTracker, IntSupplier valueSupplier) {
+        return new PreAdjustmentAction(new AmountAdjustmentCallback() {
 
             int pre;
 
@@ -27,12 +32,10 @@ public class PreAdjustmentAction extends AbstractGameAction {
                 statTracker.increaseAmount(i - pre);
             }
         }, valueSupplier);
-        Objects.requireNonNull(statTracker, "statTracker");
     }
 
-    public PreAdjustmentAction(AmountAdjustmentCallback statTracker, IntSupplier valueSupplier) {
-        this.statTracker = Objects.requireNonNull(statTracker, "statTracker");
-        this.valueSupplier = Objects.requireNonNull(valueSupplier, "valueSupplier");
+    public static PreAdjustmentAction fromAdjustment(AmountAdjustmentCallback statTracker, IntSupplier valueSupplier) {
+        return new PreAdjustmentAction(statTracker, valueSupplier);
     }
 
     @Override

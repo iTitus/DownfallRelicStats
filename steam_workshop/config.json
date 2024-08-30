@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v1.4.2\n\nFix some outdated patches",
+  "changeNote": "v1.5.0\n\nAdd tracking for Heart Blessings",
   "tags": [
     "Utility",
     "QoL"

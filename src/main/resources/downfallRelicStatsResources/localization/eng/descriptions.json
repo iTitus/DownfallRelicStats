@@ -197,6 +197,21 @@
       " NL Per Rest Site: "
     ]
   },
+  "STATS:downfall:HeartBlessingBlue": {
+    "TEXT": [
+      "Temporary HP gained: "
+    ]
+  },
+  "STATS:downfall:HeartBlessingGreen": {
+    "TEXT": [
+      "Dexterity gained: "
+    ]
+  },
+  "STATS:downfall:HeartBlessingRed": {
+    "TEXT": [
+      "Strength gained: "
+    ]
+  },
   "STATS:downfall:KnowingSkull": {
     "TEXT": [
       "Times used: ",

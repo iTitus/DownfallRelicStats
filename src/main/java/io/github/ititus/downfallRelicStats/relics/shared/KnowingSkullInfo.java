@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.shared;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -68,9 +68,9 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
 
         public static void before(int n) {
             if (n == 0 || n == 2 || n == 4) {
-                AbstractDungeon.actionManager.addToBottom(preHpAction = new PreAdjustmentAction(i -> getInstance().stats.hp -= i, () -> AbstractDungeon.player.currentHealth));
+                AbstractDungeon.actionManager.addToBottom(preHpAction = PreAdjustmentAction.fromIncrease(i -> getInstance().stats.hp -= i, () -> AbstractDungeon.player.currentHealth));
             } else if (n == 1) {
-                AbstractDungeon.actionManager.addToBottom(preGoldAction = new PreAdjustmentAction(i -> getInstance().stats.gold += i, () -> AbstractDungeon.player.gold));
+                AbstractDungeon.actionManager.addToBottom(preGoldAction = PreAdjustmentAction.fromIncrease(i -> getInstance().stats.gold += i, () -> AbstractDungeon.player.gold));
             } else if (n != 3 && n != 5) {
                 throw new AssertionError();
             }

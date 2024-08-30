@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import io.github.ititus.downfallRelicStats.relics.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
 import io.github.ititus.downfallRelicStats.relics.hexaghost.*;
+import io.github.ititus.downfallRelicStats.relics.shared.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -101,11 +102,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
-        register(GremlinSackInfo.getInstance()); // Gremlin Sack
         register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(HorseshoeInfo.getInstance()); // Horseshoe
         register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
-        register(KnowingSkullInfo.getInstance()); // Knowing Skull
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
         register(MagicMalletInfo.getInstance()); // Magic Mallet
         register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
@@ -141,13 +140,30 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(SupplyScrollInfo.getInstance()); // Supply Scroll
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
-        register(TeleportStoneInfo.getInstance()); // Teleport Stone
         register(UnknownEggInfo.getInstance()); // Unidentified Egg
-        register(GremlinWheelInfo.getInstance()); // Wheel of Change
         register(WizardHatInfo.getInstance()); // Wizard Hat
         register(WizardStaffInfo.getInstance()); // Wizard Staff
         register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
+
+        // Shared
+        // Broken Wing Statue doesn't do anything - nothing to track
+        // Coat Of Many Faces / Cloak of Many Faces gives all masks all the time - nothing to track
+        // Extra Cursed Bell - same as Calling Bell, not tracked
+        register(GremlinSackInfo.getInstance()); // Gremlin Sack
+        register(GremlinWheelInfo.getInstance()); // Wheel of Change
+        register(HeartBlessingBlueInfo.getInstance());
+        register(HeartBlessingGreenInfo.getInstance());
+        register(HeartBlessingRedInfo.getInstance());
+        // The Heart's Malice - not tracked
+        // Hecktoplasm is not registered, Ectoplasm is replaced instead
+        register(KnowingSkullInfo.getInstance()); // Knowing Skull
+        // NeowBlessing is not registered
+        // Bandit Contract (RedIOU) - not tracked
+        // Bandit Contract+ (RedIOUUpgrade) - not tracked
+        // Shattered Fragment- - not tracked
+        register(TeleportStoneInfo.getInstance()); // Teleport Stone
+        // (VFX Tester) TestRelic is not registered
 
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
