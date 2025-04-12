@@ -353,7 +353,7 @@
   "STATS:Guardian:ModeShifter": {
     "TEXT": [
       "Gem obtained: ",
-      "Additional Block gained: "
+      "None"
     ]
   },
   "STATS:Guardian:PickAxe": {

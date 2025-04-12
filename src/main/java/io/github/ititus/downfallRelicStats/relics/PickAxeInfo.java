@@ -40,10 +40,10 @@ public final class PickAxeInfo extends BaseRelicStats<PickAxeInfo.Stats> {
         }
     }
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = CampfireFindGemsEffect.class,
             method = "update"
-    )
+    )*/
     @SuppressWarnings("unused")
     public static class Patch1 {
 

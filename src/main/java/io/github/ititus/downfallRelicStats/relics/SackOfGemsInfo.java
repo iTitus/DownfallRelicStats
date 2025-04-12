@@ -20,10 +20,10 @@ public final class SackOfGemsInfo extends BaseMultiCardRelicStats {
         return INSTANCE;
     }
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = SackOfGems.class,
             method = "onEquip"
-    )
+    )*/
     @SuppressWarnings("unused")
     public static class Patch {
 

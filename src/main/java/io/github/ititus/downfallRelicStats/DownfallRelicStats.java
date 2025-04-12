@@ -69,24 +69,18 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // unlockAll();
 
-        register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
-        register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
         register(BarbellsInfo.getInstance()); // Barbell
         register(AbsorbEndCombatUpgradedInfo.getInstance()); // Black Heart of Goo
         register(BlackPowderInfo.getInstance()); // Black Powder
-        register(BottledAnomalyInfo.getInstance()); // Bottled Anomaly
-        register(BottledStasisInfo.getInstance()); // Bottled Black Hole
         register(BottledCodeInfo.getInstance()); // Bottled Code
         register(BrassTacksInfo.getInstance()); // Brass Tacks
         register(BloodyToothInfo.getInstance()); // Broken Tooth
         register(BronzeCoreInfo.getInstance()); // Bronze Core
-        register(ModeShifterInfo.getInstance()); // Bronze Gear
         register(BronzeIdolInfo.getInstance()); // Bronze Idol
         register(CableSpoolInfo.getInstance()); // Cable Spool
         register(ChampionCrownInfo.getInstance()); // Champion's Crown
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
-        register(StasisUpgradeRelicInfo.getInstance()); // Cryo Chamber
         register(DecasWashersInfo.getInstance()); // Deca's Washers
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
         register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
@@ -96,7 +90,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
         register(TimepieceInfo.getInstance()); // Frost Primer
-        register(GemstoneGunInfo.getInstance()); // Gemstone Gun
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GreedOozeRelicInfo.getInstance()); // Greed Ooze
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
@@ -112,17 +105,13 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(D8Info.getInstance()); // Mystical Octahedron
         register(ChampStancesModRelicInfo.getInstance()); // New Challenger
         register(PetGhostInfo.getInstance()); // Pet Ghost
-        register(PickAxeInfo.getInstance()); // Pick of Rhapsody
-        register(StasisCodexInfo.getInstance()); // Pilot's Codex
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
-        register(StasisEggInfo.getInstance()); // Quantum Chamber
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
-        register(SackOfGemsInfo.getInstance()); // Sack of Gems
         register(ScrapOozeRelicInfo.getInstance()); // Scrap Ooze
         register(SneckoCommonInfo.getInstance()); // Seal of Approval
         register(ShortStatureInfo.getInstance()); // Short Stature
@@ -185,6 +174,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
         // The Contract not tracked: one-time effect
         // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
+
+        // Guardian
+        register(BottledAnomalyInfo.getInstance()); // Bottled Anomaly
+        register(BottledStasisInfo.getInstance()); // Bottled Black Hole
+        register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
+        register(GemstoneGunInfo.getInstance()); // Gemstone Gun
+        register(ModeShifterInfo.getInstance()); // Bronze Gear
+        // TODO: ModeShifterPlus (Guardian Gear) -> Energy gained/Cards drawn
+        // TODO: Obsidian Scales -> Thorns gained
+        register(PickAxeInfo.getInstance()); // Pick of Rhapsody // TODO: gem tracking broken
+        register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
+        register(SackOfGemsInfo.getInstance()); // Sack of Gems // TODO: gem tracking broken
+        register(StasisCodexInfo.getInstance()); // Pilot's Codex
+        register(StasisEggInfo.getInstance()); // Quantum Chamber
+        // Stasis Slot Reduction (Wander Bots) not tracked: constant effect (energy relic)
+        register(StasisUpgradeRelicInfo.getInstance()); // Cryo Chamber
 
         // Hexaghost
         register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod
