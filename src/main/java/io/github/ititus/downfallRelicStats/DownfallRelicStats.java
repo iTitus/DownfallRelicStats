@@ -70,7 +70,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // unlockAll();
 
         register(BarbellsInfo.getInstance()); // Barbell
-        register(AbsorbEndCombatUpgradedInfo.getInstance()); // Black Heart of Goo
         register(BlackPowderInfo.getInstance()); // Black Powder
         register(BottledCodeInfo.getInstance()); // Bottled Code
         register(BrassTacksInfo.getInstance()); // Brass Tacks
@@ -91,11 +90,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
         register(TimepieceInfo.getInstance()); // Frost Primer
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
-        register(GreedOozeRelicInfo.getInstance()); // Greed Ooze
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
-        register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
         register(HorseshoeInfo.getInstance()); // Horseshoe
         register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
@@ -107,18 +104,14 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(PetGhostInfo.getInstance()); // Pet Ghost
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
-        register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
-        register(ScrapOozeRelicInfo.getInstance()); // Scrap Ooze
         register(SneckoCommonInfo.getInstance()); // Seal of Approval
         register(ShortStatureInfo.getInstance()); // Short Stature
         register(BartenderGlassInfo.getInstance()); // Shotglass
         register(SignatureFinisherInfo.getInstance()); // Signature Finisher
-        register(PreparedRelicInfo.getInstance()); // Slime Soup
-        register(SlimedTailRelicInfo.getInstance()); // Slimed Tail
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
         register(SpectersHandInfo.getInstance()); // Spectre's Hand
@@ -206,6 +199,21 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SpiritBrandInfo.getInstance()); // Spirit Brand
         register(TheBrokenSealInfo.getInstance()); // The Broken Seal
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
+
+        // Slime Boss
+        register(AbsorbEndCombatInfo.getInstance()); // Heart of Goo
+        register(AbsorbEndCombatUpgradedInfo.getInstance()); // Black Heart of Goo
+        // Aggressive Slime Relic (Goop Dweller) not tracked, does the same every combat
+        register(GreedOozeRelicInfo.getInstance()); // Greed Ooze
+        // Max Slimes Relic (Jeremiah's Banner) not tracked, does the same every combat
+        // Potency Relic (Stone of Nomakk) not tracked, does the same every combat
+        register(PreparedRelicInfo.getInstance()); // Slime Soup
+        register(ScrapOozeRelicInfo.getInstance()); // Scrap Ooze
+        register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
+        // Slimed Skull Relic (Slimy Skull) not tracked, too difficult because it uses a power
+        register(SlimedTailRelicInfo.getInstance()); // Slimed Tail
+        // TODO: Sticky Stick (Gelatinous Cube) -> can be tracked now (cards, energy)
+        // Tar Blob (Tarr Blob) not tracked, does the same every combat
     }
 
     private static void unlockAll() {
