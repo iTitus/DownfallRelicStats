@@ -108,7 +108,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SpyglassInfo.getInstance()); // Spyglass
         register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
         register(StraightRazorInfo.getInstance()); // Straight Razor
-        register(SuperSneckoEyeInfo.getInstance()); // Super Snecko Eye
+        // Super Snecko Eye not tracked, does the same every turn
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(SupplyScrollInfo.getInstance()); // Supply Scroll
         register(TagTeamworkInfo.getInstance()); // Tag Teamwork
@@ -222,6 +222,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SlimedTailRelicInfo.getInstance()); // Slimed Tail
         // TODO: Sticky Stick (Gelatinous Cube) -> can be tracked now (cards, energy)
         // Tar Blob (Tarr Blob) not tracked, does the same every combat
+
+        // Snecko
+        // Blank Card not tracked, too difficult
     }
 
     private static void unlockAll() {

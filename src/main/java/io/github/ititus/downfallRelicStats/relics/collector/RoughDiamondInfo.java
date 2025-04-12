@@ -21,7 +21,7 @@ public final class RoughDiamondInfo extends BaseCombatRelicStats {
 
     @SpirePatch(
             clz = RoughDiamond.class,
-            method = "onPlayCard"
+            method = "onUseCard"
     )
     @SuppressWarnings("unused")
     public static class Patch {
