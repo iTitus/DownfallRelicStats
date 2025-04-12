@@ -41,10 +41,10 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
         }
     }
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = ChampionCrown.class,
             method = "atBattleStart"
-    )
+    )*/
     @SuppressWarnings("unused")
     public static class Patch {
 

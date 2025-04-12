@@ -69,7 +69,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // unlockAll();
 
-        register(BarbellsInfo.getInstance()); // Barbell
         register(BlackPowderInfo.getInstance()); // Black Powder
         register(BottledCodeInfo.getInstance()); // Bottled Code
         register(BrassTacksInfo.getInstance()); // Brass Tacks
@@ -77,19 +76,13 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BronzeCoreInfo.getInstance()); // Bronze Core
         register(BronzeIdolInfo.getInstance()); // Bronze Idol
         register(CableSpoolInfo.getInstance()); // Cable Spool
-        register(ChampionCrownInfo.getInstance()); // Champion's Crown
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
         register(DecasWashersInfo.getInstance()); // Deca's Washers
-        register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
-        register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
         register(DentedPlateInfo.getInstance()); // Dented Plate
-        register(FightingForDummiesInfo.getInstance()); // Dolphin's Style Guide
-        register(DuelingGloveInfo.getInstance()); // Dueling Glove
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
         register(TimepieceInfo.getInstance()); // Frost Primer
-        register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
@@ -100,7 +93,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
         register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
         register(D8Info.getInstance()); // Mystical Octahedron
-        register(ChampStancesModRelicInfo.getInstance()); // New Challenger
         register(PetGhostInfo.getInstance()); // Pet Ghost
         register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
@@ -111,10 +103,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SneckoCommonInfo.getInstance()); // Seal of Approval
         register(ShortStatureInfo.getInstance()); // Short Stature
         register(BartenderGlassInfo.getInstance()); // Shotglass
-        register(SignatureFinisherInfo.getInstance()); // Signature Finisher
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
         register(SneckoSoulInfo.getInstance()); // Snecko Soul
-        register(SpectersHandInfo.getInstance()); // Spectre's Hand
         register(SpyglassInfo.getInstance()); // Spyglass
         register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
         register(StraightRazorInfo.getInstance()); // Straight Razor
@@ -149,6 +139,24 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // Expansion
         // Tiny Bowler Hat (StudyCardRelic) - not tracked, always does the same
+
+        // Champ
+        register(BarbellsInfo.getInstance()); // Barbell
+        // Berserkers Guide To Slaughter (Berserker's Guide) not tracked, does the same every turn
+        // Black Knights Helmet (Black Knight's Helm) not tracked, difficult to display and in the end it's always 1STR 1DEX
+        register(ChampionCrownInfo.getInstance()); // Champion's Crown // TODO: broken
+        // Champion Crown Upgraded (Victorious Crown) not tracked, does the same every combat
+        register(ChampStancesModRelicInfo.getInstance()); // New Challenger
+        register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
+        register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers
+        register(DuelingGloveInfo.getInstance()); // Dueling Glove
+        register(FightingForDummiesInfo.getInstance()); // Dolphin's Style Guide
+        register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
+        // Lift Relic (Inner Strength) not tracked, does the same every combat
+        // Power Armor not tracked, too difficult because of patching weirdness
+        // TODO: Rage Amulet (Amulet of Unyielding) -> strength gained
+        register(SignatureFinisherInfo.getInstance()); // Signature Finisher
+        register(SpectersHandInfo.getInstance()); // Spectre's Hand
 
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
