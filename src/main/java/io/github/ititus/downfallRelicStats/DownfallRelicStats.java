@@ -20,6 +20,7 @@ import io.github.ititus.downfallRelicStats.relics.champ.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
 import io.github.ititus.downfallRelicStats.relics.gremlin.*;
 import io.github.ititus.downfallRelicStats.relics.guardian.*;
+import io.github.ititus.downfallRelicStats.relics.hermit.*;
 import io.github.ititus.downfallRelicStats.relics.hexaghost.*;
 import io.github.ititus.downfallRelicStats.relics.shared.*;
 import io.github.ititus.downfallRelicStats.relics.slimebound.*;
@@ -74,25 +75,12 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // unlockAll();
 
-        register(BlackPowderInfo.getInstance()); // Black Powder
-        register(BrassTacksInfo.getInstance()); // Brass Tacks
-        register(BloodyToothInfo.getInstance()); // Broken Tooth
-        register(CharredGloveInfo.getInstance()); // Charred Glove
-        register(ClaspedLocketInfo.getInstance()); // Clasped Locket
-        register(DentedPlateInfo.getInstance()); // Dented Plate
-        register(HorseshoeInfo.getInstance()); // Horseshoe
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
         register(D8Info.getInstance()); // Mystical Octahedron
-        register(PetGhostInfo.getInstance()); // Pet Ghost
-        register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
-        register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SneckoCommonInfo.getInstance()); // Seal of Approval
-        register(BartenderGlassInfo.getInstance()); // Shotglass
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
         // Snecko Soul not tracked, does the same every combat
-        register(SpyglassInfo.getInstance()); // Spyglass
-        register(StraightRazorInfo.getInstance()); // Straight Razor
         // Super Snecko Eye not tracked, does the same every turn
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
         register(UnknownEggInfo.getInstance()); // Unidentified Egg
@@ -208,6 +196,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(StasisEggInfo.getInstance()); // Quantum Chamber
         // Stasis Slot Reduction (Wander Bots) not tracked: constant effect (energy relic)
         register(StasisUpgradeRelicInfo.getInstance()); // Cryo Chamber
+
+        // Hermit
+        register(BartenderGlassInfo.getInstance()); // Shotglass
+        register(BlackPowderInfo.getInstance()); // Black Powder
+        register(BloodyToothInfo.getInstance()); // Broken Tooth
+        register(BrassTacksInfo.getInstance()); // Brass Tacks
+        register(CharredGloveInfo.getInstance()); // Charred Glove
+        register(ClaspedLocketInfo.getInstance()); // Clasped Locket
+        register(DentedPlateInfo.getInstance()); // Dented Plate
+        register(HorseshoeInfo.getInstance()); // Horseshoe // TODO: verify patch
+        // Memento (Old Locket) not tracked, does the same every combat
+        register(PetGhostInfo.getInstance()); // Pet Ghost
+        register(RedScarfInfo.getInstance()); // Red Scarf
+        register(RyeStalkInfo.getInstance()); // Rye Stalk
+        register(SpyglassInfo.getInstance()); // Spyglass
+        register(StraightRazorInfo.getInstance()); // Straight Razor
 
         // Hexaghost
         register(BolsterEngineInfo.getInstance()); // Tricky's Bolster-Rod

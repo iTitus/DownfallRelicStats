@@ -398,7 +398,10 @@
   "STATS:hermit:BloodyTooth": {
     "TEXT": [
       "Elites encountered: ",
-      " NL In Act %d: "
+      " NL In Act ",
+      ": ",
+      " NL HP healed: ",
+      " NL Gold gained: "
     ]
   },
   "STATS:hermit:BrassTacks": {

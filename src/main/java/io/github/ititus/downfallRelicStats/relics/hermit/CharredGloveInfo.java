@@ -1,5 +1,6 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.hermit;
 
+import champ.ChampMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -33,7 +34,7 @@ public final class CharredGloveInfo extends BaseCombatRelicStats {
         private static PreAoePowerAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
+            return new BeforeAfterMethodCallEditor(ChampMod.class, "vigor", Patch.class);
         }
 
         public static void before() {

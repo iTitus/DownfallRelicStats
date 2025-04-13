@@ -1,9 +1,11 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.hermit;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import hermit.relics.BloodyTooth;
+import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
@@ -28,8 +30,9 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
 
     public static class Stats implements StatContainer {
 
-        // TODO: track the amount of money and health gained as well?
         List<Integer> elites = new ArrayList<>();
+        int hp = 0;
+        int gold = 0;
 
         @Override
         public String getDescription(String[] description) {
@@ -44,9 +47,11 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
             ));
             for (int i = 0; i < len; i++) {
                 int elitesFought = elites == null || i >= elites.size() ? 0 : elites.get(i);
-                b.append(String.format(description[1], i + 1)).append(elitesFought);
+                b.append(description[1]).append(i + 1).append(description[2]).append(elitesFought);
             }
 
+            b.append(description[3]).append(hp);
+            b.append(description[4]).append(gold);
             return b.toString();
         }
     }
@@ -56,10 +61,10 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
             method = "onVictory"
     )
     @SuppressWarnings("unused")
-    public static class Patch {
+    public static class Patch1 {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(BloodyTooth.class, "flash", Patch.class, false, true);
+            return new BeforeAfterMethodCallEditor(BloodyTooth.class, "flash", Patch1.class, false, true);
         }
 
         public static void after() {
@@ -75,6 +80,50 @@ public final class BloodyToothInfo extends BaseRelicStats<BloodyToothInfo.Stats>
             }
 
             elites.set(act, elites.get(act) + 1);
+        }
+    }
+
+    @SpirePatch(
+            clz = BloodyTooth.class,
+            method = "onVictory"
+    )
+    @SuppressWarnings("unused")
+    public static class Patch2 {
+
+        private static int hp;
+
+        public static ExprEditor Instrument() {
+            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "heal", Patch2.class);
+        }
+
+        public static void before() {
+            hp = AbstractDungeon.player.currentHealth;
+        }
+
+        public static void after() {
+            getInstance().stats.hp += AbstractDungeon.player.currentHealth - hp;
+        }
+    }
+
+    @SpirePatch(
+            clz = BloodyTooth.class,
+            method = "onVictory"
+    )
+    @SuppressWarnings("unused")
+    public static class Patch3 {
+
+        private static int gold;
+
+        public static ExprEditor Instrument() {
+            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "gainGold", Patch3.class);
+        }
+
+        public static void before() {
+            gold = AbstractDungeon.player.gold;
+        }
+
+        public static void after() {
+            getInstance().stats.gold += AbstractDungeon.player.gold - gold;
         }
     }
 }
