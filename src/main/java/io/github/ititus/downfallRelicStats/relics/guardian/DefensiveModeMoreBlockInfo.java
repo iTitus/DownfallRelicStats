@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.guardian;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import guardian.actions.BraceAction;

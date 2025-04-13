@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.champ;
 
 import champ.relics.Barbells;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;

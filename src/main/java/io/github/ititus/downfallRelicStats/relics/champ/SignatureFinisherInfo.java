@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.champ;
 
 import champ.relics.SignatureFinisher;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

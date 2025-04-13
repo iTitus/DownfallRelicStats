@@ -1,6 +1,6 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.champ;
 
-import champ.relics.ChampionCrown;
+import champ.relics.ChampStancesModRelic;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
@@ -9,15 +9,15 @@ import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;
 
-public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.Stats> {
+public final class ChampStancesModRelicInfo extends BaseRelicStats<ChampStancesModRelicInfo.Stats> {
 
-    private static final ChampionCrownInfo INSTANCE = new ChampionCrownInfo();
+    private static final ChampStancesModRelicInfo INSTANCE = new ChampStancesModRelicInfo();
 
-    private ChampionCrownInfo() {
-        super(ChampionCrown.ID, Stats.class);
+    private ChampStancesModRelicInfo() {
+        super(ChampStancesModRelic.ID, Stats.class);
     }
 
-    public static ChampionCrownInfo getInstance() {
+    public static ChampStancesModRelicInfo getInstance() {
         return INSTANCE;
     }
 
@@ -41,15 +41,15 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
         }
     }
 
-    /*TODO: @SpirePatch(
-            clz = ChampionCrown.class,
+    @SpirePatch(
+            clz = ChampStancesModRelic.class,
             method = "atBattleStart"
-    )*/
+    )
     @SuppressWarnings("unused")
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMultiMethodCallEditor(ChampionCrown.class, "addToBot", Patch.class, false, true);
+            return new BeforeAfterMultiMethodCallEditor(ChampStancesModRelic.class, "addToBot", Patch.class, false, true);
         }
 
         public static void after(int index) {

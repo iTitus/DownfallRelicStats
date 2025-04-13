@@ -1,31 +1,32 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.champ;
 
-import champ.relics.DuelingGlove;
+import champ.ChampMod;
+import champ.powers.CounterPower;
+import champ.relics.DeflectingBracers;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
-public final class DuelingGloveInfo extends BaseCombatRelicStats {
+public final class DeflectingBracersInfo extends BaseCombatRelicStats {
 
-    private static final DuelingGloveInfo INSTANCE = new DuelingGloveInfo();
+    private static final DeflectingBracersInfo INSTANCE = new DeflectingBracersInfo();
 
-    private DuelingGloveInfo() {
-        super(DuelingGlove.ID);
+    private DeflectingBracersInfo() {
+        super(DeflectingBracers.ID);
     }
 
-    public static DuelingGloveInfo getInstance() {
+    public static DeflectingBracersInfo getInstance() {
         return INSTANCE;
     }
 
     @SpirePatch(
-            clz = DuelingGlove.class,
-            method = "onPlayCard"
+            clz = ChampMod.class,
+            method = "receiveOnPlayerLoseBlock"
     )
     @SuppressWarnings("unused")
     public static class Patch {
@@ -37,7 +38,7 @@ public final class DuelingGloveInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(VulnerablePower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, CounterPower.POWER_ID));
         }
 
         public static void after() {

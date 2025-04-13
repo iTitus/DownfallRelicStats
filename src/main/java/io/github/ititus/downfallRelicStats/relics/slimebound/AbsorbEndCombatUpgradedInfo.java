@@ -1,35 +1,36 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.slimebound;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import relicstats.actions.HealingFollowupAction;
 import relicstats.actions.PreHealingAction;
-import slimebound.relics.AbsorbEndCombat;
+import slimebound.relics.AbsorbEndCombatUpgraded;
 
-public final class AbsorbEndCombatInfo extends BaseCombatRelicStats {
+public final class AbsorbEndCombatUpgradedInfo extends BaseCombatRelicStats {
 
-    private static final AbsorbEndCombatInfo INSTANCE = new AbsorbEndCombatInfo();
+    private static final AbsorbEndCombatUpgradedInfo INSTANCE = new AbsorbEndCombatUpgradedInfo();
 
-    private AbsorbEndCombatInfo() {
-        super(AbsorbEndCombat.ID);
+    private AbsorbEndCombatUpgradedInfo() {
+        super(AbsorbEndCombatUpgraded.ID);
     }
 
-    public static AbsorbEndCombatInfo getInstance() {
+    public static AbsorbEndCombatUpgradedInfo getInstance() {
         return INSTANCE;
     }
 
     @SpirePatch(
-            clz = AbsorbEndCombat.class,
+            clz = AbsorbEndCombatUpgraded.class,
             method = "onTrigger"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, AbsorbEndCombat.class, "addToBot", Patch.class);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
         }
 
         public static void before() {
