@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import io.github.ititus.downfallRelicStats.relics.*;
+import io.github.ititus.downfallRelicStats.relics.automaton.*;
 import io.github.ititus.downfallRelicStats.relics.champ.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
 import io.github.ititus.downfallRelicStats.relics.guardian.*;
@@ -73,19 +74,13 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // unlockAll();
 
         register(BlackPowderInfo.getInstance()); // Black Powder
-        register(BottledCodeInfo.getInstance()); // Bottled Code
         register(BrassTacksInfo.getInstance()); // Brass Tacks
         register(BloodyToothInfo.getInstance()); // Broken Tooth
-        register(BronzeCoreInfo.getInstance()); // Bronze Core
-        register(BronzeIdolInfo.getInstance()); // Bronze Idol
-        register(CableSpoolInfo.getInstance()); // Cable Spool
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
-        register(DecasWashersInfo.getInstance()); // Deca's Washers
         register(DentedPlateInfo.getInstance()); // Dented Plate
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
-        register(TimepieceInfo.getInstance()); // Frost Primer
         register(GremlinBombInfo.getInstance()); // Gremlin Bomb
         register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
         register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
@@ -97,9 +92,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
         register(D8Info.getInstance()); // Mystical Octahedron
         register(PetGhostInfo.getInstance()); // Pet Ghost
-        register(PlatinumCoreInfo.getInstance()); // Platinum Core
         register(PricklyShieldsInfo.getInstance()); // Prickly Shields
-        register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
@@ -122,9 +115,12 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BabySneckoInfo.getInstance()); // Young Snecko
 
         // Downfall
+        // TODO: Black Candle
+        // TODO: Burden of Knowledge
         // Broken Wing Statue doesn't do anything - nothing to track
         // Coat Of Many Faces / Cloak of Many Faces gives all masks all the time - nothing to track
         // Extra Cursed Bell - same as Calling Bell, not tracked
+        // TODO: Extra Cursed Key
         register(GremlinSackInfo.getInstance()); // Gremlin Sack
         register(GremlinWheelInfo.getInstance()); // Wheel of Change
         register(HeartBlessingBlueInfo.getInstance());
@@ -142,6 +138,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // Expansion
         // Tiny Bowler Hat (StudyCardRelic) - not tracked, always does the same
+
+        // Automaton / Bronze
+        // Analytical Core (Paradox Artifact) not tracked, does the same every turn
+        register(BottledCodeInfo.getInstance()); // Bottled Code
+        register(BronzeCoreInfo.getInstance()); // Bronze Core
+        register(BronzeIdolInfo.getInstance()); // Bronze Idol
+        register(CableSpoolInfo.getInstance()); // Cable Spool
+        register(DecasWashersInfo.getInstance()); // Deca's Washers
+        // Donu's Washers not tracked, does the same every combat
+        // Electromagnetic Coil not tracked, static effect
+        // Makeshift Battery not tracked, does the same every turn
+        // Mallet not tracked, does the same every combat
+        register(PlatinumCoreInfo.getInstance()); // Platinum Core
+        register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
+        // Silver Bullet not tracked, does the same every combat
+        register(TimepieceInfo.getInstance()); // Frost Primer
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
@@ -163,7 +175,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
-        register(BagOfTricksInfo.getInstance()); // Bag of Tricks
+        register(BagOfTricksInfo.getInstance()); // Bag of Tricks // TODO: check possible draw bug with Holiday Coal
         register(BagpipesInfo.getInstance()); // The Bagpipes
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain

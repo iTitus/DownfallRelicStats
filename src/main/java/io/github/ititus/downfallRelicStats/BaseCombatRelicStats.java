@@ -35,6 +35,10 @@ public abstract class BaseCombatRelicStats extends BaseRelicStats<BaseCombatReli
         return getStatsDescription() + stats.getExtendedDescription(getDescription(), getExtendedDescription(), showPerTurn ? Math.max(1, totalTurns) : 0, showPerCombat ? Math.max(1, totalCombats) : 0);
     }
 
+    public void trigger() {
+        this.increaseAmount(1);
+    }
+
     @Override
     public void increaseAmount(int by) {
         stats.increaseAmount(by);

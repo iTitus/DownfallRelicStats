@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.automaton;
 
 import automaton.relics.Timepiece;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

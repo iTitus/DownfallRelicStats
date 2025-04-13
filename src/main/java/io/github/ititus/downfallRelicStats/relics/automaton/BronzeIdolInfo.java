@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.automaton;
 
 import automaton.AutomatonMod;
 import automaton.patches.StatusReplacePatch;
@@ -30,10 +30,6 @@ public final class BronzeIdolInfo extends BaseCombatRelicStats implements PostDr
         if (abstractCard.type == AbstractCard.CardType.STATUS && AbstractDungeon.player.hasRelic(BronzeIdol.ID) && !abstractCard.hasTag(AutomatonMod.GOOD_STATUS)) {
             trigger();
         }
-    }
-
-    private void trigger() {
-        increaseAmount(1);
     }
 
     @SpirePatch(
