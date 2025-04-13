@@ -26,7 +26,7 @@ public final class SixitudeInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, Sixitude.class, "flash", Patch.class, false, true);
+            return new BeforeAfterMethodCallEditor(Sixitude.class, "flash", Patch.class, false, true);
         }
 
         public static void after() {

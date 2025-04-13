@@ -21,6 +21,7 @@ public final class ModeShifterInfo extends BaseCardRelicStats {
         return INSTANCE;
     }
 
+    // TODO: this might break if GuardianMod starts to use auto card registering
     @SpirePatch(
             clz = GuardianMod.class,
             method = "receivePostCreateStartingDeck"
