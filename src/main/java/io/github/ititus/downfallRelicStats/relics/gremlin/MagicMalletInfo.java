@@ -1,34 +1,29 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import gremlin.relics.WizardHat;
+import gremlin.powers.WizPower;
+import gremlin.relics.MagicalMallet;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
-public final class WizardHatInfo extends BaseCombatRelicStats {
+public final class MagicMalletInfo extends BaseCombatRelicStats {
 
-    private static final WizardHatInfo INSTANCE = new WizardHatInfo();
+    private static final MagicMalletInfo INSTANCE = new MagicMalletInfo();
 
-    private WizardHatInfo() {
-        super(WizardHat.ID);
+    private MagicMalletInfo() {
+        super(MagicalMallet.ID);
     }
 
-    public static WizardHatInfo getInstance() {
+    public static MagicMalletInfo getInstance() {
         return INSTANCE;
     }
 
-    @Override
-    protected int trackPowerAmount(String powerId, int amount) {
-        return 1;
-    }
-
     @SpirePatch(
-            clz = WizardHat.class,
+            clz = MagicalMallet.class,
             method = "onTrigger"
     )
     @SuppressWarnings("unused")
@@ -37,11 +32,11 @@ public final class WizardHatInfo extends BaseCombatRelicStats {
         private static PreAoePowerAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(WizardHat.class, "addToBot", Patch.class);
+            return new BeforeAfterMethodCallEditor(MagicalMallet.class, "addToBot", Patch.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, p -> p.type == AbstractPower.PowerType.DEBUFF));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, WizPower.POWER_ID));
         }
 
         public static void after() {

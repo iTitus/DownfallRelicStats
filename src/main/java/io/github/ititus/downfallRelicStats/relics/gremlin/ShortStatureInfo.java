@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,11 +35,6 @@ public final class ShortStatureInfo extends BaseRelicStats<ShortStatureInfo.Stat
             return description[0] + timesTriggered +
                     description[1] + healed +
                     description[2] + df.format((double) healed / Math.max(1, timesTriggered));
-        }
-
-        @Override
-        public String getExtendedDescription(String[] description, String[] extendedDescription, int totalTurns, int totalCombats) {
-            return BaseCombatRelicStats.generateExtendedDescription(extendedDescription, 1, healed, 0, totalCombats);
         }
     }
 

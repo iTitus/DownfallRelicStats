@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,7 +26,7 @@ public final class LeaderVoucherInfo extends BaseRelicStats<LeaderVoucherInfo.St
 
         @Override
         public String getDescription(String[] description) {
-            return description[0] + (gremlinLostIndex < 0 ? description[1] : description[gremlinLostIndex + 1]);
+            return description[0] + (gremlinLostIndex <= 0 ? description[1] : description[gremlinLostIndex + 1]);
         }
     }
 

@@ -1,30 +1,30 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import gremlin.relics.PricklyShields;
+import gremlin.relics.WoundPoker;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import relicstats.actions.AoeDamageFollowupAction;
 import relicstats.actions.PreAoeDamageAction;
 
-public final class PricklyShieldsInfo extends BaseCombatRelicStats {
+public final class WoundPokerInfo extends BaseCombatRelicStats {
 
-    private static final PricklyShieldsInfo INSTANCE = new PricklyShieldsInfo();
+    private static final WoundPokerInfo INSTANCE = new WoundPokerInfo();
 
-    private PricklyShieldsInfo() {
-        super(PricklyShields.ID);
+    private WoundPokerInfo() {
+        super(WoundPoker.ID);
     }
 
-    public static PricklyShieldsInfo getInstance() {
+    public static WoundPokerInfo getInstance() {
         return INSTANCE;
     }
 
     @SpirePatch(
-            clz = PricklyShields.class,
-            method = "onPlayerGainedBlock"
+            clz = WoundPoker.class,
+            method = "onPlayerEndTurn"
     )
     @SuppressWarnings("unused")
     public static class Patch {
@@ -32,7 +32,7 @@ public final class PricklyShieldsInfo extends BaseCombatRelicStats {
         private static PreAoeDamageAction preAction;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, GameActionManager.class, "addToBottom", Patch.class);
+            return new BeforeAfterMethodCallEditor(GameActionManager.class, "addToBottom", Patch.class);
         }
 
         public static void before() {

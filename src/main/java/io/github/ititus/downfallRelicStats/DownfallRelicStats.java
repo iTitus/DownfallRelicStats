@@ -18,6 +18,7 @@ import io.github.ititus.downfallRelicStats.relics.*;
 import io.github.ititus.downfallRelicStats.relics.automaton.*;
 import io.github.ititus.downfallRelicStats.relics.champ.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
+import io.github.ititus.downfallRelicStats.relics.gremlin.*;
 import io.github.ititus.downfallRelicStats.relics.guardian.*;
 import io.github.ititus.downfallRelicStats.relics.hexaghost.*;
 import io.github.ititus.downfallRelicStats.relics.shared.*;
@@ -79,39 +80,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
         register(DentedPlateInfo.getInstance()); // Dented Plate
-        register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
-        register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
-        register(GremlinBombInfo.getInstance()); // Gremlin Bomb
-        register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
-        register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
         register(HorseshoeInfo.getInstance()); // Horseshoe
-        register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
         register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
-        register(MagicMalletInfo.getInstance()); // Magic Mallet
-        register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
-        register(GremlinKnobInfo.getInstance()); // Mob Leader's Staff
         register(D8Info.getInstance()); // Mystical Octahedron
         register(PetGhostInfo.getInstance()); // Pet Ghost
-        register(PricklyShieldsInfo.getInstance()); // Prickly Shields
         register(RedScarfInfo.getInstance()); // Red Scarf
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(RyeStalkInfo.getInstance()); // Rye Stalk
         register(SneckoCommonInfo.getInstance()); // Seal of Approval
-        register(ShortStatureInfo.getInstance()); // Short Stature
         register(BartenderGlassInfo.getInstance()); // Shotglass
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
-        register(SneckoSoulInfo.getInstance()); // Snecko Soul
+        // Snecko Soul not tracked, does the same every combat
         register(SpyglassInfo.getInstance()); // Spyglass
-        register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
         register(StraightRazorInfo.getInstance()); // Straight Razor
         // Super Snecko Eye not tracked, does the same every turn
         register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
-        register(SupplyScrollInfo.getInstance()); // Supply Scroll
-        register(TagTeamworkInfo.getInstance()); // Tag Teamwork
         register(UnknownEggInfo.getInstance()); // Unidentified Egg
-        register(WizardHatInfo.getInstance()); // Wizard Hat
-        register(WizardStaffInfo.getInstance()); // Wizard Staff
-        register(WoundPokerInfo.getInstance()); // Wound Poker
         register(BabySneckoInfo.getInstance()); // Young Snecko
 
         // Downfall
@@ -120,7 +104,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Broken Wing Statue doesn't do anything - nothing to track
         // Coat Of Many Faces / Cloak of Many Faces gives all masks all the time - nothing to track
         // Extra Cursed Bell - same as Calling Bell, not tracked
-        // TODO: Extra Cursed Key
+        register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(GremlinSackInfo.getInstance()); // Gremlin Sack
         register(GremlinWheelInfo.getInstance()); // Wheel of Change
         register(HeartBlessingBlueInfo.getInstance());
@@ -190,6 +174,24 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
         // The Contract not tracked: one-time effect
         // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
+
+        // Gremlins
+        register(FragmentationGrenadeInfo.getInstance()); // Fragmentation Grenade
+        register(GremlinBombInfo.getInstance()); // Gremlin Bomb
+        register(GremlinGravestoneInfo.getInstance()); // Gremlin Gravestone
+        // Gremlin Knob (Mob Leader's Staff) not tracked, does the same every combat
+        register(GremlinKnobUpgradeInfo.getInstance()); // Mob Leader's Crown
+        register(ImpeccablePecsInfo.getInstance()); // Impeccable Pecs
+        register(LeaderVoucherInfo.getInstance()); // Gremlin Leader's Voucher
+        register(MagicMalletInfo.getInstance()); // Magic Mallet
+        register(PricklyShieldsInfo.getInstance()); // Prickly Shields
+        register(ShortStatureInfo.getInstance()); // Short Stature
+        register(StolenMerchandiseInfo.getInstance()); // Stolen Merchandise
+        register(SupplyScrollInfo.getInstance()); // Supply Scroll
+        register(TagTeamworkInfo.getInstance()); // Tag Teamwork
+        register(WizardHatInfo.getInstance()); // Wizard Hat
+        register(WizardStaffInfo.getInstance()); // Wizard Staff
+        register(WoundPokerInfo.getInstance()); // Wound Poker
 
         // Guardian
         register(BottledAnomalyInfo.getInstance()); // Bottled Anomaly

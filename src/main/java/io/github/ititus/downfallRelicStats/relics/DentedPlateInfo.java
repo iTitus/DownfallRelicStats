@@ -7,33 +7,22 @@ import hermit.relics.DentedPlate;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.stats.EnergyCardsStats;
 import javassist.expr.ExprEditor;
 import relicstats.AmountAdjustmentCallback;
 import relicstats.actions.CardDrawFollowupAction;
 import relicstats.actions.PreCardDrawAction;
 
-public final class DentedPlateInfo extends BaseRelicStats<GremlinKnobUpgradeInfo.Stats> implements AmountAdjustmentCallback {
+public final class DentedPlateInfo extends BaseRelicStats<EnergyCardsStats> {
 
     private static final DentedPlateInfo INSTANCE = new DentedPlateInfo();
 
-    private int startingAmount;
-
     private DentedPlateInfo() {
-        super(DentedPlate.ID, GremlinKnobUpgradeInfo.Stats.class);
+        super(DentedPlate.ID, EnergyCardsStats.class);
     }
 
     public static DentedPlateInfo getInstance() {
         return INSTANCE;
-    }
-
-    @Override
-    public void registerStartingAmount(int startingAmount) {
-        this.startingAmount = startingAmount;
-    }
-
-    @Override
-    public void registerEndingAmount(int endingAmount) {
-        stats.cards += endingAmount - startingAmount;
     }
 
     @SpirePatch(
@@ -59,16 +48,18 @@ public final class DentedPlateInfo extends BaseRelicStats<GremlinKnobUpgradeInfo
     @SuppressWarnings("unused")
     public static class Patch2 {
 
+        private static AmountAdjustmentCallback cardsAdjuster;
+
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(1, DentedPlate.class, "addToBot", Patch2.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
+            AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(cardsAdjuster = getInstance().stats.new CardsAdjuster()));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
+            AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(cardsAdjuster));
         }
     }
 }

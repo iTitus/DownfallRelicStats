@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -7,33 +7,22 @@ import gremlin.relics.SupplyScroll;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.stats.EnergyCardsStats;
 import javassist.expr.ExprEditor;
 import relicstats.AmountAdjustmentCallback;
 import relicstats.actions.CardDrawFollowupAction;
 import relicstats.actions.PreCardDrawAction;
 
-public final class SupplyScrollInfo extends BaseRelicStats<GremlinKnobInfo.Stats> implements AmountAdjustmentCallback {
+public final class SupplyScrollInfo extends BaseRelicStats<EnergyCardsStats> {
 
     private static final SupplyScrollInfo INSTANCE = new SupplyScrollInfo();
 
-    private int startingAmount;
-
     private SupplyScrollInfo() {
-        super(SupplyScroll.ID, GremlinKnobInfo.Stats.class);
+        super(SupplyScroll.ID, EnergyCardsStats.class);
     }
 
     public static SupplyScrollInfo getInstance() {
         return INSTANCE;
-    }
-
-    @Override
-    public void registerStartingAmount(int startingAmount) {
-        this.startingAmount = startingAmount;
-    }
-
-    @Override
-    public void registerEndingAmount(int endingAmount) {
-        stats.cards += endingAmount - startingAmount;
     }
 
     @SpirePatch(
@@ -59,16 +48,18 @@ public final class SupplyScrollInfo extends BaseRelicStats<GremlinKnobInfo.Stats
     @SuppressWarnings("unused")
     public static class Patch2 {
 
+        private static AmountAdjustmentCallback cardsAdjuster;
+
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(2, SupplyScroll.class, "addToBot", Patch2.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
+            AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(cardsAdjuster = getInstance().stats.new CardsAdjuster()));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
+            AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(cardsAdjuster));
         }
     }
 }

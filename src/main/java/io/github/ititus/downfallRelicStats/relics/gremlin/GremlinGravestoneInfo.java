@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -60,7 +60,6 @@ public final class GremlinGravestoneInfo extends BaseRelicStats<GremlinGraveston
     @SuppressWarnings("unused")
     public static class Patch2 {
 
-        // TODO: make sure ResurrectOption#new is only used when the player is entering a rest site
         public static void Postfix() {
             if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(GremlinGravestone.ID)) {
                 getInstance().stats.restSites++;

@@ -7,7 +7,6 @@ import io.github.ititus.downfallRelicStats.StatContainer;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 import sneckomod.relics.UnknownEgg;
-import sneckomod.ui.LockInCampfireOption;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -37,10 +36,10 @@ public final class UnknownEggInfo extends BaseRelicStats<UnknownEggInfo.Stats> {
         }
     }
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = LockInCampfireOption.class,
             method = "useOption"
-    )
+    )*/
     @SuppressWarnings("unused")
     public static class Patch1 {
 
@@ -55,10 +54,10 @@ public final class UnknownEggInfo extends BaseRelicStats<UnknownEggInfo.Stats> {
         }
     }
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = LockInCampfireOption.class,
             method = SpirePatch.CONSTRUCTOR
-    )
+    )*/
     @SuppressWarnings("unused")
     public static class Patch2 {
 

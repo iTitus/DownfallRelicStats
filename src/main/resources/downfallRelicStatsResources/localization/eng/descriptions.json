@@ -120,7 +120,7 @@
   },
   "STATS:collector:Bagpipes": {
     "TEXT": [
-      "Weak/Vulnerable added: "
+      "Weak/Vulnerable applied: "
     ]
   },
   "STATS:collector:BlockedChakra": {
@@ -243,14 +243,6 @@
       " NL Per Rest Site: "
     ]
   },
-  "STATS:Gremlin:GremlinKnob": {
-    "TEXT": [
-      "Energy gained: ",
-      " NL Cards drawn: ",
-      " NL Energy gained per turn: ",
-      " NL Cards drawn per turn: "
-    ]
-  },
   "STATS:Gremlin:GremlinKnobUpgrade": {
     "TEXT": [
       "Energy gained: ",
@@ -304,7 +296,9 @@
       "Energy gained: ",
       " NL Cards drawn: ",
       " NL Energy gained per turn: ",
-      " NL Cards drawn per turn: "
+      " NL Energy gained per combat: ",
+      " NL Cards drawn per turn: ",
+      " NL Cards drawn per combat: "
     ]
   },
   "STATS:Gremlin:TagTeamwork": {
@@ -319,7 +313,7 @@
   },
   "STATS:Gremlin:WizardStaff": {
     "TEXT": [
-      "Additional Wiz damage: "
+      "Additional Bang gained: "
     ]
   },
   "STATS:Gremlin:WoundPoker": {
@@ -613,24 +607,6 @@
     "TEXT": [
       "Chosen character: ",
       "None"
-    ]
-  },
-  "STATS:sneckomod:SneckoSoul": {
-    "TEXT": [
-      "Energy gained: ",
-      " NL Cards drawn: ",
-      " NL Energy gained per turn: ",
-      " NL Energy gained per combat: ",
-      " NL Cards drawn per turn: ",
-      " NL Cards drawn per combat: "
-    ]
-  },
-  "STATS:sneckomod:SuperSneckoEye": {
-    "TEXT": [
-      "Card cost counts:",
-      " NL %d energy: ",
-      " NL Average discount: ",
-      " NL Times triggered: "
     ]
   },
   "STATS:sneckomod:SuperSneckoSoul": {

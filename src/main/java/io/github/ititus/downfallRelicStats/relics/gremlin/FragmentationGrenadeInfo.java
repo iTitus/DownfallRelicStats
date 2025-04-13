@@ -1,6 +1,7 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatches;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import gremlin.actions.PseudoDamageRandomEnemyAction;
 import gremlin.patches.RandomDamagePatch;
@@ -8,6 +9,8 @@ import gremlin.relics.FragmentationGrenade;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
+import theHexaghost.cards.EtherStep;
+import theHexaghost.cards.GhostLash;
 
 public final class FragmentationGrenadeInfo extends BaseCombatRelicStats {
 
@@ -21,35 +24,33 @@ public final class FragmentationGrenadeInfo extends BaseCombatRelicStats {
         return INSTANCE;
     }
 
-    @SpirePatch(
-            clz = RandomDamagePatch.class,
-            method = "Postfix"
-    )
+    @SpirePatches({
+            @SpirePatch(
+                    clz = RandomDamagePatch.class,
+                    method = "Postfix"
+            ),
+            @SpirePatch(
+                    clz = PseudoDamageRandomEnemyAction.class,
+                    method = "update"
+            ),
+            @SpirePatch(
+                    clz = EtherStep.class,
+                    method = "afterlife"
+            ),
+            @SpirePatch(
+                    clz = GhostLash.class,
+                    method = "afterlife"
+            )
+    })
     @SuppressWarnings("unused")
-    public static class Patch1 {
+    public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(AbstractRelic.class, "flash", Patch1.class, false, true);
+            return new BeforeAfterMethodCallEditor(AbstractRelic.class, "flash", Patch.class, false, true);
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
-        }
-    }
-
-    @SpirePatch(
-            clz = PseudoDamageRandomEnemyAction.class,
-            method = "update"
-    )
-    @SuppressWarnings("unused")
-    public static class Patch2 {
-
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(AbstractRelic.class, "flash", Patch2.class, false, true);
-        }
-
-        public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }
