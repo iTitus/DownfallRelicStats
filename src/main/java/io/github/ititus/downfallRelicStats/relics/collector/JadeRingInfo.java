@@ -1,13 +1,10 @@
 package io.github.ititus.downfallRelicStats.relics.collector;
 
+import collector.powers.DoomPower;
 import collector.relics.JadeRing;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
-import javassist.CannotCompileException;
-import javassist.expr.ExprEditor;
-import javassist.expr.MethodCall;
 
 public final class JadeRingInfo extends BaseCombatRelicStats {
 
@@ -22,30 +19,17 @@ public final class JadeRingInfo extends BaseCombatRelicStats {
     }
 
     @SpirePatch(
-            clz = JadeRing.class,
-            method = "onMonsterDeath"
+            clz = DoomPower.class,
+            method = "explode"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static ExprEditor Instrument() {
-            return new SafeExprEditor() {
-
-                @Override
-                public void edit(MethodCall m) throws CannotCompileException {
-                    if (m.getClassName().equals(AbstractPlayer.class.getName()) && m.getMethodName().equals("gainGold")) {
-                        m.replace("{" + Patch.class.getName() + ".before($0);$_=$proceed($$);" + Patch.class.getName() + ".after($0);}");
-                    }
-                }
-            };
-        }
-
-        public static void before(AbstractPlayer __instance) {
-            getInstance().registerStartingAmount(__instance.gold);
-        }
-
-        public static void after(AbstractPlayer __instance) {
-            getInstance().registerEndingAmount(__instance.gold);
+        public static void Postfix(DoomPower __instance) {
+            if (AbstractDungeon.player.hasRelic(JadeRing.ID)) {
+                // TODO: track exact amount, but that might be hard to do
+                getInstance().trigger();
+            }
         }
     }
 }

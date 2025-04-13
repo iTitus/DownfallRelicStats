@@ -120,7 +120,7 @@
   },
   "STATS:collector:Bagpipes": {
     "TEXT": [
-      "Weak/Vulnerable applied: "
+      "Additional Weak/Vulnerable applied: "
     ]
   },
   "STATS:collector:BlockedChakra": {
@@ -132,11 +132,6 @@
     "TEXT": [
       "Card bottled: ",
       "None"
-    ]
-  },
-  "STATS:collector:EmeraldTorch": {
-    "TEXT": [
-      "Reserve gained: "
     ]
   },
   "STATS:collector:ForbiddenFruit": {
@@ -162,7 +157,7 @@
   },
   "STATS:collector:JadeRing": {
     "TEXT": [
-      "Souls gained: "
+      "Times triggered: "
     ]
   },
   "STATS:collector:PrismaticTorch": {
@@ -173,11 +168,6 @@
   "STATS:collector:RoughDiamond": {
     "TEXT": [
       "Energy gained: "
-    ]
-  },
-  "STATS:collector:SoullitLamp": {
-    "TEXT": [
-      "Embers created: "
     ]
   },
   "STATS:downfall:ExtraCursedKey": {

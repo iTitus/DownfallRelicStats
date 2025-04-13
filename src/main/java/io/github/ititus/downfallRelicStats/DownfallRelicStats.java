@@ -140,7 +140,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BagpipesInfo.getInstance()); // The Bagpipes
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
-        register(EmeraldTorchInfo.getInstance()); // Emerald Torch
+        // Emerald Torch not tracked, does the same every combat
         register(ForbiddenFruitInfo.getInstance()); // Forbidden Fruit
         register(FuelCanisterInfo.getInstance()); // Fuel Canister
         register(HolidayCoalInfo.getInstance()); // Krampian Coal
@@ -148,7 +148,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(JadeRingInfo.getInstance()); // Jade Ring
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
         register(RoughDiamondInfo.getInstance()); // Rough Diamond
-        register(SoullitLampInfo.getInstance()); // Soul-lit Lamp
+        // Soullit Lamp (Soul-lit Lamp) not tracked, does the same every combat
         // The Contract not tracked: one-time effect
         // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
 
@@ -194,7 +194,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CharredGloveInfo.getInstance()); // Charred Glove
         register(ClaspedLocketInfo.getInstance()); // Clasped Locket
         register(DentedPlateInfo.getInstance()); // Dented Plate
-        register(HorseshoeInfo.getInstance()); // Horseshoe // TODO: verify patch
+        register(HorseshoeInfo.getInstance()); // Horseshoe
         // Memento (Old Locket) not tracked, does the same every combat
         register(PetGhostInfo.getInstance()); // Pet Ghost
         register(RedScarfInfo.getInstance()); // Red Scarf

@@ -14,7 +14,6 @@ public final class BlockedChakraInfo extends BaseCombatRelicStats {
 
     private BlockedChakraInfo() {
         super(BlockedChakra.ID);
-        this.showPerTurn = false;
     }
 
     public static BlockedChakraInfo getInstance() {
