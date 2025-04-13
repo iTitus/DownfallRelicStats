@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import io.github.ititus.downfallRelicStats.relics.*;
 import io.github.ititus.downfallRelicStats.relics.automaton.*;
 import io.github.ititus.downfallRelicStats.relics.champ.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
@@ -24,6 +23,7 @@ import io.github.ititus.downfallRelicStats.relics.hermit.*;
 import io.github.ititus.downfallRelicStats.relics.hexaghost.*;
 import io.github.ititus.downfallRelicStats.relics.shared.*;
 import io.github.ititus.downfallRelicStats.relics.slimebound.*;
+import io.github.ititus.downfallRelicStats.relics.snecko.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
@@ -74,17 +74,6 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         LOGGER.info("POST INIT");
 
         // unlockAll();
-
-        register(SneckoBossInfo.getInstance()); // Lucky Horseshoe
-        register(D8Info.getInstance()); // Mystical Octahedron
-        register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
-        register(SneckoCommonInfo.getInstance()); // Seal of Approval
-        register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
-        // Snecko Soul not tracked, does the same every combat
-        // Super Snecko Eye not tracked, does the same every turn
-        register(SuperSneckoSoulInfo.getInstance()); // Super Snecko Soul
-        register(UnknownEggInfo.getInstance()); // Unidentified Egg
-        register(BabySneckoInfo.getInstance()); // Young Snecko
 
         // Downfall
         // TODO: Black Candle
@@ -245,7 +234,22 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Tar Blob (Tarr Blob) not tracked, does the same every combat
 
         // Snecko
-        // Blank Card not tracked, too difficult
+        register(BabySneckoInfo.getInstance()); // Young Snecko
+        // Blank Card not tracked, does the same every combat
+        register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
+        register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
+        register(CrystallizedMudInfo.getInstance()); // Snake-Charmer's Flute
+        register(D8Info.getInstance()); // Mystical Octahedron // TODO: track block gained/times the selected card was played
+        register(LoadedDieInfo.getInstance()); // Loaded Die
+        // TODO: Rare Booster Pack (Rare Booster Box) - verify whether chosen card(s) show in run history
+        // Sleeved Ace not tracked, does the same every combat
+        register(SneckoBossInfo.getInstance()); // Lucky Horseshoe // TODO: verify if this is needed, maybe track additional rewards instead
+        // TODO: Snecko Common (Seal of Approval) - verify whether chosen card(s) show in run history
+        // Snecko Soul not tracked, does the same every combat
+        // Snecko Talon (Idol of Retromation) not tracked, does the same every turn
+        // Super Snecko Eye not tracked, does the same every turn
+        // Super Snecko Soul not tracked, does the same every other turn
+        // Unknown Egg (Unidentified Egg) not tracke, too difficult
     }
 
     private static void unlockAll() {

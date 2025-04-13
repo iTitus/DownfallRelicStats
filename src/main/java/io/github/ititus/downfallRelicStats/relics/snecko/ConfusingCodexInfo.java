@@ -1,4 +1,4 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.snecko;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,7 +47,7 @@ public final class ConfusingCodexInfo extends BaseRelicStats<ConfusingCodexInfo.
 
     @SpirePatch(
             clz = ConfusingCodex.class,
-            method = "atBattleStart"
+            method = "onUseCard"
     )
     @SuppressWarnings("unused")
     public static class Patch {

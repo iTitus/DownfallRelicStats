@@ -1,20 +1,19 @@
-package io.github.ititus.downfallRelicStats.relics;
+package io.github.ititus.downfallRelicStats.relics.snecko;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
+import io.github.ititus.downfallRelicStats.stats.CardColorStats;
 import javassist.expr.ExprEditor;
 import sneckomod.relics.SneckoBoss;
-import sneckomod.relics.SneckoCommon;
 
-public final class SneckoBossInfo extends BaseRelicStats<SneckoCommonInfo.Stats> {
+public final class SneckoBossInfo extends BaseRelicStats<CardColorStats> {
 
     private static final SneckoBossInfo INSTANCE = new SneckoBossInfo();
 
     private SneckoBossInfo() {
-        super(SneckoBoss.ID, SneckoCommonInfo.Stats.class);
+        super(SneckoBoss.ID, CardColorStats.class);
     }
 
     public static SneckoBossInfo getInstance() {
@@ -23,27 +22,13 @@ public final class SneckoBossInfo extends BaseRelicStats<SneckoCommonInfo.Stats>
 
     @SpirePatch(
             clz = SneckoBoss.class,
-            method = "onEquip"
-    )
-    @SuppressWarnings("unused")
-    public static class Patch1 {
-
-        public static void Postfix() {
-            if (SneckoBoss.myColor != null && AbstractDungeon.player.hasRelic(SneckoCommon.ID)) {
-                getInstance().stats.setColor(SneckoBoss.myColor);
-            }
-        }
-    }
-
-    @SpirePatch(
-            clz = SneckoBoss.class,
             method = "update"
     )
     @SuppressWarnings("unused")
-    public static class Patch2 {
+    public static class Patch {
 
         public static ExprEditor Instrument() {
-            return new FieldAccessHookEditor(SneckoBoss.class, "myColor", Patch2.class);
+            return new FieldAccessHookEditor(SneckoBoss.class, "myColor", Patch.class);
         }
 
         public static AbstractCard.CardColor hook(AbstractCard.CardColor color) {

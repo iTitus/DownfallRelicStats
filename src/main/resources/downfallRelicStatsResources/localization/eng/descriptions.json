@@ -581,7 +581,7 @@
   },
   "STATS:sneckomod:CleanMud": {
     "TEXT": [
-      "Times possible 3-cost muddles prevented: "
+      "Times muddled: "
     ]
   },
   "STATS:sneckomod:ConfusingCodex": {
@@ -594,33 +594,26 @@
       " NL Artifact removed per combat: "
     ]
   },
+  "STATS:sneckomod:CrystallizedMud": {
+    "TEXT": [
+      "Times muddled: "
+    ]
+  },
   "STATS:sneckomod:D8": {
     "TEXT": [
       "Card bottled: ",
       "None"
     ]
   },
+  "STATS:sneckomod:LoadedDie": {
+    "TEXT": [
+      "Block gained: "
+    ]
+  },
   "STATS:sneckomod:SneckoBoss": {
     "TEXT": [
       "Chosen character: ",
       "None"
-    ]
-  },
-  "STATS:sneckomod:SneckoCommon": {
-    "TEXT": [
-      "Chosen character: ",
-      "None"
-    ]
-  },
-  "STATS:sneckomod:SuperSneckoSoul": {
-    "TEXT": [
-      "Energy gained: "
-    ]
-  },
-  "STATS:sneckomod:UnknownEgg": {
-    "TEXT": [
-      "Times identified: ",
-      " NL Per Rest Site: "
     ]
   }
 }
