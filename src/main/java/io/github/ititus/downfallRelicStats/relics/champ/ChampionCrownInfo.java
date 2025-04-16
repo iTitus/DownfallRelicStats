@@ -1,10 +1,11 @@
 package io.github.ititus.downfallRelicStats.relics.champ;
 
+import champ.cards.StanceDanceCrown;
 import champ.relics.ChampionCrown;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
-import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
-import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;
 
@@ -40,24 +41,21 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
         }
     }
 
-    /*TODO: @SpirePatch(
-            clz = ChampionCrown.class,
-            method = "atBattleStart"
-    )*/
+    @SpirePatch(
+            clz = StanceDanceCrown.class,
+            method = "doChoiceStuff"
+    )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMultiMethodCallEditor(ChampionCrown.class, "addToBot", Patch.class, false, true);
-        }
-
-        public static void after(int index) {
-            if (index == 0) {
-                getInstance().stats.berserker++;
-            } else if (index == 1) {
-                getInstance().stats.defensive++;
-            } else {
-                throw new AssertionError();
+        public static void Postfix(AbstractCard __card) {
+            switch (__card.cardID) {
+                case "octo:OctoBerserk":
+                    getInstance().stats.berserker++;
+                    break;
+                case "octo:OctoDefense":
+                    getInstance().stats.defensive++;
+                    break;
             }
         }
     }
