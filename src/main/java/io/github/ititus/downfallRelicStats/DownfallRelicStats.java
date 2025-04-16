@@ -178,9 +178,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ModeShifterInfo.getInstance()); // Bronze Gear
         // TODO: ModeShifterPlus (Guardian Gear) -> Energy gained/Cards drawn
         // TODO: Obsidian Scales -> Thorns gained
-        register(PickAxeInfo.getInstance()); // Pick of Rhapsody // TODO: find way to track gem card reward
+        register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
-        register(SackOfGemsInfo.getInstance()); // Sack of Gems // TODO: find way to track gem card reward
+        register(SackOfGemsInfo.getInstance()); // Sack of Gems
         register(StasisCodexInfo.getInstance()); // Pilot's Codex
         register(StasisEggInfo.getInstance()); // Quantum Chamber
         // Stasis Slot Reduction (Wander Bots) not tracked: constant effect (energy relic)

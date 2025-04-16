@@ -1,11 +1,15 @@
 package io.github.ititus.downfallRelicStats.relics.guardian;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.screens.CardRewardScreen;
+import guardian.relics.PickAxe;
 import guardian.relics.SackOfGems;
+import guardian.rewards.GemReward;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
-import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
-import javassist.expr.ExprEditor;
+import io.github.ititus.downfallRelicStats.patches.track.SourceModifier;
+import relicstats.RelicObtainStats;
 
 public final class SackOfGemsInfo extends BaseMultiCardRelicStats {
 
@@ -19,19 +23,22 @@ public final class SackOfGemsInfo extends BaseMultiCardRelicStats {
         return INSTANCE;
     }
 
-    /*TODO: @SpirePatch(
-            clz = SackOfGems.class,
-            method = "onEquip"
-    )*/
+    @SpirePatch(
+            clz = CardRewardScreen.class,
+            method = "acquireCard"
+    )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static ExprEditor Instrument() {
-            return new ConstructorHookEditor(ShowCardAndObtainEffect.class, Patch.class, 1);
-        }
-
-        public static void hook(AbstractCard card) {
-            getInstance().stats.addCard(card);
+        public static void Postfix(CardRewardScreen __instance, AbstractCard card) {
+            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(SackOfGems.ID) && RelicObtainStats.hasRelic(SackOfGems.ID)) {
+                if (RelicObtainStats.getFloor(PickAxe.ID) == AbstractDungeon.floorNum) {
+                    SourceModifier mod = SourceModifier.get(card);
+                    if (mod != null && mod.getRewardItem() instanceof GemReward) {
+                        getInstance().stats.addCard(card);
+                    }
+                }
+            }
         }
     }
 }
