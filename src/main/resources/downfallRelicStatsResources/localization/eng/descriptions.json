@@ -87,6 +87,11 @@
       "Strength and Dexterity gained: "
     ]
   },
+  "STATS:champ:RageAmulet": {
+    "TEXT": [
+      "Strength gained: "
+    ]
+  },
   "STATS:champ:SignatureFinisher": {
     "TEXT": [
       "Card bottled: ",
@@ -338,6 +343,11 @@
     "TEXT": [
       "Gem obtained: ",
       "None"
+    ]
+  },
+  "STATS:Guardian:ObsidianScales": {
+    "TEXT": [
+      "Thorns gained: "
     ]
   },
   "STATS:Guardian:PickAxe": {
