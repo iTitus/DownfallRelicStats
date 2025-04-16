@@ -29,18 +29,19 @@ public final class ObsidianScalesInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch1 {
 
-        private static PreAoePowerAction prePowerAction;
+        private static PreAoePowerAction preAction;
 
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(ObsidianScales.class, "addToTop", Patch1.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToTop(new PostAoePowerAction(getInstance(), prePowerAction));
+            preAction = new PreAoePowerAction(ThornsPower.POWER_ID);
+            AbstractDungeon.actionManager.addToTop(new PostAoePowerAction(getInstance(), preAction));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToTop(prePowerAction = new PreAoePowerAction(ThornsPower.POWER_ID));
+            AbstractDungeon.actionManager.addToTop(preAction);
         }
     }
 
