@@ -76,8 +76,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // unlockAll();
 
         // Downfall
-        // TODO: Black Candle
-        // TODO: Burden of Knowledge
+        // TODO: Black Candle is registered, but Blue Candle should be replaced instead?
+        // Burden of Knowledge - nothing to track
         // Broken Wing Statue doesn't do anything - nothing to track
         // Coat Of Many Faces / Cloak of Many Faces gives all masks all the time - nothing to track
         // Extra Cursed Bell - same as Calling Bell, not tracked
@@ -88,7 +88,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(HeartBlessingGreenInfo.getInstance());
         register(HeartBlessingRedInfo.getInstance());
         // The Heart's Malice - not tracked
-        // Hecktoplasm is not registered, Ectoplasm is replaced instead
+        // TODO: Hecktoplasm is registered, but Ectoplasm is also replaced?
         register(KnowingSkullInfo.getInstance()); // Knowing Skull
         // NeowBlessing is not registered
         // Bandit Contract (RedIOU) - not tracked
