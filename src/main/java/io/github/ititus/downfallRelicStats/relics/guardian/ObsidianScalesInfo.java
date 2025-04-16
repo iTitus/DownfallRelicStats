@@ -36,7 +36,7 @@ public final class ObsidianScalesInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            preAction = new PreAoePowerAction(ThornsPower.POWER_ID);
+            preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, ThornsPower.POWER_ID);
             AbstractDungeon.actionManager.addToTop(new PostAoePowerAction(getInstance(), preAction));
         }
 
@@ -52,18 +52,18 @@ public final class ObsidianScalesInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch2 {
 
-        private static PreAoePowerAction prePowerAction;
+        private static PreAoePowerAction preAction;
 
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(ObsidianScales.class, "addToBot", Patch2.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(prePowerAction = new PreAoePowerAction(ThornsPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, ThornsPower.POWER_ID));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), prePowerAction));
+            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
         }
     }
 }
