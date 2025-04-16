@@ -249,7 +249,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Snecko Talon (Idol of Retromation) not tracked, does the same every turn
         // Super Snecko Eye not tracked, does the same every turn
         // Super Snecko Soul not tracked, does the same every other turn
-        // Unknown Egg (Unidentified Egg) not tracke, too difficult
+        // Unknown Egg (Unidentified Egg) not tracked, too difficult
     }
 
     private static void unlockAll() {
