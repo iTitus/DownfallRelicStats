@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v1.6.0\n\nFix crashes on Downfall 5.3\nNote: Some relics are not tracking yet",
+  "changeNote": "v1.6.1\n\nImplement Obsidian Scales & Amulet of Unyielding\nFix tracking for Champions Crown",
   "tags": [
     "Utility",
     "QoL"
