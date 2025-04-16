@@ -178,9 +178,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ModeShifterInfo.getInstance()); // Bronze Gear
         // TODO: ModeShifterPlus (Guardian Gear) -> Energy gained/Cards drawn
         // TODO: Obsidian Scales -> Thorns gained
-        register(PickAxeInfo.getInstance()); // Pick of Rhapsody // TODO: gem tracking broken
+        register(PickAxeInfo.getInstance()); // Pick of Rhapsody // TODO: find way to track gem card reward
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
-        register(SackOfGemsInfo.getInstance()); // Sack of Gems // TODO: gem tracking broken
+        register(SackOfGemsInfo.getInstance()); // Sack of Gems // TODO: find way to track gem card reward
         register(StasisCodexInfo.getInstance()); // Pilot's Codex
         register(StasisEggInfo.getInstance()); // Quantum Chamber
         // Stasis Slot Reduction (Wander Bots) not tracked: constant effect (energy relic)
@@ -241,10 +241,10 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CrystallizedMudInfo.getInstance()); // Snake-Charmer's Flute
         register(D8Info.getInstance()); // Mystical Octahedron // TODO: track block gained/times the selected card was played
         register(LoadedDieInfo.getInstance()); // Loaded Die
-        // TODO: Rare Booster Pack (Rare Booster Box) - verify whether chosen card(s) show in run history
+        // TODO: Rare Booster Pack (Rare Booster Box) - find a way to track card reward
         // Sleeved Ace not tracked, does the same every combat
-        register(SneckoBossInfo.getInstance()); // Lucky Horseshoe // TODO: verify if this is needed, maybe track additional rewards instead
-        // TODO: Snecko Common (Seal of Approval) - verify whether chosen card(s) show in run history
+        // TODO: Snecko Boss (Lucky Horseshoe) - find a way to track card reward
+        // TODO: Snecko Common (Seal of Approval) - find a way to track card reward
         // Snecko Soul not tracked, does the same every combat
         // Snecko Talon (Idol of Retromation) not tracked, does the same every turn
         // Super Snecko Eye not tracked, does the same every turn
