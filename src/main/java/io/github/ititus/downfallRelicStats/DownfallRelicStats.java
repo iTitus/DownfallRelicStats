@@ -136,7 +136,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
         // Collector
         register(AutoCurserInfo.getInstance()); // Hexx Talisman
-        register(BagOfTricksInfo.getInstance()); // Bag of Tricks // TODO: check possible draw bug with Holiday Coal
+        register(BagOfTricksInfo.getInstance()); // Bag of Tricks
         register(BagpipesInfo.getInstance()); // The Bagpipes
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
