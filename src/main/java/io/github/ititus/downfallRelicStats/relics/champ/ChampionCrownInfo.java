@@ -4,6 +4,7 @@ import champ.cards.StanceDanceCrown;
 import champ.relics.ChampionCrown;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
 
@@ -48,8 +49,8 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static void Postfix(AbstractCard __card) {
-            switch (__card.cardID) {
+        public static void Postfix(StanceDanceCrown __instance, AbstractMonster m, AbstractCard card) {
+            switch (card.cardID) {
                 case "octo:OctoBerserk":
                     getInstance().stats.berserker++;
                     break;
