@@ -2,9 +2,13 @@ package io.github.ititus.downfallRelicStats.relics.champ;
 
 import champ.relics.RageAmulet;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import hermit.util.Wiz;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
+import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 public final class RageAmuletInfo extends BaseCombatRelicStats {
@@ -26,12 +30,18 @@ public final class RageAmuletInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
+        private static PreAoePowerAction preAction;
+
         public static ExprEditor Instrument() {
-            return new ConstructorHookEditor(StrengthPower.class, Patch.class, 2);
+            return new BeforeAfterMethodCallEditor(Wiz.class, "atb", Patch.class);
         }
 
-        public static void hook(int strengthAmount) {
-            getInstance().increaseAmount(strengthAmount);
+        public static void before() {
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, StrengthPower.POWER_ID));
+        }
+
+        public static void after() {
+            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
         }
     }
 }

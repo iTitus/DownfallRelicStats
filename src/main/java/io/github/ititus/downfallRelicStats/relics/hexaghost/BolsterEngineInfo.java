@@ -2,10 +2,14 @@ package io.github.ititus.downfallRelicStats.relics.hexaghost;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
 import javassist.expr.ExprEditor;
 import theHexaghost.relics.BolsterEngine;
@@ -64,12 +68,18 @@ public final class BolsterEngineInfo extends BaseRelicStats<BolsterEngineInfo.St
     @SuppressWarnings("unused")
     public static class Patch2 {
 
+        private static PreAoePowerAction preAction;
+
         public static ExprEditor Instrument() {
-            return new ConstructorHookEditor(StrengthPower.class, Patch2.class, 2);
+            return new BeforeAfterMethodCallEditor(2, BolsterEngine.class, "addToBot", Patch2.class);
         }
 
-        public static void hook(int strengthAmount) {
-            getInstance().stats.strength += strengthAmount;
+        public static void before() {
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, StrengthPower.POWER_ID));
+        }
+
+        public static void after() {
+            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction((powerId, amount) -> getInstance().stats.strength += amount, preAction));
         }
     }
 }

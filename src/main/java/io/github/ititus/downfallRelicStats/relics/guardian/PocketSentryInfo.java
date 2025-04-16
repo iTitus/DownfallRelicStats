@@ -9,7 +9,6 @@ import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
-import relicstats.actions.PreAoeDamageAction;
 
 public final class PocketSentryInfo extends BaseCombatRelicStats {
 
@@ -30,19 +29,18 @@ public final class PocketSentryInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-        private static PreAoeDamageAction preDamageAction;
-        private static PreAoePowerAction prePowerAction;
+        private static PreAoePowerAction preAction;
 
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(PocketSentry.class, "addToBot", Patch.class);
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(prePowerAction = new PreAoePowerAction(WeakPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(WeakPower.POWER_ID));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), prePowerAction));
+            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
         }
     }
 }
