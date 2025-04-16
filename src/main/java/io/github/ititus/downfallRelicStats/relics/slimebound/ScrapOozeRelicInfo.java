@@ -1,6 +1,8 @@
 package io.github.ititus.downfallRelicStats.relics.slimebound;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
 import slimebound.relics.ScrapOozeRelic;
@@ -74,14 +76,16 @@ public final class ScrapOozeRelicInfo extends BaseRelicStats<ScrapOozeRelicInfo.
     }
 
     @SpirePatch(
-            clz = ScrapOozeRelic.class,
-            method = "addCampfireOption"
+            clz = RestRoom.class,
+            method = "onPlayerEntry"
     )
     @SuppressWarnings("unused")
     public static class Patch2 {
 
         public static void Postfix() {
-            getInstance().stats.restSites++;
+            if (AbstractDungeon.player.hasRelic(ScrapOozeRelic.ID)) {
+                getInstance().stats.restSites++;
+            }
         }
     }
 }

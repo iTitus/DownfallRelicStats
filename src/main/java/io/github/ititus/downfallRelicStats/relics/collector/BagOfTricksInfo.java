@@ -27,11 +27,11 @@ public final class BagOfTricksInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static void Prefix(BagOfTricks __instance) {
+        public static void Prefix() {
             AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void Postfix(BagOfTricks __instance) {
+        public static void Postfix() {
             AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }

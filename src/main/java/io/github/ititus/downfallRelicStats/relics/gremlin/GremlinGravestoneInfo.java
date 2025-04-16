@@ -2,6 +2,7 @@ package io.github.ititus.downfallRelicStats.relics.gremlin;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import gremlin.characters.GremlinCharacter;
 import gremlin.relics.GremlinGravestone;
 import gremlin.ui.campfire.ResurrectOption;
@@ -54,14 +55,14 @@ public final class GremlinGravestoneInfo extends BaseRelicStats<GremlinGraveston
     }
 
     @SpirePatch(
-            clz = ResurrectOption.class,
-            method = SpirePatch.CONSTRUCTOR
+            clz = RestRoom.class,
+            method = "onPlayerEntry"
     )
     @SuppressWarnings("unused")
     public static class Patch2 {
 
         public static void Postfix() {
-            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(GremlinGravestone.ID)) {
+            if (AbstractDungeon.player.hasRelic(GremlinGravestone.ID)) {
                 getInstance().stats.restSites++;
             }
         }

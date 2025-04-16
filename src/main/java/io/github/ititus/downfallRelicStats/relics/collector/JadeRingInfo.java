@@ -25,7 +25,7 @@ public final class JadeRingInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static void Postfix(DoomPower __instance) {
+        public static void Postfix() {
             if (AbstractDungeon.player.hasRelic(JadeRing.ID)) {
                 // TODO: track exact amount, but that might be hard to do
                 getInstance().trigger();

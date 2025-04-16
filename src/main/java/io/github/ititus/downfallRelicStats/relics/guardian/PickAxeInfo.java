@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import guardian.relics.PickAxe;
 import guardian.rewards.GemReward;
-import guardian.ui.FindGemsOption;
 import io.github.ititus.downfallRelicStats.BaseMultiCardRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.patches.track.SourceModifier;
@@ -60,14 +59,14 @@ public final class PickAxeInfo extends BaseRelicStats<PickAxeInfo.Stats> {
     }
 
     @SpirePatch(
-            clz = FindGemsOption.class,
-            method = SpirePatch.CONSTRUCTOR
+            clz = RestRoom.class,
+            method = "onPlayerEntry"
     )
     @SuppressWarnings("unused")
     public static class Patch2 {
 
         public static void Postfix() {
-            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasRelic(PickAxe.ID)) {
+            if (AbstractDungeon.player.hasRelic(PickAxe.ID)) {
                 getInstance().stats.restSites++;
             }
         }
