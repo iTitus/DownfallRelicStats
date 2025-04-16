@@ -1,16 +1,15 @@
 package io.github.ititus.downfallRelicStats.patches.track;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 
 @SuppressWarnings("unused")
 public final class RewardPatches {
 
-    @SpirePatch(
+    /*TODO: @SpirePatch(
             clz = CombatRewardScreen.class,
             method = "setupItemReward"
-    )
+    )*/
     public static final class GemRewardPath {
 
         public static void Postfix(CombatRewardScreen __instance) {
