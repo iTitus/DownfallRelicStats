@@ -177,7 +177,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GemstoneGunInfo.getInstance()); // Gemstone Gun
         register(ModeShifterInfo.getInstance()); // Bronze Gear
         // TODO: ModeShifterPlus (Guardian Gear) -> Energy gained/Cards drawn
-        // TODO: Obsidian Scales -> Thorns gained
+        register(ObsidianScalesInfo.getInstance()); // Obsidian Scales
         register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
         register(SackOfGemsInfo.getInstance()); // Sack of Gems
