@@ -130,7 +130,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(GladiatorsBookOfMartialProwessInfo.getInstance()); // Gladiators Manual
         // Lift Relic (Inner Strength) not tracked, does the same every combat
         // Power Armor not tracked, too difficult because of patching weirdness
-        // TODO: Rage Amulet (Amulet of Unyielding) -> strength gained
+        register(RageAmuletInfo.getInstance()); // Amulet of Unyielding
         register(SignatureFinisherInfo.getInstance()); // Signature Finisher
         register(SpectersHandInfo.getInstance()); // Spectre's Hand
 
