@@ -239,7 +239,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CleanMudInfo.getInstance()); // Snake-Charmer's Flute
         register(ConfusingCodexInfo.getInstance()); // Ring of the Snek
         register(CrystallizedMudInfo.getInstance()); // Snake-Charmer's Flute
-        register(D8Info.getInstance()); // Mystical Octahedron // TODO: track block gained/times the selected card was played
+        register(D8Info.getInstance()); // Mystical Octahedron
         register(LoadedDieInfo.getInstance()); // Loaded Die
         // TODO: Rare Booster Pack (Rare Booster Box) - find a way to track card reward
         // Sleeved Ace not tracked, does the same every combat

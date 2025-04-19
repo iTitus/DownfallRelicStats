@@ -612,7 +612,9 @@
   "STATS:sneckomod:D8": {
     "TEXT": [
       "Card bottled: ",
-      "None"
+      "None",
+      " NL ",
+      "Block gained: "
     ]
   },
   "STATS:sneckomod:LoadedDie": {
