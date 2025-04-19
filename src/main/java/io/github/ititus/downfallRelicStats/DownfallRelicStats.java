@@ -230,7 +230,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(SelfDamagePreventRelicInfo.getInstance()); // Protective Gear
         // Slimed Skull Relic (Slimy Skull) not tracked, too difficult because it uses a power
         register(SlimedTailRelicInfo.getInstance()); // Slimed Tail
-        // TODO: Sticky Stick (Gelatinous Cube) -> can be tracked now (cards, energy)
+        register(StickyStickInfo.getInstance()); // Gelatinous Cube
         // Tar Blob (Tarr Blob) not tracked, does the same every combat
 
         // Snecko

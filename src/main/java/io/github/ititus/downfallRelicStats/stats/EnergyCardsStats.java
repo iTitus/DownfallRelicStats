@@ -4,7 +4,7 @@ import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
 import relicstats.AmountAdjustmentCallback;
 
-public class EnergyCardsStats implements StatContainer {
+public final class EnergyCardsStats implements StatContainer {
 
     public int energy = 0;
     public int cards = 0;
@@ -21,7 +21,7 @@ public class EnergyCardsStats implements StatContainer {
                 BaseCombatRelicStats.generateExtendedDescription(description, 4, cards, totalTurns, totalCombats);
     }
 
-    public class CardsAdjuster implements AmountAdjustmentCallback {
+    public final class CardsAdjuster implements AmountAdjustmentCallback {
 
         private int startingAmount;
 

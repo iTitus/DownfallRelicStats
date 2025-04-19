@@ -584,6 +584,16 @@
       "Times split: "
     ]
   },
+  "STATS:Slimebound:StickyStick": {
+    "TEXT": [
+      "Energy gained: ",
+      " NL Cards drawn: ",
+      " NL Energy gained per turn: ",
+      " NL Energy gained per combat: ",
+      " NL Cards drawn per turn: ",
+      " NL Cards drawn per combat: "
+    ]
+  },
   "STATS:sneckomod:BabySnecko": {
     "TEXT": [
       "Damage dealt: "
