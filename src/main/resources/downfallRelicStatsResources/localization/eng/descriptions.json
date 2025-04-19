@@ -175,6 +175,11 @@
       "Energy gained: "
     ]
   },
+  "STATS:downfall:BlackCandle": {
+    "TEXT": [
+      "Curses exhausted: "
+    ]
+  },
   "STATS:downfall:ExtraCursedKey": {
     "TEXT": [
       "Curses created: "
@@ -205,6 +210,11 @@
   "STATS:downfall:HeartBlessingRed": {
     "TEXT": [
       "Strength gained: "
+    ]
+  },
+  "STATS:downfall:Hecktoplasm": {
+    "TEXT": [
+      "Gold lost: "
     ]
   },
   "STATS:downfall:KnowingSkull": {
