@@ -176,7 +176,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DefensiveModeMoreBlockInfo.getInstance()); // Baalor's Lordly Plate
         register(GemstoneGunInfo.getInstance()); // Gemstone Gun
         register(ModeShifterInfo.getInstance()); // Bronze Gear
-        // TODO: ModeShifterPlus (Guardian Gear) -> Energy gained/Cards drawn
+        register(ModeShifterPlusInfo.getInstance()); // Guardian Gear // TODO: track energy/cards instead of times triggered
         register(ObsidianScalesInfo.getInstance()); // Obsidian Scales
         // TODO: register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry

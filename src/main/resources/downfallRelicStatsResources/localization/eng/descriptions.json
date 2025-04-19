@@ -355,6 +355,11 @@
       "None"
     ]
   },
+  "STATS:Guardian:ModeShifterPlus": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
   "STATS:Guardian:ObsidianScales": {
     "TEXT": [
       "Thorns gained: "
