@@ -3,8 +3,6 @@ package io.github.ititus.downfallRelicStats.relics.guardian;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import guardian.relics.ModeShifterPlus;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
-import javassist.expr.ExprEditor;
 
 public final class ModeShifterPlusInfo extends BaseCombatRelicStats {
 
@@ -20,16 +18,12 @@ public final class ModeShifterPlusInfo extends BaseCombatRelicStats {
 
     @SpirePatch(
             clz = ModeShifterPlus.class,
-            method = "onChangeStance"
+            method = "onTrigger"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(ModeShifterPlus.class, "addToTop", Patch.class, false, true);
-        }
-
-        public static void after() {
+        public static void Postfix() {
             getInstance().trigger();
         }
     }
