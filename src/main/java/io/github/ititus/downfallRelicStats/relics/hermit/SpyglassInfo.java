@@ -32,7 +32,7 @@ public final class SpyglassInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

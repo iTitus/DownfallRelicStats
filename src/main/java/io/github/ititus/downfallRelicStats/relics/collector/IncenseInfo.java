@@ -34,7 +34,7 @@ public final class IncenseInfo extends BaseCombatRelicStats {
 
         public static void after() {
             // TODO: show separate info for each debuff
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

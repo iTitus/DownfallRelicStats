@@ -25,7 +25,7 @@ public final class StolenMerchandiseInfo extends BaseCombatRelicStats {
     public static class Patch {
 
         public static void Postfix() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

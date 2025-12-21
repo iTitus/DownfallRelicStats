@@ -33,7 +33,7 @@ public final class ExtraCursedKeyInfo extends BaseCombatRelicStats {
         }
 
         public static void hook() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

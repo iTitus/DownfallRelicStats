@@ -27,7 +27,7 @@ public final class TimepieceInfo extends BaseCombatRelicStats {
 
         public static void Prefix(Timepiece __instance, AbstractCard function, boolean forGameplay) {
             if (forGameplay && new RetainCardMod().shouldApply(function)) {
-                getInstance().increaseAmount(1);
+                getInstance().trigger();
             }
         }
     }

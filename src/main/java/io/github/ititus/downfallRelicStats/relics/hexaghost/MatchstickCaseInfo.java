@@ -28,7 +28,7 @@ public final class MatchstickCaseInfo extends BaseCombatRelicStats {
             if (!___triggered) {
                 // TODO: try to differentiate what the player has picked
                 // difficulty: uses exact same logic as Float+
-                getInstance().increaseAmount(1);
+                getInstance().trigger();
             }
         }
     }

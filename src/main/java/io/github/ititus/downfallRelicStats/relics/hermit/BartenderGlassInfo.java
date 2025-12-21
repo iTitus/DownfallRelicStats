@@ -31,7 +31,7 @@ public final class BartenderGlassInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

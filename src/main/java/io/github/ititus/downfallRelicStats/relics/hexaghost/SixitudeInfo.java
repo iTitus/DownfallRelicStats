@@ -30,7 +30,7 @@ public final class SixitudeInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

@@ -30,7 +30,7 @@ public final class SelfDamagePreventRelicInfo extends BaseCombatRelicStats {
 
         public static void Postfix(TackleSelfDamageAction __instance, DamageInfo info) {
             if (CardCrawlGame.isInARun() && AbstractDungeon.player.hasRelic(SelfDamagePreventRelic.ID) && !AbstractDungeon.player.hasPower(PreventTackleDamagePower.POWER_ID)) {
-                getInstance().increaseAmount(1);
+                getInstance().trigger();
             }
         }
     }

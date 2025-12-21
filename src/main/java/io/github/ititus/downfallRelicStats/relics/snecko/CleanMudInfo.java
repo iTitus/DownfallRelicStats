@@ -39,7 +39,7 @@ public final class CleanMudInfo extends BaseCombatRelicStats {
         // TODO: keep in sync with MuddleAction#update and MuddleMarkedAction#update
         public static void Postfix(AbstractGameAction __instance, AbstractCard ___card, boolean ___no3) {
             if (___card.cost >= 0 && !___card.hasTag(SneckoMod.SNEKPROOF) && AbstractDungeon.player.hasRelic(CleanMud.ID) && !___no3 && ___card.costForTurn != 3) {
-                getInstance().increaseAmount(1);
+                getInstance().trigger();
             }
         }
     }

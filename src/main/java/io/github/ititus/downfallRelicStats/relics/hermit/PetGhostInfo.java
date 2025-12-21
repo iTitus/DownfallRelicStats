@@ -31,7 +31,7 @@ public final class PetGhostInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

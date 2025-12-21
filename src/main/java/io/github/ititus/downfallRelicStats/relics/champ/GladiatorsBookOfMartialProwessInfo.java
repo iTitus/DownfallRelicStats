@@ -30,7 +30,7 @@ public final class GladiatorsBookOfMartialProwessInfo extends BaseCombatRelicSta
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

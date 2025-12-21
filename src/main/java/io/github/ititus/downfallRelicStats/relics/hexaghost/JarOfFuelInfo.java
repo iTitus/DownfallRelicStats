@@ -33,7 +33,7 @@ public final class JarOfFuelInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 
@@ -49,7 +49,7 @@ public final class JarOfFuelInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            getInstance().increaseAmount(1);
+            getInstance().trigger();
         }
     }
 }

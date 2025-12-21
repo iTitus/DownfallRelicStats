@@ -32,7 +32,7 @@ public final class FuelCanisterInfo extends BaseCombatRelicStats {
 
         public static boolean hook(AbstractCard __instance, boolean retain) {
             if (retain && !__instance.retain) {
-                getInstance().increaseAmount(1);
+                getInstance().trigger();
             }
             return retain;
         }
