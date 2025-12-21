@@ -2,9 +2,10 @@ package io.github.ititus.downfallRelicStats.relics.champ;
 
 import champ.relics.FightingForDummies;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
-import javassist.expr.ExprEditor;
+import relicstats.actions.CardDrawFollowupAction;
+import relicstats.actions.PreCardDrawAction;
 
 public final class FightingForDummiesInfo extends BaseCombatRelicStats {
 
@@ -20,17 +21,17 @@ public final class FightingForDummiesInfo extends BaseCombatRelicStats {
 
     @SpirePatch(
             clz = FightingForDummies.class,
-            method = "onPlayerEndTurn"
+            method = "atTurnStartPostDraw"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(FightingForDummies.class, "addToBot", Patch.class, false, true);
+        public static void Prefix() {
+            AbstractDungeon.actionManager.addToBottom(new PreCardDrawAction(getInstance()));
         }
 
-        public static void after() {
-            getInstance().trigger();
+        public static void Postfix() {
+            AbstractDungeon.actionManager.addToBottom(new CardDrawFollowupAction(getInstance()));
         }
     }
 }
