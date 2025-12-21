@@ -147,7 +147,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(IncenseInfo.getInstance()); // Incense // TODO: this is deprecated, check after next update
         register(JadeRingInfo.getInstance()); // Jade Ring
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
-        register(RoughDiamondInfo.getInstance()); // Rough Diamond
+        register(RoughDiamondInfo.getInstance()); // Rough Diamond // TODO: this is deprecated, check after next update
         // Soullit Lamp (Soul-lit Lamp) not tracked, does the same every combat
         // The Contract not tracked: one-time effect
         // Thimble Helm not tracked: too difficult because it uses a power that overrides modifyBlock which is called all the time
