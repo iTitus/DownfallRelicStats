@@ -144,7 +144,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Forbidden Fruit not tracked, does the same every combat
         register(FuelCanisterInfo.getInstance()); // Fuel Canister
         register(HolidayCoalInfo.getInstance()); // Krampian Coal
-        register(IncenseInfo.getInstance()); // Incense
+        register(IncenseInfo.getInstance()); // Incense // TODO: this is deprecated, check after next update
         register(JadeRingInfo.getInstance()); // Jade Ring
         register(PrismaticTorchInfo.getInstance()); // Prismatic Torch
         register(RoughDiamondInfo.getInstance()); // Rough Diamond
@@ -178,7 +178,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ModeShifterInfo.getInstance()); // Bronze Gear
         register(ModeShifterPlusInfo.getInstance()); // Guardian Gear // TODO: track energy/cards instead of times triggered
         register(ObsidianScalesInfo.getInstance()); // Obsidian Scales
-        // TODO: register(PickAxeInfo.getInstance()); // Pick of Rhapsody
+        register(PickAxeInfo.getInstance()); // Pick of Rhapsody
         register(PocketSentryInfo.getInstance()); // Arumba's Pocket Sentry
         // TODO: register(SackOfGemsInfo.getInstance()); // Sack of Gems
         register(StasisCodexInfo.getInstance()); // Pilot's Codex
@@ -213,9 +213,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(RecyclingMachineInfo.getInstance()); // Recycler
         register(SixitudeInfo.getInstance()); // Six-Point Brand
         register(SoulConsumerInfo.getInstance()); // Soul Stone (old: Thermal Stone)
-        register(SoulOfChaosInfo.getInstance()); // Soul of Chaos
+        // Soul of Chaos not tracked, does the same every turn // TODO: maybe track randomized ghostflames?
         register(SpiritBrandInfo.getInstance()); // Spirit Brand
-        register(TheBrokenSealInfo.getInstance()); // The Broken Seal
+        register(TheBrokenSealInfo.getInstance()); // The Broken Seal // TODO: this is deprecated, check after next update
         register(UnbrokenSoulInfo.getInstance()); // Mark of the Ether
 
         // Slime Boss
