@@ -141,7 +141,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BlockedChakraInfo.getInstance()); // Blocked Chakra
         register(BottledCollectibleInfo.getInstance()); // Bottled Brain
         // Emerald Torch not tracked, does the same every combat
-        register(ForbiddenFruitInfo.getInstance()); // Forbidden Fruit
+        // Forbidden Fruit not tracked, does the same every combat
         register(FuelCanisterInfo.getInstance()); // Fuel Canister
         register(HolidayCoalInfo.getInstance()); // Krampian Coal
         register(IncenseInfo.getInstance()); // Incense

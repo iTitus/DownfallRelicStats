@@ -139,12 +139,6 @@
       "None"
     ]
   },
-  "STATS:collector:ForbiddenFruit": {
-    "TEXT": [
-      "Cards obtained: ",
-      "None"
-    ]
-  },
   "STATS:collector:FuelCanister": {
     "TEXT": [
       "Cards retained: "
