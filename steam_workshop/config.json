@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v1.6.3\n\nImplement Gelatinous Cube & Guardian Gear tracking",
+  "changeNote": "v1.7.0\n\nHotfix for Downfall v6\nNew relics will be supported in the next update",
   "tags": [
     "Utility",
     "QoL"
