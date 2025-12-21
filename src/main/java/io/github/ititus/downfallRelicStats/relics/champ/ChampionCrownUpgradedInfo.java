@@ -1,10 +1,11 @@
 package io.github.ititus.downfallRelicStats.relics.champ;
 
+import champ.ChampMod;
 import champ.relics.ChampionCrownUpgraded;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
-import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;
@@ -46,20 +47,30 @@ public final class ChampionCrownUpgradedInfo extends BaseRelicStats<ChampionCrow
             method = "onAfterUseCard"
     )
     @SuppressWarnings("unused")
-    public static class Patch {
+    public static class Patch1 {
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMultiMethodCallEditor(ChampionCrownUpgraded.class, "addToBot", Patch.class, false, true);
+            return new BeforeAfterMethodCallEditor(ChampMod.class, "berserkOpen", Patch1.class, false, true);
         }
 
-        public static void after(int index) {
-            if (index == 0) {
-                getInstance().stats.berserker++;
-            } else if (index == 1) {
-                getInstance().stats.defensive++;
-            } else {
-                throw new AssertionError();
-            }
+        public static void after() {
+            getInstance().stats.berserker++;
+        }
+    }
+
+    @SpirePatch(
+            clz = ChampionCrownUpgraded.class,
+            method = "onAfterUseCard"
+    )
+    @SuppressWarnings("unused")
+    public static class Patch2 {
+
+        public static ExprEditor Instrument() {
+            return new BeforeAfterMethodCallEditor(ChampMod.class, "defenseOpen", Patch2.class, false, true);
+        }
+
+        public static void after() {
+            getInstance().stats.defensive++;
         }
     }
 }
