@@ -361,9 +361,7 @@
   },
   "STATS:Guardian:PickAxe": {
     "TEXT": [
-      " NL Gems obtained:",
-      "Gems mined: ",
-      " NL Per Rest Site: "
+      "Gem Rewards obtained: "
     ]
   },
   "STATS:Guardian:PocketSentry": {
