@@ -120,8 +120,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(BarbellsInfo.getInstance()); // Barbell
         // Berserkers Guide To Slaughter (Berserker's Guide) not tracked, does the same every turn
         // Black Knights Helmet (Black Knight's Helm) not tracked, difficult to display and in the end it's always 1STR 1DEX
-        register(ChampionCrownInfo.getInstance()); // Champion's Crown
-        // Champion Crown Upgraded (Victorious Crown) not tracked, does the same every combat
+        // Champion's Crown hard to track because it uses a shared tag now
+        register(ChampionCrownUpgradedInfo.getInstance()); // Champion Crown Upgraded (Victorious Crown)
         register(ChampStancesModRelicInfo.getInstance()); // New Challenger
         register(DefensiveTrainingManualInfo.getInstance()); // Defensive Thesis
         register(DeflectingBracersInfo.getInstance()); // Deflecting Bracers

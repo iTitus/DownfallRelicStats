@@ -1,24 +1,23 @@
 package io.github.ititus.downfallRelicStats.relics.champ;
 
-import champ.cards.StanceDanceCrown;
-import champ.relics.ChampionCrown;
+import champ.relics.ChampionCrownUpgraded;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
+import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMultiMethodCallEditor;
+import javassist.expr.ExprEditor;
 
 import java.text.DecimalFormat;
 
-public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.Stats> {
+public final class ChampionCrownUpgradedInfo extends BaseRelicStats<ChampionCrownUpgradedInfo.Stats> {
 
-    private static final ChampionCrownInfo INSTANCE = new ChampionCrownInfo();
+    private static final ChampionCrownUpgradedInfo INSTANCE = new ChampionCrownUpgradedInfo();
 
-    private ChampionCrownInfo() {
-        super(ChampionCrown.ID, Stats.class);
+    private ChampionCrownUpgradedInfo() {
+        super(ChampionCrownUpgraded.ID, Stats.class);
     }
 
-    public static ChampionCrownInfo getInstance() {
+    public static ChampionCrownUpgradedInfo getInstance() {
         return INSTANCE;
     }
 
@@ -43,20 +42,23 @@ public final class ChampionCrownInfo extends BaseRelicStats<ChampionCrownInfo.St
     }
 
     @SpirePatch(
-            clz = StanceDanceCrown.class,
-            method = "doChoiceStuff"
+            clz = ChampionCrownUpgraded.class,
+            method = "onAfterUseCard"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
-        public static void Postfix(StanceDanceCrown __instance, AbstractMonster m, AbstractCard card) {
-            switch (card.cardID) {
-                case "octo:OctoBerserk":
-                    getInstance().stats.berserker++;
-                    break;
-                case "octo:OctoDefense":
-                    getInstance().stats.defensive++;
-                    break;
+        public static ExprEditor Instrument() {
+            return new BeforeAfterMultiMethodCallEditor(ChampionCrownUpgraded.class, "addToBot", Patch.class, false, true);
+        }
+
+        public static void after(int index) {
+            if (index == 0) {
+                getInstance().stats.berserker++;
+            } else if (index == 1) {
+                getInstance().stats.defensive++;
+            } else {
+                throw new AssertionError();
             }
         }
     }
