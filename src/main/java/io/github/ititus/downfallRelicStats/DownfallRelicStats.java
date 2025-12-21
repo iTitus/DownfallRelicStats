@@ -84,9 +84,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ExtraCursedKeyInfo.getInstance()); // Extra Cursed Key
         register(GremlinSackInfo.getInstance()); // Gremlin Sack
         register(GremlinWheelInfo.getInstance()); // Wheel of Change
-        register(HeartBlessingBlueInfo.getInstance());
-        register(HeartBlessingGreenInfo.getInstance());
-        register(HeartBlessingRedInfo.getInstance());
+        register(HeartBlessingBlueInfo.getInstance()); // TODO: this is deprecated, check after next update, also does not work correctly for gremlins
+        register(HeartBlessingGreenInfo.getInstance()); // TODO: this is deprecated, check after next update
+        register(HeartBlessingRedInfo.getInstance()); // TODO: this is deprecated, check after next update
         // The Heart's Malice - not tracked
         register(HecktoplasmInfo.getInstance()); // Hecktoplasm
         register(KnowingSkullInfo.getInstance()); // Knowing Skull

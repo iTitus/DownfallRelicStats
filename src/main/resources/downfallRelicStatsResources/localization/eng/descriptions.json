@@ -193,7 +193,7 @@
   },
   "STATS:downfall:HeartBlessingBlue": {
     "TEXT": [
-      "Temporary HP gained: "
+      "HP healed: "
     ]
   },
   "STATS:downfall:HeartBlessingGreen": {
