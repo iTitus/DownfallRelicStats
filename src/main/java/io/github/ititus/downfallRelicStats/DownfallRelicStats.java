@@ -5,16 +5,14 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.ISubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.Prefs;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import io.github.ititus.downfallRelicStats.relics.automaton.*;
+import io.github.ititus.downfallRelicStats.relics.awakened.*;
 import io.github.ititus.downfallRelicStats.relics.champ.*;
 import io.github.ititus.downfallRelicStats.relics.collector.*;
 import io.github.ititus.downfallRelicStats.relics.gremlin.*;
@@ -27,8 +25,6 @@ import io.github.ititus.downfallRelicStats.relics.snecko.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import relicstats.RelicStats;
-
-import java.util.Map;
 
 @SpireInitializer
 @SuppressWarnings("unused")
@@ -115,6 +111,10 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(ProtectiveGogglesInfo.getInstance()); // Protective Goggles
         // Silver Bullet not tracked, does the same every combat
         register(TimepieceInfo.getInstance()); // Frost Primer
+
+        // Awakened One
+        register(AbyssBladeInfo.getInstance()); // Abyss Blade
+        register(AwakenedUrnInfo.getInstance()); // Awakened Urn (Bird-Faced Vase)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell

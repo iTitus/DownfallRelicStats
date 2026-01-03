@@ -1,4 +1,14 @@
 {
+  "STATS:awakened:AbyssBlade": {
+    "TEXT": [
+      "Times triggered: "
+    ]
+  },
+  "STATS:awakened:AwakenedUrn": {
+    "TEXT": [
+      "HP healed: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",
