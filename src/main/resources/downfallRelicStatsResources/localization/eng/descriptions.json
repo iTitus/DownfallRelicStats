@@ -29,6 +29,11 @@
       "Damage dealt: "
     ]
   },
+  "STATS:awakened:HexxBomb": {
+    "TEXT": [
+      "Manaburn transferred: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",

@@ -120,6 +120,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CurvedSwordInfo.getInstance()); // Curved Sword (Zetsumei)
         // Curved Sword Meme (Conjure Blade) not tracked, is a meme and does the same every combat
         register(DeadBirdInfo.getInstance()); // Dead Bird (Corvid Spirit)
+        // Eye of the Occult not tracked, hard to quantify
+        register(HexxBombInfo.getInstance()); // Hexx Bomb (Manabomb)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
