@@ -24,6 +24,11 @@
       "Ceremonies generated: "
     ]
   },
+  "STATS:awakened:DeadBird": {
+    "TEXT": [
+      "Damage dealt: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",

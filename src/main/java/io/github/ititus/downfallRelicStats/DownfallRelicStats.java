@@ -119,6 +119,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(CursedBlessingInfo.getInstance()); // Cursed Blessing (Final Rites)
         register(CurvedSwordInfo.getInstance()); // Curved Sword (Zetsumei)
         // Curved Sword Meme (Conjure Blade) not tracked, is a meme and does the same every combat
+        register(DeadBirdInfo.getInstance()); // Dead Bird (Corvid Spirit)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
