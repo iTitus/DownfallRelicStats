@@ -27,8 +27,6 @@ public final class NerfedMummifiedHandInfo extends BaseCombatRelicStats {
     @SuppressWarnings("unused")
     public static class Patch {
 
-        private static PreAdjustmentAction preAction;
-
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(AbstractCard.class, "setCostForTurn", Patch.class, true, false).addReceiver();
         }

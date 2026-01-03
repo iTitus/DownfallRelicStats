@@ -128,6 +128,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Ripped Doll not tracked, does the same every combat
         // Shard of Nowak (Gilded Bone Shard) not tracked, hard to quantify
         register(ShreddedDollInfo.getInstance()); // Shredded Doll
+        register(StrengthBoosterInfo.getInstance()); // Strength Booster (Paper Crow)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell

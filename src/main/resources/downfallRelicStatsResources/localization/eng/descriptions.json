@@ -55,6 +55,11 @@
       "Ritual gained: "
     ]
   },
+  "STATS:awakened:StrengthBooster": {
+    "TEXT": [
+      "Additional damage dealt: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",
