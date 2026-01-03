@@ -125,6 +125,9 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(MiniBlackHoleInfo.getInstance()); // Mini Black Hole (Alethea)
         register(MoonTalismanInfo.getInstance()); // Moon Talisman (Crescent Talisman)
         register(NerfedMummifiedHandInfo.getInstance()); // Nerfed Mummified Hand (Dessicated Hand) [sic]
+        // Ripped Doll not tracked, does the same every combat
+        // Shard of Nowak (Gilded Bone Shard) not tracked, hard to quantify
+        register(ShreddedDollInfo.getInstance()); // Shredded Doll
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell

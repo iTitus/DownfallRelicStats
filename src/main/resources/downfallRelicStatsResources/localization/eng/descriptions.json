@@ -39,15 +39,20 @@
       "Cards drawn: "
     ]
   },
+  "STATS:awakened:MoonTalisman": {
+    "TEXT": [
+      "Card chosen: ",
+      "None"
+    ]
+  },
   "STATS:awakened:NerfedMummifiedHand": {
     "TEXT": [
       "Energy discounted: "
     ]
   },
-  "STATS:bronze:MoonTalisman": {
+  "STATS:awakened:ShreddedDoll": {
     "TEXT": [
-      "Card chosen: ",
-      "None"
+      "Ritual gained: "
     ]
   },
   "STATS:bronze:BottledCode": {
