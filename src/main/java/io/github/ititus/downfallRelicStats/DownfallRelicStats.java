@@ -115,6 +115,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Awakened One
         register(AbyssBladeInfo.getInstance()); // Abyss Blade
         register(AwakenedUrnInfo.getInstance()); // Awakened Urn (Bird-Faced Vase)
+        register(CawingCaskInfo.getInstance()); // Cawing Cask
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell

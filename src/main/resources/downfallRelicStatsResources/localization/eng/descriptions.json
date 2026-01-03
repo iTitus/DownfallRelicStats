@@ -9,6 +9,11 @@
       "HP healed: "
     ]
   },
+  "STATS:awakened:CawingCask": {
+    "TEXT": [
+      "Ritual gained: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",
