@@ -15,6 +15,7 @@ public class PreAdjustmentAction extends AbstractGameAction {
     private PreAdjustmentAction(AmountAdjustmentCallback statTracker, IntSupplier valueSupplier) {
         this.statTracker = Objects.requireNonNull(statTracker, "statTracker");
         this.valueSupplier = Objects.requireNonNull(valueSupplier, "valueSupplier");
+        this.actionType = ActionType.SPECIAL;
     }
 
     public static PreAdjustmentAction fromIncrease(AmountIncreaseCallback statTracker, IntSupplier valueSupplier) {
@@ -38,17 +39,34 @@ public class PreAdjustmentAction extends AbstractGameAction {
         return new PreAdjustmentAction(statTracker, valueSupplier);
     }
 
+    public PreAdjustmentAction doNotCancelOnCombatEnd() {
+        this.actionType = ActionType.DAMAGE;
+        return this;
+    }
+
+    public PostAdjustmentAction post() {
+        return new PostAdjustmentAction(this);
+    }
+
     @Override
     public void update() {
         this.registerStartingAmount();
         this.isDone = true;
     }
 
+    protected int getValueSafe() {
+        try {
+            return this.valueSupplier.getAsInt();
+        } catch (Exception ignored) {
+            return 0;
+        }
+    }
+
     protected void registerStartingAmount() {
-        this.statTracker.registerStartingAmount(this.valueSupplier.getAsInt());
+        this.statTracker.registerStartingAmount(this.getValueSafe());
     }
 
     protected void registerEndingAmount() {
-        this.statTracker.registerEndingAmount(this.valueSupplier.getAsInt());
+        this.statTracker.registerEndingAmount(this.getValueSafe());
     }
 }

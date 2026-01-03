@@ -39,7 +39,7 @@ public final class MiniBlackHoleInfo extends BaseCombatRelicStats {
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

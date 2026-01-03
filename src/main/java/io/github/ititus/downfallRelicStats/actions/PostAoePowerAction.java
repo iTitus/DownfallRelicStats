@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 public class PostAoePowerAction extends AbstractGameAction {
@@ -12,8 +13,9 @@ public class PostAoePowerAction extends AbstractGameAction {
     private final PreAoePowerAction preAction;
 
     public PostAoePowerAction(PowerChangeCallback statTracker, PreAoePowerAction preAction) {
-        this.statTracker = statTracker;
-        this.preAction = preAction;
+        this.statTracker = Objects.requireNonNull(statTracker, "statTracker");
+        this.preAction = Objects.requireNonNull(preAction, "preAction");
+        this.actionType = this.preAction.actionType;
     }
 
     public void update() {

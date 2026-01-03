@@ -77,7 +77,7 @@ public final class StasisUpgradeRelicInfo extends BaseRelicStats<StasisUpgradeRe
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

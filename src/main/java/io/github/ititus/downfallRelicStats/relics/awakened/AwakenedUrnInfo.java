@@ -35,8 +35,8 @@ public final class AwakenedUrnInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            preAction = PreAdjustmentAction.fromAdjustment(getInstance(), () -> AbstractDungeon.player.currentHealth);
-            AbstractDungeon.actionManager.addToTop(new PostAdjustmentAction(preAction));
+            preAction = PreAdjustmentAction.fromAdjustment(getInstance(), () -> AbstractDungeon.player.currentHealth).doNotCancelOnCombatEnd();
+            AbstractDungeon.actionManager.addToTop(preAction.post());
         }
 
         public static void after() {

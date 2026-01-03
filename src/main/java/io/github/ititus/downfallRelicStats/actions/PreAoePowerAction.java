@@ -38,6 +38,7 @@ public class PreAoePowerAction extends AbstractGameAction {
     public PreAoePowerAction(Mode mode, Predicate<AbstractPower> filter) {
         this.mode = Objects.requireNonNull(mode, "mode");
         this.filter = Objects.requireNonNull(filter, "filter");
+        this.actionType = ActionType.SPECIAL;
     }
 
     public static Predicate<AbstractPower> idFilter(String... powerIds) {
@@ -52,6 +53,8 @@ public class PreAoePowerAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        affectedCreatures.clear();
+
         List<AbstractCreature> candidates = new ArrayList<>();
         if (mode == Mode.ONLY_MONSTERS || mode == Mode.ALL) {
             candidates.addAll(AbstractDungeon.getMonsters().monsters);

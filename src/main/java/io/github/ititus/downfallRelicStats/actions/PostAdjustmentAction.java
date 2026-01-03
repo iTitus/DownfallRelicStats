@@ -10,6 +10,7 @@ public class PostAdjustmentAction extends AbstractGameAction {
 
     public PostAdjustmentAction(PreAdjustmentAction preAction) {
         this.preAction = Objects.requireNonNull(preAction, "preAction");
+        this.actionType = this.preAction.actionType;
     }
 
     public void update() {

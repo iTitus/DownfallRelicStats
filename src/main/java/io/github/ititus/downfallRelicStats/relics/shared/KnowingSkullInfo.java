@@ -78,10 +78,10 @@ public final class KnowingSkullInfo extends BaseRelicStats<KnowingSkullInfo.Stat
 
         public static void after(int n) {
             if (n == 0 || n == 2 || n == 4) {
-                AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preHpAction));
+                AbstractDungeon.actionManager.addToBottom(preHpAction.post());
             } else if (n == 1) {
                 getInstance().stats.goldTimes++;
-                AbstractDungeon.actionManager.addToBottom(new PostAdjustmentAction(preGoldAction));
+                AbstractDungeon.actionManager.addToBottom(preGoldAction.post());
             } else if (n == 3) {
                 getInstance().stats.cards++;
             } else if (n == 5) {
