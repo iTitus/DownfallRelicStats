@@ -39,6 +39,12 @@
       "Cards drawn: "
     ]
   },
+  "STATS:bronze:MoonTalisman": {
+    "TEXT": [
+      "Card chosen: ",
+      "None"
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",

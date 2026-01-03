@@ -123,6 +123,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Eye of the Occult not tracked, hard to quantify
         register(HexxBombInfo.getInstance()); // Hexx Bomb (Manabomb)
         register(MiniBlackHoleInfo.getInstance()); // Mini Black Hole (Alethea)
+        register(MoonTalismanInfo.getInstance()); // Moon Talisman (Crescent Talisman)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
