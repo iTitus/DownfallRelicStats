@@ -1,45 +1,39 @@
 package io.github.ititus.downfallRelicStats.relics.awakened;
 
 import awakenedOne.powers.ManaburnPower;
-import awakenedOne.relics.HexxBomb;
+import awakenedOne.relics.TomeOfPortalmancy;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
-import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
-import javassist.expr.ExprEditor;
 
-public final class HexxBombInfo extends BaseCombatRelicStats {
+public final class TomeOfPortalmancyInfo extends BaseCombatRelicStats {
 
-    private static final HexxBombInfo INSTANCE = new HexxBombInfo();
+    private static final TomeOfPortalmancyInfo INSTANCE = new TomeOfPortalmancyInfo();
 
-    private HexxBombInfo() {
-        super(HexxBomb.ID);
+    private TomeOfPortalmancyInfo() {
+        super(TomeOfPortalmancy.ID);
     }
 
-    public static HexxBombInfo getInstance() {
+    public static TomeOfPortalmancyInfo getInstance() {
         return INSTANCE;
     }
 
     @SpirePatch(
-            clz = HexxBomb.class,
-            method = "onMonsterDeath"
+            clz = TomeOfPortalmancy.class,
+            method = "onSpecificTrigger"
     )
     @SuppressWarnings("unused")
     public static class Patch {
 
         private static PreAoePowerAction preAction;
 
-        public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(1, HexxBomb.class, "addToBot", Patch.class);
-        }
-
-        public static void before() {
+        public static void Prefix() {
             AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(ManaburnPower.POWER_ID));
         }
 
-        public static void after() {
+        public static void Postfix() {
             AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
         }
     }

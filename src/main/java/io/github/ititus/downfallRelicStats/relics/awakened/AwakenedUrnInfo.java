@@ -4,7 +4,6 @@ import awakenedOne.relics.AwakenedUrn;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.actions.PostAdjustmentAction;
 import io.github.ititus.downfallRelicStats.actions.PreAdjustmentAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
