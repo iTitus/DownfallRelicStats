@@ -19,42 +19,6 @@ public final class SourceModifier extends AbstractCardModifier {
     private int floor = -1;
     private RewardItem rewardItem;
 
-    @Override
-    public AbstractCardModifier makeCopy() {
-        SourceModifier m = new SourceModifier();
-        m.act = this.act;
-        m.floor = this.floor;
-        m.rewardItem = this.rewardItem;
-        return m;
-    }
-
-    @Override
-    public String identifier(AbstractCard card) {
-        return ID;
-    }
-
-    @Override
-    public boolean isInherent(AbstractCard card) {
-        return true;
-    }
-
-    @Override
-    public boolean shouldApply(AbstractCard card) {
-        return !CardModifierManager.hasModifier(card, ID);
-    }
-
-    public int getAct() {
-        return this.act;
-    }
-
-    public int getFloor() {
-        return this.floor;
-    }
-
-    public RewardItem getRewardItem() {
-        return this.rewardItem;
-    }
-
     public static SourceModifier create(RewardItem rewardItem) {
         SourceModifier m = new SourceModifier();
         if (CardCrawlGame.isInARun()) {
@@ -99,5 +63,41 @@ public final class SourceModifier extends AbstractCardModifier {
             }
         }
         return null;
+    }
+
+    @Override
+    public AbstractCardModifier makeCopy() {
+        SourceModifier m = new SourceModifier();
+        m.act = this.act;
+        m.floor = this.floor;
+        m.rewardItem = this.rewardItem;
+        return m;
+    }
+
+    @Override
+    public String identifier(AbstractCard card) {
+        return ID;
+    }
+
+    @Override
+    public boolean isInherent(AbstractCard card) {
+        return true;
+    }
+
+    @Override
+    public boolean shouldApply(AbstractCard card) {
+        return !CardModifierManager.hasModifier(card, ID);
+    }
+
+    public int getAct() {
+        return this.act;
+    }
+
+    public int getFloor() {
+        return this.floor;
+    }
+
+    public RewardItem getRewardItem() {
+        return this.rewardItem;
     }
 }

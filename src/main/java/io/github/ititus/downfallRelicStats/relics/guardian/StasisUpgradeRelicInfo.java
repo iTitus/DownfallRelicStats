@@ -10,7 +10,6 @@ import guardian.relics.StasisUpgradeRelic;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
-import io.github.ititus.downfallRelicStats.actions.PostAdjustmentAction;
 import io.github.ititus.downfallRelicStats.actions.PreAdjustmentAction;
 import io.github.ititus.downfallRelicStats.patches.editor.SafeExprEditor;
 import javassist.CannotCompileException;

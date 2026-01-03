@@ -2,7 +2,6 @@ package io.github.ititus.downfallRelicStats.relics.hermit;
 
 import champ.ChampMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import hermit.relics.CharredGlove;

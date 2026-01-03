@@ -56,6 +56,56 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         }
     }
 
+    private static void unlockAll() {
+        LOGGER.info("locked cards: {}", UnlockTracker.lockedCards);
+        for (String cardId : CardLibrary.cards.keySet()) {
+            // LOGGER.info("unlock card: {}", cardId);
+            UnlockTracker.unlockCard(cardId);
+        }
+        LOGGER.info("locked cards after: {}", UnlockTracker.lockedCards);
+
+        LOGGER.info("locked relics: {}", UnlockTracker.lockedRelics);
+        for (String relicId : BaseMod.listAllRelicIDs()) {
+            // LOGGER.info("unlock relic: {}", relicId);
+            UnlockTracker.unlockPref.putInteger(relicId, 2);
+            UnlockTracker.lockedRelics.remove(relicId);
+            UnlockTracker.markRelicAsSeen(relicId);
+        }
+        LOGGER.info("locked relics after: {}", UnlockTracker.lockedRelics);
+
+        LOGGER.info("locked characters: {}", UnlockTracker.lockedCharacters);
+        for (String character : UnlockTracker.lockedCharacters.toArray(new String[0])) {
+            UnlockTracker.unlockPref.putInteger(character, 2);
+            UnlockTracker.lockedCharacters.remove(character);
+        }
+        LOGGER.info("locked characters after: {}", UnlockTracker.lockedCharacters);
+
+        LOGGER.info("locked loadouts: {}", UnlockTracker.lockedLoadouts);
+        UnlockTracker.lockedLoadouts.clear();
+
+        for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
+            // LOGGER.info("unlock character: {}", p.chosenClass);
+            int maxUnlockLevel = BaseMod.isBaseGameCharacter(p) ? 5 : BaseMod.getMaxUnlockLevel(p);
+            int unlockLevel = UnlockTracker.getUnlockLevel(p.chosenClass);
+            UnlockTracker.unlockProgress.putInteger(p.chosenClass + "UnlockLevel", Math.max(unlockLevel, maxUnlockLevel + 1));
+
+            Prefs prefs = p.getPrefs();
+            prefs.putInteger("WIN_COUNT", Math.max(1, prefs.getInteger("WIN_COUNT", 0)));
+            prefs.putInteger("ASCENSION_LEVEL", 20);
+            prefs.flush();
+
+            CardCrawlGame.playerPref.putBoolean(p.chosenClass + "_WIN", true);
+
+            LOGGER.info("playerClass={} unlockLevel={} maxUnlockLevel={}", p.chosenClass, unlockLevel, maxUnlockLevel);
+        }
+
+        UnlockTracker.unlockPref.flush();
+        UnlockTracker.seenPref.flush();
+        UnlockTracker.relicSeenPref.flush();
+        UnlockTracker.unlockProgress.flush();
+        CardCrawlGame.playerPref.flush();
+    }
+
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(UIStrings.class, makePath("localization/eng/descriptions.json"));
@@ -132,6 +182,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(TomeOfPortalmancyInfo.getInstance()); // Tome of Portalmancy
         register(VioletPlumageInfo.getInstance()); // Violet Plumage
         register(WhiteRibbonInfo.getInstance()); // White Ribbon
+        // Zener Deck not tracked, does the same every combat
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
@@ -267,55 +318,5 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         // Super Snecko Eye not tracked, does the same every turn
         // Super Snecko Soul not tracked, does the same every other turn
         // Unknown Egg (Unidentified Egg) not tracked, too difficult
-    }
-
-    private static void unlockAll() {
-        LOGGER.info("locked cards: {}", UnlockTracker.lockedCards);
-        for (String cardId : CardLibrary.cards.keySet()) {
-            // LOGGER.info("unlock card: {}", cardId);
-            UnlockTracker.unlockCard(cardId);
-        }
-        LOGGER.info("locked cards after: {}", UnlockTracker.lockedCards);
-
-        LOGGER.info("locked relics: {}", UnlockTracker.lockedRelics);
-        for (String relicId : BaseMod.listAllRelicIDs()) {
-            // LOGGER.info("unlock relic: {}", relicId);
-            UnlockTracker.unlockPref.putInteger(relicId, 2);
-            UnlockTracker.lockedRelics.remove(relicId);
-            UnlockTracker.markRelicAsSeen(relicId);
-        }
-        LOGGER.info("locked relics after: {}", UnlockTracker.lockedRelics);
-
-        LOGGER.info("locked characters: {}", UnlockTracker.lockedCharacters);
-        for (String character : UnlockTracker.lockedCharacters.toArray(new String[0])) {
-            UnlockTracker.unlockPref.putInteger(character, 2);
-            UnlockTracker.lockedCharacters.remove(character);
-        }
-        LOGGER.info("locked characters after: {}", UnlockTracker.lockedCharacters);
-
-        LOGGER.info("locked loadouts: {}", UnlockTracker.lockedLoadouts);
-        UnlockTracker.lockedLoadouts.clear();
-
-        for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
-            // LOGGER.info("unlock character: {}", p.chosenClass);
-            int maxUnlockLevel = BaseMod.isBaseGameCharacter(p) ? 5 : BaseMod.getMaxUnlockLevel(p);
-            int unlockLevel = UnlockTracker.getUnlockLevel(p.chosenClass);
-            UnlockTracker.unlockProgress.putInteger(p.chosenClass + "UnlockLevel", Math.max(unlockLevel, maxUnlockLevel + 1));
-
-            Prefs prefs = p.getPrefs();
-            prefs.putInteger("WIN_COUNT", Math.max(1, prefs.getInteger("WIN_COUNT", 0)));
-            prefs.putInteger("ASCENSION_LEVEL", 20);
-            prefs.flush();
-
-            CardCrawlGame.playerPref.putBoolean(p.chosenClass + "_WIN", true);
-
-            LOGGER.info("playerClass={} unlockLevel={} maxUnlockLevel={}", p.chosenClass, unlockLevel, maxUnlockLevel);
-        }
-
-        UnlockTracker.unlockPref.flush();
-        UnlockTracker.seenPref.flush();
-        UnlockTracker.relicSeenPref.flush();
-        UnlockTracker.unlockProgress.flush();
-        CardCrawlGame.playerPref.flush();
     }
 }
