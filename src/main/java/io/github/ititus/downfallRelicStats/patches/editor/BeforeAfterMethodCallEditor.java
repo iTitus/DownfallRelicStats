@@ -3,6 +3,9 @@ package io.github.ititus.downfallRelicStats.patches.editor;
 import javassist.CannotCompileException;
 import javassist.expr.MethodCall;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BeforeAfterMethodCallEditor extends SafeExprEditor {
 
     private final int requiredIndex;
@@ -11,7 +14,9 @@ public class BeforeAfterMethodCallEditor extends SafeExprEditor {
     private final String callbackClassName;
     private final boolean doBefore;
     private final boolean doAfter;
-    private final boolean addThis;
+    private boolean addThis;
+    private boolean addReceiver;
+    private boolean addArgs;
 
     private int n;
 
@@ -31,14 +36,6 @@ public class BeforeAfterMethodCallEditor extends SafeExprEditor {
         this(requiredIndex, requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter);
     }
 
-    public BeforeAfterMethodCallEditor(Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter, boolean addThis) {
-        this(requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter, addThis);
-    }
-
-    public BeforeAfterMethodCallEditor(int requiredIndex, Class<?> requiredTargetClass, String requiredTargetMethodName, Class<?> callbackClass, boolean doBefore, boolean doAfter, boolean addThis) {
-        this(requiredIndex, requiredTargetClass.getName(), requiredTargetMethodName, callbackClass.getName(), doBefore, doAfter, addThis);
-    }
-
     public BeforeAfterMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName) {
         this(0, requiredTargetClassName, requiredTargetMethodName, callbackClassName);
     }
@@ -52,21 +49,27 @@ public class BeforeAfterMethodCallEditor extends SafeExprEditor {
     }
 
     public BeforeAfterMethodCallEditor(int requiredIndex, String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter) {
-        this(requiredIndex, requiredTargetClassName, requiredTargetMethodName, callbackClassName, doBefore, doAfter, false);
-    }
-
-    public BeforeAfterMethodCallEditor(String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter, boolean addThis) {
-        this(0, requiredTargetClassName, requiredTargetMethodName, callbackClassName, doBefore, doAfter, addThis);
-    }
-
-    public BeforeAfterMethodCallEditor(int requiredIndex, String requiredTargetClassName, String requiredTargetMethodName, String callbackClassName, boolean doBefore, boolean doAfter, boolean addThis) {
         this.requiredIndex = requiredIndex;
         this.requiredTargetClassName = requiredTargetClassName;
         this.requiredTargetMethodName = requiredTargetMethodName;
         this.callbackClassName = callbackClassName;
         this.doBefore = doBefore;
         this.doAfter = doAfter;
-        this.addThis = addThis;
+    }
+
+    public BeforeAfterMethodCallEditor addThis() {
+        this.addThis = true;
+        return this;
+    }
+
+    public BeforeAfterMethodCallEditor addReceiver() {
+        this.addReceiver = true;
+        return this;
+    }
+
+    public BeforeAfterMethodCallEditor addArgs() {
+        this.addArgs = true;
+        return this;
     }
 
     @Override
@@ -79,17 +82,33 @@ public class BeforeAfterMethodCallEditor extends SafeExprEditor {
             StringBuilder b = new StringBuilder().append('{');
             if (doBefore) {
                 b.append(callbackClassName).append(".before(");
+                List<String> args = new ArrayList<>();
                 if (addThis) {
-                    b.append("this");
+                    args.add("this");
                 }
+                if (addReceiver) {
+                    args.add("$0");
+                }
+                if (addArgs) {
+                    args.add("$$");
+                }
+                b.append(String.join(",", args));
                 b.append(");");
             }
             b.append("$_=$proceed($$);");
             if (doAfter) {
                 b.append(callbackClassName).append(".after(");
+                List<String> args = new ArrayList<>();
                 if (addThis) {
-                    b.append("this");
+                    args.add("this");
                 }
+                if (addReceiver) {
+                    args.add("$0");
+                }
+                if (addArgs) {
+                    args.add("$$");
+                }
+                b.append(String.join(",", args));
                 b.append(");");
             }
             m.replace(b.append('}').toString());

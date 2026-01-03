@@ -51,7 +51,7 @@ public final class GreedOozeRelicInfo extends BaseRelicStats<GreedOozeRelicInfo.
         private static int goldAmount;
 
         public static ExprEditor Instrument() {
-            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "loseGold", Patch.class, true, true, true);
+            return new BeforeAfterMethodCallEditor(AbstractPlayer.class, "loseGold", Patch.class, true, true).addThis();
         }
 
         public static void Prefix() {

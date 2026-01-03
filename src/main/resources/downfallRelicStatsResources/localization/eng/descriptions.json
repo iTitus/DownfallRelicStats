@@ -39,6 +39,11 @@
       "Cards drawn: "
     ]
   },
+  "STATS:awakened:NerfedMummifiedHand": {
+    "TEXT": [
+      "Energy discounted: "
+    ]
+  },
   "STATS:bronze:MoonTalisman": {
     "TEXT": [
       "Card chosen: ",

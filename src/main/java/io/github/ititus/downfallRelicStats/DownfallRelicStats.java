@@ -124,6 +124,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(HexxBombInfo.getInstance()); // Hexx Bomb (Manabomb)
         register(MiniBlackHoleInfo.getInstance()); // Mini Black Hole (Alethea)
         register(MoonTalismanInfo.getInstance()); // Moon Talisman (Crescent Talisman)
+        register(NerfedMummifiedHandInfo.getInstance()); // Nerfed Mummified Hand (Dessicated Hand) [sic]
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
