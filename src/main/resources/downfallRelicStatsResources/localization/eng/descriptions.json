@@ -19,6 +19,11 @@
       "Ritual gained: "
     ]
   },
+  "STATS:awakened:CurvedSword": {
+    "TEXT": [
+      "Ceremonies generated: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",

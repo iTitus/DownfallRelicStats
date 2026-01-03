@@ -117,6 +117,8 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(AwakenedUrnInfo.getInstance()); // Awakened Urn (Bird-Faced Vase)
         register(CawingCaskInfo.getInstance()); // Cawing Cask
         register(CursedBlessingInfo.getInstance()); // Cursed Blessing (Final Rites)
+        register(CurvedSwordInfo.getInstance()); // Curved Sword (Zetsumei)
+        // Curved Sword Meme (Conjure Blade) not tracked, is a meme and does the same every combat
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
