@@ -131,6 +131,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(StrengthBoosterInfo.getInstance()); // Strength Booster (Paper Crow)
         register(TomeOfPortalmancyInfo.getInstance()); // Tome of Portalmancy
         register(VioletPlumageInfo.getInstance()); // Violet Plumage
+        register(WhiteRibbonInfo.getInstance()); // White Ribbon
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
