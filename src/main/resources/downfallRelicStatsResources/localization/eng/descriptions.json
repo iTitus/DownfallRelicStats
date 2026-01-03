@@ -34,6 +34,11 @@
       "Manaburn transferred: "
     ]
   },
+  "STATS:awakened:MiniBlackHole": {
+    "TEXT": [
+      "Cards drawn: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",

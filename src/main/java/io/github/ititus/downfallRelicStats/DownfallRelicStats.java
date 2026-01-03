@@ -122,6 +122,7 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
         register(DeadBirdInfo.getInstance()); // Dead Bird (Corvid Spirit)
         // Eye of the Occult not tracked, hard to quantify
         register(HexxBombInfo.getInstance()); // Hexx Bomb (Manabomb)
+        register(MiniBlackHoleInfo.getInstance()); // Mini Black Hole (Alethea)
 
         // Champ
         register(BarbellsInfo.getInstance()); // Barbell
