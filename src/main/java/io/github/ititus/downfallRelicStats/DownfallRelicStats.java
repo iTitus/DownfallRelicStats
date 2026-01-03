@@ -254,44 +254,33 @@ public final class DownfallRelicStats implements EditStringsSubscriber, PostInit
 
     private static void unlockAll() {
         LOGGER.info("locked cards: {}", UnlockTracker.lockedCards);
-        for (Map.Entry<String, AbstractCard> cardEntry : CardLibrary.cards.entrySet()) {
-            String cardId = cardEntry.getKey();
-            AbstractCard card = cardEntry.getValue();
-
+        for (String cardId : CardLibrary.cards.keySet()) {
             // LOGGER.info("unlock card: {}", cardId);
-            UnlockTracker.unlockPref.putInteger(cardId, 2);
-            UnlockTracker.seenPref.putInteger(cardId, 1);
-
-            if (card != null && !card.isSeen) {
-                card.isSeen = true;
-                card.unlock();
-            }
+            UnlockTracker.unlockCard(cardId);
         }
-        UnlockTracker.lockedCards.clear();
+        LOGGER.info("locked cards after: {}", UnlockTracker.lockedCards);
 
         LOGGER.info("locked relics: {}", UnlockTracker.lockedRelics);
         for (String relicId : BaseMod.listAllRelicIDs()) {
             // LOGGER.info("unlock relic: {}", relicId);
             UnlockTracker.unlockPref.putInteger(relicId, 2);
-            UnlockTracker.relicSeenPref.putInteger(relicId, 1);
-
-            AbstractRelic relic = RelicLibrary.getRelic(relicId);
-            if (relic != null) {
-                relic.isSeen = true;
-            }
+            UnlockTracker.lockedRelics.remove(relicId);
+            UnlockTracker.markRelicAsSeen(relicId);
         }
-        UnlockTracker.lockedRelics.clear();
+        LOGGER.info("locked relics after: {}", UnlockTracker.lockedRelics);
 
         LOGGER.info("locked characters: {}", UnlockTracker.lockedCharacters);
-        for (String character : UnlockTracker.lockedCharacters) {
+        for (String character : UnlockTracker.lockedCharacters.toArray(new String[0])) {
             UnlockTracker.unlockPref.putInteger(character, 2);
+            UnlockTracker.lockedCharacters.remove(character);
         }
-        UnlockTracker.lockedCharacters.clear();
+        LOGGER.info("locked characters after: {}", UnlockTracker.lockedCharacters);
 
         LOGGER.info("locked loadouts: {}", UnlockTracker.lockedLoadouts);
         UnlockTracker.lockedLoadouts.clear();
 
         for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
+            // LOGGER.info("unlock character: {}", p.chosenClass);
             int maxUnlockLevel = BaseMod.isBaseGameCharacter(p) ? 5 : BaseMod.getMaxUnlockLevel(p);
             int unlockLevel = UnlockTracker.getUnlockLevel(p.chosenClass);
             UnlockTracker.unlockProgress.putInteger(p.chosenClass + "UnlockLevel", Math.max(unlockLevel, maxUnlockLevel + 1));
