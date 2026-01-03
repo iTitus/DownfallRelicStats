@@ -65,6 +65,11 @@
       "Manaburn applied: "
     ]
   },
+  "STATS:awakened:VioletPlumage": {
+    "TEXT": [
+      "Cards drawn: "
+    ]
+  },
   "STATS:bronze:BottledCode": {
     "TEXT": [
       "Card bottled: ",
