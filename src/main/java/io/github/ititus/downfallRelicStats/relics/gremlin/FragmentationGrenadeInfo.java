@@ -3,6 +3,7 @@ package io.github.ititus.downfallRelicStats.relics.gremlin;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatches;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import gremlin.actions.DamageRandomEnemyActionButItsRelicRng;
 import gremlin.actions.PseudoDamageRandomEnemyAction;
 import gremlin.patches.RandomDamagePatch;
 import gremlin.relics.FragmentationGrenade;
@@ -31,6 +32,10 @@ public final class FragmentationGrenadeInfo extends BaseCombatRelicStats {
             ),
             @SpirePatch(
                     clz = PseudoDamageRandomEnemyAction.class,
+                    method = "update"
+            ),
+            @SpirePatch(
+                    clz = DamageRandomEnemyActionButItsRelicRng.class,
                     method = "update"
             ),
             @SpirePatch(
