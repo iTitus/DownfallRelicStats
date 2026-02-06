@@ -3,7 +3,7 @@
   "title": "Downfall Relic Stats compatibility",
   "description": "Adds Relic Stats compatibility to the Downfall Expansion.\n\nDocs: https://docs.google.com/spreadsheets/d/18dtrFm4siMDIRIgfQaTNUI5c9gl41TEzDUhEpoqs6yE/edit?usp=sharing",
   "visibility": "public",
-  "changeNote": "v1.7.3\n\nFix Fragmentation Grenade not tracking extra Prickly Shields damage",
+  "changeNote": "v1.7.4\n\nImprove Horseshoe tracking",
   "tags": [
     "Utility",
     "QoL"

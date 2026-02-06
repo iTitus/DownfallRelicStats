@@ -2,7 +2,9 @@ package io.github.ititus.downfallRelicStats.relics.hermit;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import hermit.relics.Horseshoe;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.FieldAccessHookEditor;
@@ -32,8 +34,10 @@ public final class HorseshoeInfo extends BaseCombatRelicStats {
         }
 
         public static int hook(AbstractPower __instance, int amount) {
-            getInstance().registerStartingAmount(__instance.amount);
-            getInstance().registerEndingAmount(amount);
+            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(Horseshoe.ID) && !AbstractDungeon.player.hasPower(ArtifactPower.POWER_ID)) {
+                getInstance().registerStartingAmount(Math.max(0, __instance.amount));
+                getInstance().registerEndingAmount(Math.max(0, amount));
+            }
             return amount;
         }
     }
@@ -46,8 +50,10 @@ public final class HorseshoeInfo extends BaseCombatRelicStats {
     public static class Patch2 {
 
         public static int Postfix(int __result, Horseshoe __instance, AbstractPower power, AbstractCreature source, int stackAmount) {
-            getInstance().registerStartingAmount(stackAmount);
-            getInstance().registerEndingAmount(__result);
+            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(Horseshoe.ID) && !AbstractDungeon.player.hasPower(ArtifactPower.POWER_ID)) {
+                getInstance().registerStartingAmount(Math.max(0, stackAmount));
+                getInstance().registerEndingAmount(Math.max(0, __result));
+            }
             return __result;
         }
     }
