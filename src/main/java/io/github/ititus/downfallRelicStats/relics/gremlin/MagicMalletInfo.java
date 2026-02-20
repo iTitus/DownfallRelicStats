@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import gremlin.powers.WizPower;
 import gremlin.relics.MagicalMallet;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoeAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
@@ -36,11 +36,11 @@ public final class MagicMalletInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, WizPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoeAction.Mode.ONLY_PLAYER, getInstance(), WizPower.POWER_ID));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

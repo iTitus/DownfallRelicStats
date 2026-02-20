@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import sneckomod.relics.ConfusingCodex;
 
@@ -55,11 +54,7 @@ public final class ConfusingCodexInfo extends BaseRelicStats<ConfusingCodexInfo.
         private static PreAoePowerAction preAction;
 
         public static void Prefix() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction());
-        }
-
-        public static void Postfix() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction((powerId, by) -> {
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction((powerId, by) -> {
                 if (WeakPower.POWER_ID.equals(powerId)) {
                     getInstance().stats.weak += by;
                 } else if (VulnerablePower.POWER_ID.equals(powerId)) {
@@ -67,7 +62,11 @@ public final class ConfusingCodexInfo extends BaseRelicStats<ConfusingCodexInfo.
                 } else if (ArtifactPower.POWER_ID.equals(powerId)) {
                     getInstance().stats.artifact -= by;
                 }
-            }, preAction));
+            }));
+        }
+
+        public static void Postfix() {
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.BaseRelicStats;
 import io.github.ititus.downfallRelicStats.StatContainer;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoeAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import io.github.ititus.downfallRelicStats.patches.editor.ConstructorHookEditor;
@@ -75,11 +75,11 @@ public final class BolsterEngineInfo extends BaseRelicStats<BolsterEngineInfo.St
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, StrengthPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoeAction.Mode.ONLY_PLAYER, (powerId, amount) -> getInstance().stats.strength += amount, StrengthPower.POWER_ID));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction((powerId, amount) -> getInstance().stats.strength += amount, preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

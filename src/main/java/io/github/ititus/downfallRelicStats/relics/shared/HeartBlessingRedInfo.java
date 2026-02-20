@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import downfall.relics.HeartBlessingRed;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoeAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
@@ -37,8 +37,8 @@ public final class HeartBlessingRedInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, StrengthPower.POWER_ID);
-            AbstractDungeon.actionManager.addToTop(new PostAoePowerAction(getInstance(), preAction));
+            preAction = new PreAoePowerAction(PreAoeAction.Mode.ONLY_PLAYER, getInstance(), StrengthPower.POWER_ID);
+            AbstractDungeon.actionManager.addToTop(preAction.post());
         }
 
         public static void after() {

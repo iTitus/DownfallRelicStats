@@ -5,10 +5,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
+import io.github.ititus.downfallRelicStats.actions.PreAoeDamageAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
-import relicstats.actions.AoeDamageFollowupAction;
-import relicstats.actions.PreAoeDamageAction;
 
 public final class DeadBirdInfo extends BaseCombatRelicStats {
 
@@ -36,11 +35,11 @@ public final class DeadBirdInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction());
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoeDamageAction(getInstance()));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new AoeDamageFollowupAction(getInstance(), preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

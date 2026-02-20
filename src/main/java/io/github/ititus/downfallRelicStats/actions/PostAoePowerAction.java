@@ -1,30 +1,19 @@
 package io.github.ititus.downfallRelicStats.actions;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
-public class PostAoePowerAction extends AbstractGameAction {
+public final class PostAoePowerAction extends PostAoeAction<PreAoePowerAction> {
 
-    private final PowerChangeCallback statTracker;
-    private final PreAoePowerAction preAction;
-
-    public PostAoePowerAction(PowerChangeCallback statTracker, PreAoePowerAction preAction) {
-        this.statTracker = Objects.requireNonNull(statTracker, "statTracker");
-        this.preAction = Objects.requireNonNull(preAction, "preAction");
-        this.actionType = this.preAction.actionType;
+    public PostAoePowerAction(PreAoePowerAction preAction) {
+        super(preAction);
     }
 
-    public void update() {
-        if (!preAction.isDone) {
-            throw new IllegalStateException();
-        }
-
-        Map<String, Integer> oldPowerAmounts = preAction.getPowerAmounts();
-        Map<String, Integer> newPowerAmounts = preAction.countPowerAmounts();
+    @Override
+    protected void post() {
+        Map<String, Integer> oldPowerAmounts = this.preAction.getPowerAmounts();
+        Map<String, Integer> newPowerAmounts = this.preAction.countPowerAmounts();
 
         Set<String> powerIds = new HashSet<>();
         powerIds.addAll(oldPowerAmounts.keySet());
@@ -32,9 +21,7 @@ public class PostAoePowerAction extends AbstractGameAction {
         for (String powerId : powerIds) {
             int oldAmount = oldPowerAmounts.getOrDefault(powerId, 0);
             int newAmount = newPowerAmounts.getOrDefault(powerId, 0);
-            statTracker.onPowerChanged(powerId, newAmount - oldAmount);
+            this.preAction.getStatTracker().onPowerChanged(powerId, newAmount - oldAmount);
         }
-
-        isDone = true;
     }
 }

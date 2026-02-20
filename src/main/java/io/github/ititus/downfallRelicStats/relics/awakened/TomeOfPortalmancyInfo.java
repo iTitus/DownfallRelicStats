@@ -5,7 +5,6 @@ import awakenedOne.relics.TomeOfPortalmancy;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 
 public final class TomeOfPortalmancyInfo extends BaseCombatRelicStats {
@@ -30,11 +29,11 @@ public final class TomeOfPortalmancyInfo extends BaseCombatRelicStats {
         private static PreAoePowerAction preAction;
 
         public static void Prefix() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(ManaburnPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(getInstance(), ManaburnPower.POWER_ID));
         }
 
         public static void Postfix() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }

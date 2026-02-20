@@ -5,7 +5,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
-import relicstats.actions.PreAoeDamageAction;
 
 public final class IncenseInfo extends BaseCombatRelicStats {
 
@@ -25,8 +24,6 @@ public final class IncenseInfo extends BaseCombatRelicStats {
     )
     @SuppressWarnings("unused")
     public static class Patch {
-
-        private static PreAoeDamageAction preAction;
 
         public static ExprEditor Instrument() {
             return new BeforeAfterMethodCallEditor(Incense.class, "flash", Patch.class, false, true);

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import guardian.relics.ObsidianScales;
 import io.github.ititus.downfallRelicStats.BaseCombatRelicStats;
-import io.github.ititus.downfallRelicStats.actions.PostAoePowerAction;
+import io.github.ititus.downfallRelicStats.actions.PreAoeAction;
 import io.github.ititus.downfallRelicStats.actions.PreAoePowerAction;
 import io.github.ititus.downfallRelicStats.patches.editor.BeforeAfterMethodCallEditor;
 import javassist.expr.ExprEditor;
@@ -36,8 +36,8 @@ public final class ObsidianScalesInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, ThornsPower.POWER_ID);
-            AbstractDungeon.actionManager.addToTop(new PostAoePowerAction(getInstance(), preAction));
+            preAction = new PreAoePowerAction(PreAoeAction.Mode.ONLY_PLAYER, getInstance(), ThornsPower.POWER_ID);
+            AbstractDungeon.actionManager.addToTop(preAction.post());
         }
 
         public static void after() {
@@ -59,11 +59,11 @@ public final class ObsidianScalesInfo extends BaseCombatRelicStats {
         }
 
         public static void before() {
-            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoePowerAction.Mode.ONLY_PLAYER, ThornsPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(preAction = new PreAoePowerAction(PreAoeAction.Mode.ONLY_PLAYER, getInstance(), ThornsPower.POWER_ID));
         }
 
         public static void after() {
-            AbstractDungeon.actionManager.addToBottom(new PostAoePowerAction(getInstance(), preAction));
+            AbstractDungeon.actionManager.addToBottom(preAction.post());
         }
     }
 }
